@@ -11,6 +11,7 @@ try {
     console.error('Connection error:', error);
 }
 
+app.use(express.json());
 app.use('/loker', lokerRoutes);
 
 app.listen(5000, () => console.log('Server running at port 5000'));
