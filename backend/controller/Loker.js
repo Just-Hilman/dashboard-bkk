@@ -24,11 +24,43 @@ export const getLokerById = async (req, res) => {
 
 }
 
-export const createlLoker = async (req, res) => {
+export const createLoker = async (req, res) => {
     try {
         await Loker.create(req.body);
         res.json({
             "messege": "Loker Cerated"
+        });
+    } catch (error) {
+        res.json({ messege: error.messege });
+    }
+
+}
+
+export const updateLoker = async (req, res) => {
+    try {
+        await Loker.update(req.body, {
+            where: {
+                id: req.params.id
+            }
+        });
+        res.json({
+            "messege": "Loker Updated"
+        });
+    } catch (error) {
+        res.json({ messege: error.messege });
+    }
+
+}
+
+export const deleteLoker = async (req, res) => {
+    try {
+        await Loker.destroy({
+            where: {
+                id: req.params.id
+            }
+        });
+        res.json({
+            "messege": "Loker Deleted"
         });
     } catch (error) {
         res.json({ messege: error.messege });

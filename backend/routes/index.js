@@ -2,14 +2,18 @@ import express from "express";
 
 import {
     getAllLoker,
-    createlLoker,
-    getLokerById
+    createLoker,
+    getLokerById,
+    updateLoker,
+    deleteLoker
 } from "../controller/Loker.js";
 
 const router = express.Router();
 
 router.get('/', getAllLoker);
 router.get('/:id', getLokerById);
-router.post('/', createlLoker);
+router.post('/', createLoker);
+router.patch('/:id', updateLoker);
+router.delete('/:id', deleteLoker);
 
 export default router;
