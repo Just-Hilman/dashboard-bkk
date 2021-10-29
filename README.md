@@ -4,7 +4,7 @@ Application that can help local organizations in the process of managing the rec
 
 ### Configure
 
-Get the repo
+Get the repository
 
 ```cmd
 git clone https://github.com/Just-Hilman/dashboard-bkk.git
