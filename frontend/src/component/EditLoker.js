@@ -1,19 +1,20 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import axios from "axios";
-import { useHistory } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 
-const AddLoker = () => {
+const EditLoker = () => {
     const [loker, setLoker] = useState('');
     const [perusahaan, setPerusahaan] = useState('');
     const [deskripsi, setDeskripsi] = useState('');
     const [kualifikasi, setKualifikasi] = useState('');
     const [jadwal, setJadwal] = useState('');
 
+    const { id } = useParams();
     const history = useHistory();
 
-    const saveLoker = async (e) => {
+    const updateLoker = async (e) => {
         e.preventDefault();
-        await axios.post('http://localhost:5000/loker', {
+        await axios.patch(`http://localhost:5000/loker/${id}`, {
             nama_loker: loker,
             nama_perusahaan: perusahaan,
             deskripsi: deskripsi,
@@ -23,9 +24,22 @@ const AddLoker = () => {
         history.push("/");
     }
 
+    useEffect(() => {
+        getLokerById();
+    }, []);
+
+    const getLokerById = async () => {
+        const response = await axios.get(`http://localhost:5000/loker/${id}`);
+        setLoker(response.data.nama_loker);
+        setPerusahaan(response.data.nama_perusahaan);
+        setDeskripsi(response.data.deskripsi);
+        setKualifikasi(response.data.kualifikasi);
+        setJadwal(response.data.jadwal);
+    }
+
     return (
         <div>
-            <form onSubmit={ saveLoker }>
+            <form onSubmit={ updateLoker }>
                 <div>
                     <label className="label">Loker</label>
                     <input
@@ -82,7 +96,7 @@ const AddLoker = () => {
                 </div>
 
                 <div className="field">
-                    <button className="button is-link is-outlined">Save</button>
+                    <button className="button is-link is-outlined">Update</button>
                 </div>
             </form>
 
@@ -90,4 +104,4 @@ const AddLoker = () => {
     )
 }
 
-export default AddLoker
+export default EditLoker

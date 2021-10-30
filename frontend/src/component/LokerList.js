@@ -40,7 +40,7 @@ const LokerList = () => {
                             <td>{ loker.kualifikasi }</td>
                             <td>2021-12-31</td>
                             <td>
-                                <button className="button is-warning is-focused">Ubah</button>
+                                <Link to={`/edit/${loker.id}`} className="button is-warning is-focused">Ubah</Link>
                                 <button className="button is-danger is-focused">Hapus</button>
                             </td>
                         </tr>

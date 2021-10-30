@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import LokerList from "./component/LokerList";
 import AddLoker from "./component/AddLoker";
+import EditLoker from "./component/EditLoker";
 
 function App() {
   return (
@@ -16,6 +17,11 @@ function App() {
               <Route path="/add">
                 <AddLoker />
               </Route>
+
+              <Route path="/edit/:id">
+                <EditLoker />
+              </Route>
+
             </Switch>
           </div>
         </div>
