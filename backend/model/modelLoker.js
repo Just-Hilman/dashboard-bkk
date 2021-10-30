@@ -15,6 +15,9 @@ const Loker = db.define('lowongan_pekerjaan', {
     },
     kualifikasi: {
         type:DataTypes.STRING
+    },
+    jadwal: {
+        type:DataTypes.DATE
     }
 }, {
     freezeTableName: true
