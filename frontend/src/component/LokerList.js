@@ -31,7 +31,6 @@ const LokerList = () => {
                     <th>Deskripsi Pekerjaan</th>
                     <th>Kualifikan Pekerjaan</th>
                     <th>Jadwal Tes Seleksi</th>
-                    <th>Updated at</th>
                     <th>Action</th>
                 </tr>
               </thead>
@@ -45,7 +44,6 @@ const LokerList = () => {
                             <td>{ loker.deskripsi }</td>
                             <td>{ loker.kualifikasi }</td>
                             <td>{ loker.jadwal }</td>
-                            <td>{ loker.updatedAt }</td>
                             <td>
                                 <Link to={`/edit/${loker.id}`} className="button is-warning is-focused">Ubah</Link>
                                 <button onClick={() => deleteLoker(loker.id)} className="button is-danger is-focused">Hapus</button>
