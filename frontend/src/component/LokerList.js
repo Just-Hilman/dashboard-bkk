@@ -14,6 +14,11 @@ const LokerList = () => {
         setLoker(response.data);
     }
 
+    const deleteLoker = async (id) => {
+        await axios.delete(`http://localhost:5000/loker/${id}`);
+        getLoker();
+    }
+
     return (
         <div>
             <Link to="/add" className="button is-success is-outlined mt-5">Add Loker</Link>
@@ -26,6 +31,7 @@ const LokerList = () => {
                     <th>Deskripsi Pekerjaan</th>
                     <th>Kualifikan Pekerjaan</th>
                     <th>Jadwal Tes Seleksi</th>
+                    <th>Updated at</th>
                     <th>Action</th>
                 </tr>
               </thead>
@@ -38,10 +44,11 @@ const LokerList = () => {
                             <td>{ loker.nama_perusahaan }</td>
                             <td>{ loker.deskripsi }</td>
                             <td>{ loker.kualifikasi }</td>
-                            <td>2021-12-31</td>
+                            <td>{ loker.jadwal }</td>
+                            <td>{ loker.updatedAt }</td>
                             <td>
                                 <Link to={`/edit/${loker.id}`} className="button is-warning is-focused">Ubah</Link>
-                                <button className="button is-danger is-focused">Hapus</button>
+                                <button onClick={() => deleteLoker(loker.id)} className="button is-danger is-focused">Hapus</button>
                             </td>
                         </tr>
                     )) }    
