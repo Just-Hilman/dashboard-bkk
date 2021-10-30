@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const LokerList = () => {
     const [loker, setLoker] = useState([]);
@@ -15,6 +16,7 @@ const LokerList = () => {
 
     return (
         <div>
+            <Link to="/add" className="button is-success is-outlined mt-5">Add Loker</Link>
             <table className="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
               <thead>
                 <tr>
