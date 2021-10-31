@@ -10,7 +10,7 @@ const Peserta = db.define('peserta_seleksi', {
     alamat: {
         type: DataTypes.STRING
     },
-    tempat_tgl_lahir: {
+    tgl_lahir: {
         type: DataTypes.DATE
     },
     jurusan: {
