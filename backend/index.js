@@ -1,7 +1,7 @@
 import express from "express";
 import db from "./config/database.js";
-import lokerRoutes from "./routes/index.js";
-import pesertaRoutes from "./routes/index.js";
+import lokerRoutes from "./routes/routeLoker.js";
+import pesertaRoutes from "./routes/routePeserta.js";
 import cors from "cors"
 
 const app = express();

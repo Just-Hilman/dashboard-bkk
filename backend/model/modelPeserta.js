@@ -16,7 +16,7 @@ const Peserta = db.define('peserta_seleksi', {
     jurusan: {
         type: DataTypes.STRING
     },
-    no_tep: {
+    no_telp: {
         type: DataTypes.STRING
     },
     email: {
