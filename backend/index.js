@@ -13,8 +13,10 @@ try {
     console.error('Connection error:', error);
 }
 
-//loker
 app.use(cors());
+
+//loker
+
 app.use(express.json());
 app.use('/loker', lokerRoutes);
 

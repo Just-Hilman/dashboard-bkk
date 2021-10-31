@@ -51,3 +51,19 @@ export const updatePeserta = async (req, res) => {
     }
 
 }
+
+export const deletePeserta = async (req, res) => {
+    try {
+        await Peserta.destroy({
+            where: {
+                id: req.params.id
+            }
+        });
+        res.json({
+            "messege": "Peserta Deleted"
+        });
+    } catch (error) {
+        res.json({ messege: error.messege });
+    }
+
+}
