@@ -28,3 +28,5 @@ const Loker = db.define('peserta_seleksi', {
 }, {
     freezeTableName: true
 });
+
+export default Peserta;
