@@ -8,6 +8,10 @@ import {
     deleteLoker
 } from "../controller/Loker.js";
 
+import {
+    getAllPeserta
+} from "../controller/Peserta.js";
+
 const router = express.Router();
 
 router.get('/', getAllLoker);
@@ -15,5 +19,8 @@ router.get('/:id', getLokerById);
 router.post('/', createLoker);
 router.patch('/:id', updateLoker);
 router.delete('/:id', deleteLoker);
+
+
+router.get('/', getAllPeserta);
 
 export default router;
