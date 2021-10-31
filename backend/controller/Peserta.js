@@ -9,3 +9,15 @@ export const getAllPeserta = async (req, res) => {
     }
 
 }
+
+export const createPeserta = async (req, res) => {
+    try {
+        await Peserta.create(req.body);
+        res.json({
+            "messege": "Peserta Added"
+        });
+    } catch (error) {
+        res.json({ messege: error.messege });
+    }
+
+}

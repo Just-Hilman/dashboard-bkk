@@ -23,7 +23,7 @@ const Peserta = db.define('peserta_seleksi', {
         type: DataTypes.STRING
     },
     id_loker: {
-        type: DataTypes.INT
+        type: DataTypes.INTEGER
     }
 }, {
     freezeTableName: true

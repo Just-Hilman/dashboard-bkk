@@ -9,7 +9,8 @@ import {
 } from "../controller/Loker.js";
 
 import {
-    getAllPeserta
+    getAllPeserta,
+    createPeserta
 } from "../controller/Peserta.js";
 
 const router = express.Router();
@@ -22,5 +23,6 @@ router.delete('/:id', deleteLoker);
 
 
 router.get('/', getAllPeserta);
+router.post('/', createPeserta);
 
 export default router;
