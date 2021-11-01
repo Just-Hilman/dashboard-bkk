@@ -20,7 +20,7 @@ const AddLoker = () => {
             kualifikasi: kualifikasi,
             jadwal: jadwal
         });
-        history.push("/");
+        history.push("/loker");
     }
 
     return (

@@ -2,6 +2,9 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import LokerList from "./component/LokerList";
 import AddLoker from "./component/AddLoker";
 import EditLoker from "./component/EditLoker";
+import PesertaList from "./component/PesertaList";
+import AddPeserta from "./component/AddPeserta";
+import EditPeserta from "./component/EditPeserta";
 
 function App() {
   return (
@@ -10,16 +13,31 @@ function App() {
         <div className="columns">
           <div className="column is-full">
             <Switch>
-              <Route exact path="/">
+              <Route exact path="/loker">
                 <LokerList />
               </Route>
 
-              <Route path="/add">
+              <Route path="/addLoker">
                 <AddLoker />
               </Route>
 
-              <Route path="/edit/:id">
+              <Route path="/loker/edit/:id">
                 <EditLoker />
+              </Route>
+
+            </Switch>
+
+            <Switch>
+              <Route exact path="/peserta">
+                <PesertaList />
+              </Route>
+
+              <Route path="/addPeserta">
+                <AddPeserta />
+              </Route>
+
+              <Route path="/peserta/edit/:id">
+                <EditPeserta />
               </Route>
 
             </Switch>
