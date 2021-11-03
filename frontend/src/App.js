@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import "./style/style.css";
 import MainPage from "./view/MainPage";
 import LokerList from "./component/LokerList";
 import AddLoker from "./component/AddLoker";
@@ -10,9 +11,9 @@ import EditPeserta from "./component/EditPeserta";
 function App() {
   return (
     <Router>
-      <div className="container">
-        <div className="columns">
-          <div className="column is-full">
+      <div>
+        <div>
+          <div>
             <Switch>
 
               <Route exact path="/">
