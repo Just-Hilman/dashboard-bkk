@@ -2,7 +2,11 @@ import React from 'react'
 
 const MainPage = () => {
     return (
-        <div></div>
+        <div className="App">
+            <header className="App-header">
+                
+            </header>
+        </div>
     )
 }
 

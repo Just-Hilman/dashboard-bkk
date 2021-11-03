@@ -14,7 +14,12 @@ function App() {
         <div className="columns">
           <div className="column is-full">
             <Switch>
-              <Route exact path="/loker">
+
+              <Route exact path="/">
+                <MainPage />
+              </Route>
+
+              <Route path="/loker">
                 <LokerList />
               </Route>
 
@@ -29,7 +34,7 @@ function App() {
             </Switch>
 
             <Switch>
-              <Route exact path="/peserta">
+              <Route path="/peserta">
                 <PesertaList />
               </Route>
 
