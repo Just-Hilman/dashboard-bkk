@@ -64,7 +64,7 @@ const MainPage = () => {
                         </div>
                             
                         <div class="cta">
-                            <a href="#" class="jumbotron-button">Lihat Lowongan</a>
+                            <a href="http://localhost:3000/loker" class="jumbotron-button">Lihat Lowongan</a>
                         </div>
                         <div class="color-overlay"></div>
                     </div>

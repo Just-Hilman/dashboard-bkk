@@ -26,10 +26,10 @@ const AddLoker = () => {
     return (
         <div>
             <form onSubmit={ saveLoker }>
-                <div>
-                    <label className="label">Loker</label>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Loker</label>
                     <input
-                        class="input is-primary"
+                        class="form-control"
                         type="text"
                         placeholder="Lowongan Pekerjaan"
                         value={loker}
@@ -37,10 +37,10 @@ const AddLoker = () => {
                     />
                 </div>
 
-                <div className="field">
-                    <label className="label">Perusahaan</label>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Perusahaan</label>
                     <input
-                        class="input is-primary"
+                        class="form-control"
                         type="text"
                         placeholder="Perusahaan"
                         value={perusahaan}
@@ -48,10 +48,10 @@ const AddLoker = () => {
                     />
                 </div>
 
-                <div className="field">
-                    <label className="label">Deskripsi</label>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Deskripsi</label>
                     <textarea
-                        class="textarea"
+                        class="form-control" aria-label="With textarea"
                         type="text"
                         placeholder="Deskripsi"
                         value={deskripsi}
@@ -59,10 +59,10 @@ const AddLoker = () => {
                     />
                 </div>
 
-                <div className="field">
-                    <label className="label">Kualifikasi</label>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Kualifikasi</label>
                     <textarea
-                        class="textarea"
+                        class="form-control" aria-label="With textarea"
                         type="text"
                         placeholder="Kualifikasi" rows="10"
                         value={kualifikasi}
@@ -70,10 +70,10 @@ const AddLoker = () => {
                     />
                 </div>
 
-                <div className="field">
+                <div class="mb-3">
                     <label className="label">Jadwal</label>
                     <input
-                        class="input"
+                        class="form-control"
                         type="date"
                         placeholder="Jadwal Tes"
                         value={jadwal}
@@ -81,8 +81,8 @@ const AddLoker = () => {
                     />
                 </div>
 
-                <div className="field">
-                    <button className="button is-link is-outlined">Save</button>
+                <div class="mb-3">
+                    <button type="submit" class="btn btn-primary">Save</button>
                 </div>
             </form>
 

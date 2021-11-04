@@ -21,8 +21,8 @@ const PesertaList = () => {
 
     return (
         <div>
-            <Link to="/addPeserta" className="button is-success is-outlined mt-5">Add Peserta</Link>
-            <table className="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+            <Link to="/addPeserta" class="btn btn-outline-success">Add Peserta</Link>
+            <table class="table table-hover">
               <thead>
                 <tr>
                     <th>No</th>
@@ -49,8 +49,8 @@ const PesertaList = () => {
                             <td>{ peserta.email }</td>
                             <td>{ peserta.id_loker }</td>
                             <td>
-                                <Link to={`/edit/${peserta.id}`} className="button is-warning is-focused">Ubah</Link>
-                                <button onClick={() => deletePeserta(peserta.id)} className="button is-danger is-focused">Hapus</button>
+                                <Link to={`/edit/${peserta.id}`} class="btn btn-warning">Ubah</Link>
+                                <button onClick={() => deletePeserta(peserta.id)} class="btn btn-danger">Hapus</button>
                             </td>
                         </tr>
                     )) }    

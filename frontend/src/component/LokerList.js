@@ -21,8 +21,8 @@ const LokerList = () => {
 
     return (
         <div>
-            <Link to="/addLoker" className="button is-success is-outlined mt-5">Add Loker</Link>
-            <table className="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+            <Link to="/addLoker" class="btn btn-outline-success">Add Loker</Link>
+            <table class="table table-hover">
               <thead>
                 <tr>
                     <th>No</th>
@@ -45,8 +45,8 @@ const LokerList = () => {
                             <td>{ loker.kualifikasi }</td>
                             <td>{ loker.jadwal }</td>
                             <td>
-                                <Link to={`/edit/${loker.id}`} className="button is-warning is-focused">Ubah</Link>
-                                <button onClick={() => deleteLoker(loker.id)} className="button is-danger is-focused">Hapus</button>
+                                <Link to={`/edit/${loker.id}`} class="btn btn-warning">Ubah</Link>
+                                <button onClick={() => deleteLoker(loker.id)} class="btn btn-danger">Hapus</button>
                             </td>
                         </tr>
                     )) }    
