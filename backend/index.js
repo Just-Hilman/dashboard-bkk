@@ -4,6 +4,7 @@ import db from "./config/database.js";
 import lokerRoutes from "./routes/routeLoker.js";
 import pesertaRoutes from "./routes/routePeserta.js";
 import usersRoutes from "./routes/routeUsers.js";
+import usersLogin from "./routes/loginUsers.js";
 import cors from "cors"
 dotenv.config();
 
@@ -28,9 +29,11 @@ app.use('/loker', lokerRoutes);
 app.use(express.json());
 app.use('/peserta', pesertaRoutes);
 
-//login
+//users
 app.use(express.json());
 app.use('/users', usersRoutes);
-app.use('/login', usersRoutes);
+
+//login
+app.use('/login', usersLogin);
 
 app.listen(5000, () => console.log('Server running at port 5000'));
