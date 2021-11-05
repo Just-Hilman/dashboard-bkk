@@ -31,5 +31,6 @@ app.use('/peserta', pesertaRoutes);
 //login
 app.use(express.json());
 app.use('/users', usersRoutes);
+app.use('/login', usersRoutes);
 
 app.listen(5000, () => console.log('Server running at port 5000'));
