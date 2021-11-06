@@ -8,6 +8,8 @@ import PesertaList from "./component/PesertaList";
 import AddPeserta from "./component/AddPeserta";
 import EditPeserta from "./component/EditPeserta";
 import Login from "./component/Login";
+import Register from "./component/Register";
+import DashboardUser from "./component/DashboardUser";
 
 function App() {
   return (
@@ -54,6 +56,18 @@ function App() {
               <Route path="/login">
                 <Login />
               </Route>
+
+              <Route path="/register">
+                <Register />
+              </Route>
+
+            </Switch>
+
+            <Switch>
+              <Route path="/dashboard">
+                <DashboardUser />
+              </Route>
+
 
             </Switch>
           </div>
