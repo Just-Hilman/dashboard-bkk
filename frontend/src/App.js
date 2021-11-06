@@ -7,6 +7,7 @@ import EditLoker from "./component/EditLoker";
 import PesertaList from "./component/PesertaList";
 import AddPeserta from "./component/AddPeserta";
 import EditPeserta from "./component/EditPeserta";
+import Login from "./component/Login";
 
 function App() {
   return (
@@ -45,6 +46,13 @@ function App() {
 
               <Route path="/peserta/edit/:id">
                 <EditPeserta />
+              </Route>
+
+            </Switch>
+
+            <Switch>
+              <Route path="/login">
+                <Login />
               </Route>
 
             </Switch>
