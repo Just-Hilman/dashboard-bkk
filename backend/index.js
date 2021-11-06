@@ -1,12 +1,13 @@
 import express from "express";
 import dotenv from "dotenv";
-import cookeParser from "cookie-parser";
+import cookieParser from "cookie-parser";
 import db from "./config/database.js";
 import lokerRoutes from "./routes/routeLoker.js";
 import pesertaRoutes from "./routes/routePeserta.js";
 import usersRoutes from "./routes/routeUsers.js";
 import usersLogin from "./routes/loginUsers.js";
-import cors from "cors"
+import userLogout from "./routes/logoutUsers.js";
+import cors from "cors";
 dotenv.config();
 
 const app = express();
@@ -18,8 +19,8 @@ try {
     console.error('Connection error:', error);
 }
 
-app.use(cors());
-app.use(cookeParser());
+app.use(cors({ credentials:true, origin:'http://localhost:3000'}));
+app.use(cookieParser());
 
 //loker
 
@@ -38,5 +39,8 @@ app.use('/users', usersRoutes);
 //login
 app.use('/login', usersLogin);
 app.use('/token', usersLogin);
+
+//logout
+app.use('/logout', userLogout);
 
 app.listen(5000, () => console.log('Server running at port 5000'));
