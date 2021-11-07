@@ -50,7 +50,7 @@ const Register = () => {
                                     </div>
                                         
                                     <div class="mb-3">
-                                        <input type="password" class="form-control" placeholder="Konfirm Password" id="exampleInputPassword1" class="form-control" value={confPassword} onChange={(e) => setConfPassword(e.target.value)}></input>
+                                        <input type="password" class="form-control" placeholder="Confirm Password" id="exampleInputPassword1" class="form-control" value={confPassword} onChange={(e) => setConfPassword(e.target.value)}></input>
                                     </div>
 
                                     <div class="form-group form-check ml-2">
