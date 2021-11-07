@@ -42,20 +42,20 @@ const Register = () => {
                                     </div>
                                         
                                     <div class="mb-3">
-                                        <input type="email" class="form-control" placeholder="Enter Email" id="exampleInputEmail1" aria-describedby="emailHelp" class="form-control" value={email} onChange={(e) => setEmail(e.target.value)}></input>
+                                        <input type="email" class="form-control" placeholder="Enter Email" value={email} onChange={(e) => setEmail(e.target.value)}></input>
                                     </div>
                                         
                                     <div class="mb-3">
-                                        <input type="password" class="form-control" placeholder="Password" id="exampleInputPassword1" class="form-control" value={password} onChange={(e) => setPassword(e.target.value)}></input>
+                                        <input type="password" class="form-control" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)}></input>
                                     </div>
                                         
                                     <div class="mb-3">
-                                        <input type="password" class="form-control" placeholder="Confirm Password" id="exampleInputPassword1" class="form-control" value={confPassword} onChange={(e) => setConfPassword(e.target.value)}></input>
+                                        <input type="password" class="form-control" placeholder="Confirm Password" value={confPassword} onChange={(e) => setConfPassword(e.target.value)}></input>
                                     </div>
 
                                     <div class="form-group form-check ml-2">
                                         <input type="checkbox" class="form-check-input" id="exampleCheck1"/>
-                                        <label class="form-check-label" for="exampleCheck1">I Agree to <a class="agree" href="">Terms of service & Privacy Policy</a> </label>
+                                        <label class="form-check-label" for="exampleCheck1">I Agree to <a class="agree" href="/">Terms of service & Privacy Policy</a> </label>
                                     </div>
 
 
