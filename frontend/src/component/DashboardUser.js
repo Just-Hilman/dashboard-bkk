@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios';
 import jwt_decode from 'jwt-decode';
 import { useHistory } from 'react-router-dom';
+import { error } from 'jquery';
 
 const DashboardUser = () => {
     const [name, setName] = useState('');
@@ -24,6 +25,41 @@ const DashboardUser = () => {
             if (error.response) {
                 history.push('/login');
             }
+        }
+    }
+
+    const axiosJWT = axios.create();
+    
+    axiosJWT.interceptors.request.use(async (config) => {
+        const currentDate = new Date();
+        if (expire * 1000 < currentDate.getTime()) {
+            const response = await axios.get('http://localhost:5000/token');
+            config.headers.Authorization = `Bearer ${response.data.accessToken}`;
+            setToken(response.data.accessToken);
+            const decoded = jwt_decode(response.data.accessToken);
+            setName(decoded.name);
+            setExpire(decoded.exp);
+        }
+        return config;
+    }, (error) => {
+            return Promise.reject(error);
+    });
+
+    const getUsers = async () => {
+        const response = await axiosJWT.get('http://localhost:5000/users', {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        });
+        console.log(response.data);
+    }
+
+    const Logout = async() => {
+        try {
+            await axios.delete('http://localhost:5000/logout');
+            history.push("/");
+        } catch (error) {
+            console.log(error);
         }
     }
 
@@ -60,7 +96,7 @@ const DashboardUser = () => {
                         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                             <div class="bg-white py-2 collapse-inner rounded">
                                 <a class="collapse-item" href="buttons.html">Daftar Lowongan Pekrejaan</a>
-                                <a class="collapse-item" href="cards.html">Cards</a>
+                                <button onClick={getUsers}>Get Users</button>
                             </div>
                         </div>
                     </li>
@@ -75,7 +111,7 @@ const DashboardUser = () => {
                             data-parent="#accordionSidebar">
                             <div class="bg-white py-2 collapse-inner rounded">
                                 <a class="collapse-item" href="utilities-color.html">Jadwal Seleksi</a>
-                                <a class="collapse-item" href="utilities-border.html">Peserta Seleksi</a>
+                                <a class="collapse-item" href="http://localhost:3000/peserta">Peserta Seleksi</a>
                             </div>
                         </div>
                     </li>
@@ -90,11 +126,12 @@ const DashboardUser = () => {
                         </a>
                         <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                             <div class="bg-white py-2 collapse-inner rounded">
-                                <a class="collapse-item" href="login.html">Rekap Harian</a>
-                                <a class="collapse-item" href="register.html">Rekap Bulanan</a>
+                                <a class="collapse-item" href="/">Rekap Harian</a>
+                                <a class="collapse-item" href="/">Rekap Bulanan</a>
                             </div>
                         </div>
                     </li>
+                    
 
                     <hr class="sidebar-divider d-none d-md-block"></hr>
 
@@ -307,7 +344,7 @@ const DashboardUser = () => {
                         </div>
                         <div class="modal-footer">
                             <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                            <a class="btn btn-primary" href="login.html">Logout</a>
+                            <button onClick={Logout} class="btn btn-primary" type="button" >Logout</button>
                         </div>
                     </div>
                 </div>
