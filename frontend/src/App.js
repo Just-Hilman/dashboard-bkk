@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./style/style.css";
-import "./style/style_dashboard.css";
+// import "./style/style_dashboard.css";
 import MainPage from "./view/MainPage";
 import LokerList from "./component/LokerList";
 import AddLoker from "./component/AddLoker";

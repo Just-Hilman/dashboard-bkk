@@ -74,7 +74,7 @@ const MainPage = () => {
                         </h5>
                     </div>
 
-                    <article id="consult" className="card">
+                    <article id="consult" className="card-main">
                         <h5>Consult</h5>
                         <p>Co-create, design thinking; strengthen infrastructure resist granular.
                             Revolution circular, movements or framework social impact low-hanging fruit. 
@@ -82,7 +82,7 @@ const MainPage = () => {
                         </p>
                     </article>
                         
-                    <article id="design" className="card">
+                    <article id="design" className="card-main">
                         <h5>Design</h5>
                         <p>Policymaker collaborates collective impact humanitarian shared value
                             vocabulary inspire issue outcomes agile. Overcome injustice deep dive agile 
@@ -90,7 +90,7 @@ const MainPage = () => {
                         </p>
                     </article>
                         
-                    <article id="develop" className="card">
+                    <article id="develop" className="card-main">
                         <h5>Develop</h5>
                         <p>Revolutionary circular, movements a or impact framework social impact low-
                             hanging. Save the compelling revolutionary inspire progress. Collective
@@ -98,7 +98,7 @@ const MainPage = () => {
                         </p>
                     </article>
                         
-                    <article id="marketing" className="card">
+                    <article id="marketing" className="card-main">
                         <h5>Marketing</h5>
                         <p>Peaceful; vibrant paradigm, collaborative cities. Shared vocabulary agile,
                             replicable, effective altruism youth. Mobilize commitment to overcome
@@ -106,7 +106,7 @@ const MainPage = () => {
                         </p>
                     </article>
                         
-                    <article id="manage" className="card">
+                    <article id="manage" className="card-main">
                         <h5>Manage</h5>
                         <p>Change-makers innovation or shared unit of analysis. Overcome injustice
                             outcomes strategize vibrant boots on the ground sustainable. Optimism,
@@ -114,7 +114,7 @@ const MainPage = () => {
                         </p>
                     </article>
                         
-                    <article id="evolve" className="card">
+                    <article id="evolve" className="card-main">
                         <h5>Evolve</h5>
                         <p>Activate catalyze and impact contextualize humanitarian. Unit of analysis
                             overcome injustice storytelling altruism. Thought leadership mass 

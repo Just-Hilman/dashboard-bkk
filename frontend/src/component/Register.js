@@ -32,7 +32,7 @@ const Register = () => {
             <div class="container">
                 <div class="row d-flex justify-content-center">
                     <div class="col-md-7 col-lg-5">
-                        <div class="card">
+                        <div class="card-login">
                             <div class="card-body">
                                 <h3 class="sign mb-5">SIGN UP</h3>
                                 <form onSubmit={Register}>
