@@ -6,6 +6,18 @@
     padding: 0;
 }
 
+/* Font style dashboard */
+.sidebar-brand-text {
+    font-family: 'Noto Sans', sans-serif;
+}
+
+.text-center {
+    font-family: 'Noto Sans', sans-serif;
+}
+
+/* End font style dashboard */
+
+
 .header-main {
     display: inline;
 }
@@ -119,7 +131,7 @@
     height: 720px;
 }
 
-.text-center {
+.text-center-main {
     color: whitesmoke;
     font-family: 'Quicksand', sans-serif;
     position: absolute;
@@ -129,7 +141,7 @@
 
 }
 
-.text-center p {
+.text-center-main p {
     margin: 20px 5px;
 }
 
@@ -863,6 +875,7 @@ a:focus {
     width: 100%;
 }
 
+
 @media (min-width: 768px) {
     .chart-area {
         height: 20rem;
@@ -910,7 +923,7 @@ body.sidebar-toggled footer.sticky-footer {
 
 /* End Dashboard */
 
-footer {
+.footer-main {
     padding: 20px;
     color: rgb(132, 163, 247);
     background-color: #004a75;

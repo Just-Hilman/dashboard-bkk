@@ -48,7 +48,7 @@ const MainPage = () => {
 
                 {/* Jumbotron */}
                 <div className="jumbotron jumbotron-fluid">
-                    <div className="text-center">
+                    <div className="text-center-main">
                         <h1 class="display-4">Selamat Datang !</h1>
                         <h2>Di Portal Bursa Kerja Khusus SMKN 6 Bandung</h2>
                         <p class="lead">Have something great in mind? Feel free to contact me. <br></br>
@@ -127,7 +127,7 @@ const MainPage = () => {
                 </div>
             </main>
 
-            <footer>
+            <footer className="footer-main">
                 <p> &#169; 2021 Hilman. All Right Reserved.</p>
             </footer>
         </body>
