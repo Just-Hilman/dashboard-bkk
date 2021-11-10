@@ -3,33 +3,33 @@ import React from 'react'
 const MainPage = () => {
     return (
         <body>
-            <header>
+            <header className="header-main">
                 {/* Navbar */}
-                <nav className="navbar fixed-top navbar-expand-lg navbar-light">
+                <nav className="navbar fixed-top navbar-expand-lg navbar-light navbar-main">
                     <div className="container">
-                        <a className="navbar-brand page-scroll" href="#home">BKK SMKN 6</a>
+                        <a className="navbar-brand page-scroll navbar-brand-main" href="#home">BKK SMKN 6</a>
                         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                             <span className="navbar-toggler-icon"></span>
                         </button>
                         <div className="collapse navbar-collapse" id="navbarNav">
                             <ul className="navbar-nav mx-auto">
-                                <li className="nav-item active">
-                                    <a className="nav-link page-scroll" href="#home">Home <span className="sr-only">(current)</span></a>
+                                <li className="nav-item nav-item-main active">
+                                    <a className="nav-link nav-link-main page-scroll" href="#home">Home <span className="sr-only">(current)</span></a>
                                 </li>
-                                <li className="nav-item">
-                                    <a className="nav-link page-scroll" href="#loker">Lowongan Kerja <span></span></a>
+                                <li className="nav-item nav-item-main">
+                                    <a className="nav-link nav-link-main page-scroll" href="#loker">Lowongan Kerja <span></span></a>
                                 </li>
-                                <li className="nav-item">
-                                    <a className="nav-link page-scroll" href="#contact">Contact Us <span></span></a>
+                                <li className="nav-item nav-item-main">
+                                    <a className="nav-link nav-link-main page-scroll" href="#contact">Contact Us <span></span></a>
                                 </li>
-                                <li className="nav-item">
-                                    <a className="nav-link page-scroll" href="#faq">FAQ <span></span></a>
+                                <li className="nav-item nav-item-main">
+                                    <a className="nav-link nav-link-main page-scroll" href="#faq">FAQ <span></span></a>
                                 </li>
-                                <li className="nav-item">
-                                    <a className="nav-link page-scroll" href="#about">About <span></span></a>
+                                <li className="nav-item nav-item-main">
+                                    <a className="nav-link nav-link-main page-scroll" href="#about">About <span></span></a>
                                 </li>
-                                <li className="nav-item">
+                                <li className="nav-item nav-item-main">
                                     <a href="http://localhost:3000/login">
                                         <button className="btn tombol-login" >
                                             <svg width="30px" height="30px" viewBox="0 0 16 16" className="bi bi-person"
@@ -47,11 +47,11 @@ const MainPage = () => {
                 {/* End Of Navbar */}
 
                 {/* Jumbotron */}
-                <div className="jumbotron">
+                <div className="jumbotron jumbotron-fluid">
                     <div className="text-center">
-                        <h1>Selamat Datang !</h1>
+                        <h1 class="display-4">Selamat Datang !</h1>
                         <h2>Di Portal Bursa Kerja Khusus SMKN 6 Bandung</h2>
-                        <p>Have something great in mind? Feel free to contact me. <br></br>
+                        <p class="lead">Have something great in mind? Feel free to contact me. <br></br>
                             I'll help you to make it happen.</p>
                     </div>
                         
