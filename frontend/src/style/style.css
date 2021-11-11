@@ -215,6 +215,18 @@ body {
     background-image: url(../img/undraw_profile.svg);
 }
 
+.btn-tambah {
+    margin: 10px 0 20px 0;
+}
+
+.btn-ubah {
+    margin: 0 10px !important;
+}
+
+.tabel-area {
+    height: 400px !important;
+}
+
 
 
 /* Dashboard */
