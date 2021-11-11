@@ -28,39 +28,39 @@ const Register = () => {
     }
 
     return (
-        <section class="auth">
-            <div class="container">
-                <div class="row d-flex justify-content-center">
-                    <div class="col-md-7 col-lg-5">
-                        <div class="card-login">
-                            <div class="card-body">
-                                <h3 class="sign mb-5">SIGN UP</h3>
+        <section className="auth">
+            <div className="container">
+                <div className="row d-flex justify-content-center">
+                    <div className="col-md-7 col-lg-5">
+                        <div className="card-login">
+                            <div className="card-body">
+                                <h3 className="sign mb-5">SIGN UP</h3>
                                 <form onSubmit={Register}>
                                     <p>{ msg }</p>
-                                    <div class="mb-3">
-                                        <input type="text" class="form-control" placeholder="Full Name" value={name} onChange={(e) => setName(e.target.value)}></input>
+                                    <div className="mb-3">
+                                        <input type="text" className="form-control" placeholder="Full Name" value={name} onChange={(e) => setName(e.target.value)}></input>
                                     </div>
                                         
-                                    <div class="mb-3">
-                                        <input type="email" class="form-control" placeholder="Enter Email" value={email} onChange={(e) => setEmail(e.target.value)}></input>
+                                    <div className="mb-3">
+                                        <input type="email" className="form-control" placeholder="Enter Email" value={email} onChange={(e) => setEmail(e.target.value)}></input>
                                     </div>
                                         
-                                    <div class="mb-3">
-                                        <input type="password" class="form-control" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)}></input>
+                                    <div className="mb-3">
+                                        <input type="password" className="form-control" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)}></input>
                                     </div>
                                         
-                                    <div class="mb-3">
-                                        <input type="password" class="form-control" placeholder="Confirm Password" value={confPassword} onChange={(e) => setConfPassword(e.target.value)}></input>
+                                    <div className="mb-3">
+                                        <input type="password" className="form-control" placeholder="Confirm Password" value={confPassword} onChange={(e) => setConfPassword(e.target.value)}></input>
                                     </div>
 
-                                    <div class="form-group form-check ml-2">
-                                        <input type="checkbox" class="form-check-input" id="exampleCheck1"/>
-                                        <label class="form-check-label" for="exampleCheck1">I Agree to <a class="agree" href="/">Terms of service & Privacy Policy</a> </label>
+                                    <div className="form-group form-check ml-2">
+                                        <input type="checkbox" className="form-check-input" id="exampleCheck1"/>
+                                        <label className="form-check-label">I Agree to <a className="agree" href="/">Terms of service & Privacy Policy</a> </label>
                                     </div>
 
 
                                     
-                                    <button type="submit" class="btn btn-primary form-control">Daftar</button>
+                                    <button type="submit" className="btn btn-primary form-control">Daftar</button>
                                 </form>
                             </div>
                         </div>

@@ -24,28 +24,28 @@ const Login = () => {
     }
 
     return (
-        <section class="auth">
-            <div class="container">
-                <div class="row d-flex justify-content-center">
-                    <div class="col-md-7 col-lg-5">
-                        <div class="card card-login">
-                            <div class="card-body">
-                                <h3 class="sign mb-5">SIGN IN</h3>
+        <section className="auth">
+            <div className="container">
+                <div className="row d-flex justify-content-center">
+                    <div className="col-md-7 col-lg-5">
+                        <div className="card card-login">
+                            <div className="card-body">
+                                <h3 className="sign mb-5">SIGN IN</h3>
                                 <form onSubmit={Auth}>
                                     <p>{ msg }</p>
-                                    <div class="mb-3">
-                                        <label for="exampleInputEmail1" class="form-label">Email address</label>
-                                        <input type="email" class="form-control" placeholder="Enter Email" value={email} onChange={(e) => setEmail(e.target.value)} id="exampleInputEmail1" aria-describedby="emailHelp"></input>
+                                    <div className="mb-3">
+                                        <label className="form-label">Email address</label>
+                                        <input type="email" className="form-control" placeholder="Enter Email" value={email} onChange={(e) => setEmail(e.target.value)} id="exampleInputEmail1" aria-describedby="emailHelp"></input>
                                     </div>
                                         
-                                    <div class="mb-3">
-                                        <label for="exampleInputEmail1" class="form-label">Password</label>
-                                        <input type="password" class="form-control" placeholder="Your Password" value={password} onChange={(e) => setPassword(e.target.value)}id="exampleInputPassword1"></input>
+                                    <div className="mb-3">
+                                        <label className="form-label">Password</label>
+                                        <input type="password" className="form-control" placeholder="Your Password" value={password} onChange={(e) => setPassword(e.target.value)}id="exampleInputPassword1"></input>
                                     </div>
                                         
-                                    <p>Belum memiliki akun? <a class="link-info" href="http://localhost:3000/register">Daftar</a> </p>
+                                    <p>Belum memiliki akun? <a className="link-info" href="http://localhost:3000/register">Daftar</a> </p>
                                     
-                                    <button type="submit" class="btn btn-primary">Login</button>
+                                    <button type="submit" className="btn btn-primary">Login</button>
                                 </form>
                             </div>
                         </div>

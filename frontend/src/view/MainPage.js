@@ -2,12 +2,12 @@ import React from 'react'
 
 const MainPage = () => {
     return (
-        <body>
+        <div>
             <header className="header-main">
                 {/* Navbar */}
                 <nav className="navbar fixed-top navbar-expand-lg navbar-light navbar-main">
                     <div className="container">
-                        <a className="navbar-brand page-scroll navbar-brand-main" href="#home">BKK SMKN 6</a>
+                        <a className="navbar-brand page-scroll navbar-brand-main" href="/">BKK SMKN 6</a>
                         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                             <span className="navbar-toggler-icon"></span>
@@ -15,19 +15,19 @@ const MainPage = () => {
                         <div className="collapse navbar-collapse" id="navbarNav">
                             <ul className="navbar-nav mx-auto">
                                 <li className="nav-item nav-item-main active">
-                                    <a className="nav-link nav-link-main page-scroll" href="#home">Home <span className="sr-only">(current)</span></a>
+                                    <a className="nav-link nav-link-main page-scroll" href="/">Home <span className="sr-only">(current)</span></a>
                                 </li>
                                 <li className="nav-item nav-item-main">
-                                    <a className="nav-link nav-link-main page-scroll" href="#loker">Lowongan Kerja <span></span></a>
+                                    <a className="nav-link nav-link-main page-scroll" href="/login">Lowongan Kerja <span></span></a>
                                 </li>
                                 <li className="nav-item nav-item-main">
-                                    <a className="nav-link nav-link-main page-scroll" href="#contact">Contact Us <span></span></a>
+                                    <a className="nav-link nav-link-main page-scroll" href="/login">Contact Us <span></span></a>
                                 </li>
                                 <li className="nav-item nav-item-main">
-                                    <a className="nav-link nav-link-main page-scroll" href="#faq">FAQ <span></span></a>
+                                    <a className="nav-link nav-link-main page-scroll" href="/login">FAQ <span></span></a>
                                 </li>
                                 <li className="nav-item nav-item-main">
-                                    <a className="nav-link nav-link-main page-scroll" href="#about">About <span></span></a>
+                                    <a className="nav-link nav-link-main page-scroll" href="/login">About <span></span></a>
                                 </li>
                                 <li className="nav-item nav-item-main">
                                     <a href="http://localhost:3000/login">
@@ -49,9 +49,9 @@ const MainPage = () => {
                 {/* Jumbotron */}
                 <div className="jumbotron jumbotron-fluid">
                     <div className="text-center-main">
-                        <h1 class="display-4">Selamat Datang !</h1>
+                        <h1 className="display-4">Selamat Datang !</h1>
                         <h2>Di Portal Bursa Kerja Khusus SMKN 6 Bandung</h2>
-                        <p class="lead">Have something great in mind? Feel free to contact me. <br></br>
+                        <p className="lead">Have something great in mind? Feel free to contact me. <br></br>
                             I'll help you to make it happen.</p>
                     </div>
                         
@@ -130,8 +130,8 @@ const MainPage = () => {
             <footer className="footer-main">
                 <p> &#169; 2021 Hilman. All Right Reserved.</p>
             </footer>
-        </body>
-)
+        </div>
+    )
 }
 
 export default MainPage
