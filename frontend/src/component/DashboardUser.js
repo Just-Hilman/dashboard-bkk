@@ -68,7 +68,7 @@ const DashboardUser = () => {
             <div id="wrapper">
                 
                 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
-                    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+                    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="http://localhost:3000/dashboard">
                         <div class="sidebar-brand-icon rotate-n-15">
                             <i class="fas fa-tools"></i>
                         </div>
@@ -78,7 +78,7 @@ const DashboardUser = () => {
                     <hr class="sidebar-divider my-0"></hr>
 
                     <li class="nav-item active">
-                        <a class="nav-link" href="index.html">
+                        <a class="nav-link" href="http://localhost:3000/dashboard">
                             <i class="fas fa-fw fa-tachometer-alt"></i>
                             <span>Dashboard</span>
                         </a>
@@ -95,7 +95,7 @@ const DashboardUser = () => {
                         </a>
                         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                             <div class="bg-white py-2 collapse-inner rounded">
-                                <a class="collapse-item" href="buttons.html">Daftar Lowongan Pekrejaan</a>
+                                <a class="collapse-item" href="http://localhost:3000/loker">Daftar Lowongan Pekrejaan</a>
                                 <button onClick={getUsers}>Get Users</button>
                             </div>
                         </div>

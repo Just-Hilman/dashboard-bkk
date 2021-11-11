@@ -4,6 +4,10 @@ import db from "../config/database.js";
 const { DataTypes } = Sequelize;
 
 const Loker = db.define('lowongan_pekerjaan', {
+    id: {
+        type: DataTypes.INTEGER,
+        primaryKey: true
+    },
     nama_perusahaan: {
         type:DataTypes.STRING
     },

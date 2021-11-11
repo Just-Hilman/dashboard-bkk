@@ -211,7 +211,7 @@ const PesertaList = () => {
                                             </div>
                                         </div>
                                         <div class="card-body">
-                                            <div class="chart-area tabel-area">
+                                            <div>
                                                 <div>
                                                     <Link to="/addPeserta" class="btn btn-outline-success btn-tambah">Add Peserta</Link>
                                                     <table class="table table-hover">
