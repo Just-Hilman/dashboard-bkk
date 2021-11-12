@@ -10,6 +10,7 @@ import EditPeserta from "./component/EditPeserta";
 import Login from "./component/Login";
 import Register from "./component/Register";
 import DashboardUser from "./component/DashboardUser";
+import DashboardAdmin from "./component/DashboardAdmin";
 
 function App() {
   return (
@@ -65,7 +66,7 @@ function App() {
 
             <Switch>
               <Route path="/dashboard">
-                <DashboardUser />
+                <DashboardAdmin />
               </Route>
 
 
