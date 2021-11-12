@@ -33,11 +33,11 @@ function App() {
                 <AddLoker />
               </Route>
 
-              <Route path="/loker/edit/:id">
+              <Route path="/edit-loker/:id">
                 <EditLoker />
               </Route>
 
-              <Route path="/loker/detail/:id">
+              <Route path="/detail-loker/:id">
                 <DetailLoker />
               </Route>
 
@@ -53,7 +53,7 @@ function App() {
                 <AddPeserta />
               </Route>
 
-              <Route path="/peserta/edit/:id">
+              <Route path="/edit-peserta/:id">
                 <EditPeserta />
               </Route>
 

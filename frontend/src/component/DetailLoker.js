@@ -164,7 +164,7 @@ const DetailLoker = () => {
 
                         <div className="container-fluid">
                             <div className="d-sm-flex align-items-center justify-content-between mb-4">
-                                <h1 className="h3 mb-0 text-gray-800">Daftar Lowongan Pekerjaan</h1>
+                                <h1 className="h3 mb-0 text-gray-800">Detail Lowongan Pekerjaan</h1>
                             </div>
                             
                             <div className="row">
@@ -182,9 +182,20 @@ const DetailLoker = () => {
                                         </div>
                                         <div className="card-body">
                                             <div>
-                                                <h5 class="card-title">Special title treatment</h5>
-                                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                                                <h3 class="card-title">{loker} | {perusahaan}</h3>
+
+                                                <h6 class="card-title">Deskripsi Pekerjaan</h6>
+                                                <p class="card-text">{deskripsi}</p>
+
+
+                                                <h6 class="card-title">Kualifikasi</h6>
+                                                <ul class="list-group list-group-flush">
+
+                                                    <li class="list-group-item">An item</li>
+                                                    <li class="list-group-item">A second item</li>
+                                                    <li class="list-group-item">A third item</li>
+                                                </ul>
+                                                <a href="#" class="btn btn-primary">Apply</a>
                                             </div>
                                         </div>
                                     </div>

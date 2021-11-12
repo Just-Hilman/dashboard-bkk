@@ -211,7 +211,7 @@ const DashboardUser = () => {
                                                                     <td>{ loker.kualifikasi }</td>
                                                                     <td>{ loker.jadwal }</td>
                                                                     <td>
-                                                                        <Link to={`/detail/${loker.id}`} className="btn btn-warning btn-ubah">Detail</Link>
+                                                                        <Link to={`/detail-loker/${loker.id}`} className="btn btn-warning btn-ubah">Detail</Link>
                                                                     </td>
                                                                 </tr>
                                                             )) }    

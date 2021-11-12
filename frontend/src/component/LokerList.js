@@ -239,7 +239,7 @@ const LokerList = () => {
                                                                     <td>{ loker.kualifikasi }</td>
                                                                     <td>{ loker.jadwal }</td>
                                                                     <td>
-                                                                        <Link to={`/edit/${loker.id}`} className="btn btn-warning btn-ubah">Ubah</Link>
+                                                                        <Link to={`/edit-loker/${loker.id}`} className="btn btn-warning btn-ubah">Ubah</Link>
                                                                         <button onClick={() => deleteLoker(loker.id)} className="btn btn-danger">Hapus</button>
                                                                     </td>
                                                                 </tr>

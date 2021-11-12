@@ -241,7 +241,7 @@ const PesertaList = () => {
                                                                     <td>{ peserta.email }</td>
                                                                     <td>{ peserta.id_loker }</td>
                                                                     <td>
-                                                                        <Link to={`/edit/${peserta.id}`} className="btn btn-warning btn-ubah">Ubah</Link>
+                                                                        <Link to={`/edit-peserta/${peserta.id}`} className="btn btn-warning btn-ubah">Ubah</Link>
                                                                         <button onClick={() => deletePeserta(peserta.id)} className="btn btn-danger">Hapus</button>
                                                                     </td>
                                                                 </tr>
