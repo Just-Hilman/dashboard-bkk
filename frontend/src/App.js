@@ -11,6 +11,7 @@ import Login from "./component/Login";
 import Register from "./component/Register";
 import DashboardUser from "./component/DashboardUser";
 import DashboardAdmin from "./component/DashboardAdmin";
+import DetailLoker from "./component/DetailLoker";
 
 function App() {
   return (
@@ -35,6 +36,11 @@ function App() {
               <Route path="/loker/edit/:id">
                 <EditLoker />
               </Route>
+
+              <Route path="/loker/detail/:id">
+                <DetailLoker />
+              </Route>
+
 
             </Switch>
 
@@ -69,6 +75,9 @@ function App() {
                 <DashboardAdmin />
               </Route>
 
+              <Route path="/dashboard-user">
+                <DashboardUser />
+              </Route>
 
             </Switch>
           </div>

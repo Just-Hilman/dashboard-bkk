@@ -1,85 +1,50 @@
-import React, { useState, useEffect } from 'react'
-import axios from 'axios';
-import { Link } from "react-router-dom";
-import jwt_decode from 'jwt-decode';
-import { useHistory } from 'react-router-dom';
+import { useState, useEffect } from 'react'
+import axios from "axios";
+import { useHistory, useParams } from 'react-router-dom';
 
-const DashboardUser = () => {
+const DetailLoker = () => {
     const [name, setName] = useState('');
-    const [token, setToken] = useState('');
-    const [expire, setExpire] = useState('');
-    const [loker, setLoker] = useState([]);
+    const [loker, setLoker] = useState('');
+    const [perusahaan, setPerusahaan] = useState('');
+    const [deskripsi, setDeskripsi] = useState('');
+    const [kualifikasi, setKualifikasi] = useState('');
+    const [jadwal, setJadwal] = useState('');
+
+    const { id } = useParams();
     const history = useHistory();
 
 
+    // const updateLoker = async (e) => {
+    //     e.preventDefault();
+    //     await axios.patch(`http://localhost:5000/loker/${id}`, {
+    //         nama_loker: loker,
+    //         nama_perusahaan: perusahaan,
+    //         deskripsi: deskripsi,
+    //         kualifikasi: kualifikasi,
+    //         jadwal: jadwal
+    //     });
+    //     history.push("/");
+    // }
+
     useEffect(() => {
-        getLoker();
+        getLokerById();
     }, []);
 
-    const getLoker = async () => {
-        const response = await axios.get('http://localhost:5000/loker');
-        setLoker(response.data);
+    const getLokerById = async () => {
+        const response = await axios.get(`http://localhost:5000/loker/${id}`);
+        setLoker(response.data.nama_loker);
+        setPerusahaan(response.data.nama_perusahaan);
+        setDeskripsi(response.data.deskripsi);
+        setKualifikasi(response.data.kualifikasi);
+        setJadwal(response.data.jadwal);
     }
-
-    // useEffect(() => {
-    //     refreshToken();
-    // }, []);
-
-    // const refreshToken = async () => {
-    //     try {
-    //         const response = await axios.get('http://localhost:5000/token');
-    //         setToken(response.data.accessToken);
-    //         const decoded = jwt_decode(response.data.accessToken);
-    //         setName(decoded.name);
-    //         setExpire(decoded.exp);
-    //     } catch (error) {
-    //         if (error.response) {
-    //             history.push('/login');
-    //         }
-    //     }
-    // }
-
-    // const axiosJWT = axios.create();
-    
-    // axiosJWT.interceptors.request.use(async (config) => {
-    //     const currentDate = new Date();
-    //     if (expire * 1000 < currentDate.getTime()) {
-    //         const response = await axios.get('http://localhost:5000/token');
-    //         config.headers.Authorization = `Bearer ${response.data.accessToken}`;
-    //         setToken(response.data.accessToken);
-    //         const decoded = jwt_decode(response.data.accessToken);
-    //         setName(decoded.name);
-    //         setExpire(decoded.exp);
-    //     }
-    //     return config;
-    // }, (error) => {
-    //         return Promise.reject(error);
-    // });
-
-    // const getUsers = async () => {
-    //     const response = await axiosJWT.get('http://localhost:5000/users', {
-    //         headers: {
-    //             Authorization: `Bearer ${token}`
-    //         }
-    //     });
-    //     console.log(response.data);
-    // }
-
-    // const Logout = async() => {
-    //     try {
-    //         await axios.delete('http://localhost:5000/logout');
-    //         history.push("/");
-    //     } catch (error) {
-    //         console.log(error);
-    //     }
-    // }
 
     return (
         <div id="page-top">
             <div id="wrapper">
                 
                 <ul className="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
-                    <a className="sidebar-brand d-flex align-items-center justify-content-center" href="http://localhost:3000/dashboard-user">
+                    <a className="sidebar-brand d-flex align-items-center justify-content-center" href="http://localhost:3000/dashboard">
                         <div className="sidebar-brand-icon rotate-n-15">
                             <i className="fas fa-tools"></i>
                         </div>
@@ -89,7 +54,7 @@ const DashboardUser = () => {
                     <hr className="sidebar-divider my-0"></hr>
 
                     <li className="nav-item active">
-                        <a className="nav-link" href="http://localhost:3000/dashboard-user">
+                        <a className="nav-link" href="http://localhost:3000/dashboard">
                             <i className="fas fa-fw fa-tachometer-alt"></i>
                             <span>Dashboard</span>
                         </a>
@@ -109,7 +74,39 @@ const DashboardUser = () => {
                                 <a className="collapse-item" href="http://localhost:3000/loker">Daftar Lowongan Pekrejaan</a>
                             </div>
                         </div>
-                    </li>           
+                    </li>
+
+                    <li className="nav-item">
+                        <a className="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
+                            aria-expanded="true" aria-controls="collapseUtilities">
+                            <i className="fas fa-fw fa-wrench"></i>
+                            <span>Seleksi</span>
+                        </a>
+                        <div id="collapseUtilities" className="collapse" aria-labelledby="headingUtilities"
+                            data-parent="#accordionSidebar">
+                            <div className="bg-white py-2 collapse-inner rounded">
+                                <a className="collapse-item" href="utilities-color.html">Jadwal Seleksi</a>
+                                <a className="collapse-item" href="http://localhost:3000/peserta">Peserta Seleksi</a>
+                            </div>
+                        </div>
+                    </li>
+
+                    <hr className="sidebar-divider"></hr>
+
+                    <li className="nav-item">
+                        <a className="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
+                            aria-expanded="true" aria-controls="collapsePages">
+                            <i className="fas fa-fw fa-folder"></i>
+                            <span>Laporan</span>
+                        </a>
+                        <div id="collapsePages" className="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                            <div className="bg-white py-2 collapse-inner rounded">
+                                <a className="collapse-item" href="/">Rekap Harian</a>
+                                <a className="collapse-item" href="/">Rekap Bulanan</a>
+                            </div>
+                        </div>
+                    </li>
+                    
 
                     <hr className="sidebar-divider d-none d-md-block"></hr>
 
@@ -134,7 +131,7 @@ const DashboardUser = () => {
                                 <li className="nav-item dropdown no-arrow">
                                     <a className="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <span className="mr-2 d-none d-lg-inline text-gray-600 small"> <strong> Welcome Back ! </strong> { name }</span>
+                                        <span className="mr-2 d-none d-lg-inline text-gray-600 small"> <strong> Admin | </strong> { name }</span>
                                         <img className="img-profile rounded-circle"></img>
                                     </a>
 
@@ -167,7 +164,7 @@ const DashboardUser = () => {
 
                         <div className="container-fluid">
                             <div className="d-sm-flex align-items-center justify-content-between mb-4">
-                                <h1 className="h3 mb-0 text-gray-800">Dashboard</h1>
+                                <h1 className="h3 mb-0 text-gray-800">Daftar Lowongan Pekerjaan</h1>
                             </div>
                             
                             <div className="row">
@@ -185,41 +182,9 @@ const DashboardUser = () => {
                                         </div>
                                         <div className="card-body">
                                             <div>
-                                                <div>
-                                                    <table className="table table-hover">
-                                                    <thead>
-                                                        <tr>
-                                                            <th>No</th>
-                                                            <th>ID Loker</th>    
-                                                            <th>Lowongan Pekerjaan</th>
-                                                            <th>Perusahaan</th>
-                                                            <th>Deskripsi Pekerjaan</th>
-                                                            <th>Kualifikan Pekerjaan</th>
-                                                            <th>Jadwal Tes Seleksi</th>
-                                                            <th>Action</th>
-                                                        </tr>
-                                                    </thead>
-
-                                                    <tbody>
-                                                            {loker.map((loker, index) => (
-                                                                <tr key={loker.id}>
-                                                                    <td>{index + 1}</td>
-                                                                    <td>{ loker.id }</td>
-                                                                    <td>{ loker.nama_loker }</td>
-                                                                    <td>{ loker.nama_perusahaan }</td>
-                                                                    <td>{ loker.deskripsi }</td>
-                                                                    <td>{ loker.kualifikasi }</td>
-                                                                    <td>{ loker.jadwal }</td>
-                                                                    <td>
-                                                                        <Link to={`/detail/${loker.id}`} className="btn btn-warning btn-ubah">Detail</Link>
-                                                                    </td>
-                                                                </tr>
-                                                            )) }    
-                                                        
-                                                    </tbody>
-                                                    </table>
-                                                    
-                                                </div>
+                                                <h5 class="card-title">Special title treatment</h5>
+                                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                                <a href="#" class="btn btn-primary">Go somewhere</a>
                                             </div>
                                         </div>
                                     </div>
@@ -261,4 +226,4 @@ const DashboardUser = () => {
     )
 }
 
-export default DashboardUser
+export default DetailLoker

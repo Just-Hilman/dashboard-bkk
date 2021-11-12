@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios';
 import jwt_decode from 'jwt-decode';
 import { useHistory } from 'react-router-dom';
-import { error } from 'jquery';
 
 const DashboardUser = () => {
     const [name, setName] = useState('');
