@@ -76,38 +76,6 @@ const DetailLoker = () => {
                         </div>
                     </li>
 
-                    <li className="nav-item">
-                        <a className="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-                            aria-expanded="true" aria-controls="collapseUtilities">
-                            <i className="fas fa-fw fa-wrench"></i>
-                            <span>Seleksi</span>
-                        </a>
-                        <div id="collapseUtilities" className="collapse" aria-labelledby="headingUtilities"
-                            data-parent="#accordionSidebar">
-                            <div className="bg-white py-2 collapse-inner rounded">
-                                <a className="collapse-item" href="utilities-color.html">Jadwal Seleksi</a>
-                                <a className="collapse-item" href="http://localhost:3000/peserta">Peserta Seleksi</a>
-                            </div>
-                        </div>
-                    </li>
-
-                    <hr className="sidebar-divider"></hr>
-
-                    <li className="nav-item">
-                        <a className="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
-                            aria-expanded="true" aria-controls="collapsePages">
-                            <i className="fas fa-fw fa-folder"></i>
-                            <span>Laporan</span>
-                        </a>
-                        <div id="collapsePages" className="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-                            <div className="bg-white py-2 collapse-inner rounded">
-                                <a className="collapse-item" href="/">Rekap Harian</a>
-                                <a className="collapse-item" href="/">Rekap Bulanan</a>
-                            </div>
-                        </div>
-                    </li>
-                    
-
                     <hr className="sidebar-divider d-none d-md-block"></hr>
 
                     <div className="sidebar-card d-none d-lg-flex">
@@ -131,7 +99,7 @@ const DetailLoker = () => {
                                 <li className="nav-item dropdown no-arrow">
                                     <a className="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <span className="mr-2 d-none d-lg-inline text-gray-600 small"> <strong> Admin | </strong> { name }</span>
+                                        <span className="mr-2 d-none d-lg-inline text-gray-600 small"> <strong> Peserta | </strong> { name }</span>
                                         <img className="img-profile rounded-circle"></img>
                                     </a>
 
@@ -191,10 +159,13 @@ const DetailLoker = () => {
                                                 <h6 class="card-title">Kualifikasi</h6>
                                                 <ul class="list-group list-group-flush">
 
-                                                    <li class="list-group-item">An item</li>
+                                                    <li class="list-group-item">{kualifikasi}</li>
                                                     <li class="list-group-item">A second item</li>
                                                     <li class="list-group-item">A third item</li>
                                                 </ul>
+
+                                                <h6 class="card-title">Jadwal Tes Seleksi</h6>
+                                                <p>{jadwal}</p>
                                                 <a href="#" class="btn btn-primary">Apply</a>
                                             </div>
                                         </div>
