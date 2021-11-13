@@ -215,7 +215,7 @@ const PesertaList = () => {
                                                 <div>
                                                     <Link to="/addPeserta" className="btn btn-outline-success btn-tambah">Add Peserta</Link>
                                                     <table className="table table-hover">
-                                                    <thead>
+                                                    <thead className="text-tabel-head">
                                                         <tr>
                                                             <th>No</th>
                                                             <th>Nama</th>
@@ -229,7 +229,7 @@ const PesertaList = () => {
                                                         </tr>
                                                     </thead>
 
-                                                    <tbody>
+                                                    <tbody className="text-tabel">
                                                             {peserta.map((peserta, index) => (
                                                                 <tr key={peserta.id}>
                                                                     <td>{ index +1 }</td>
@@ -241,8 +241,8 @@ const PesertaList = () => {
                                                                     <td>{ peserta.email }</td>
                                                                     <td>{ peserta.id_loker }</td>
                                                                     <td>
-                                                                        <Link to={`/edit-peserta/${peserta.id}`} className="btn btn-warning btn-ubah">Ubah</Link>
-                                                                        <button onClick={() => deletePeserta(peserta.id)} className="btn btn-danger">Hapus</button>
+                                                                        <Link to={`/edit-peserta/${peserta.id}`} className="btn btn-warning btn-sm btn-ubah">Ubah</Link>
+                                                                        <button onClick={() => deletePeserta(peserta.id)} className="btn btn-sm btn-danger">Hapus</button>
                                                                     </td>
                                                                 </tr>
                                                             )) }    
