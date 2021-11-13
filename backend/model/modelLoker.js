@@ -20,6 +20,18 @@ const Loker = db.define('lowongan_pekerjaan', {
     kualifikasi: {
         type:DataTypes.STRING
     },
+    kualifikasi_2: {
+        type:DataTypes.STRING
+    },
+    kualifikasi_3: {
+        type:DataTypes.STRING
+    },
+    kualifikasi_4: {
+        type:DataTypes.STRING
+    },
+    kualifikasi_5: {
+        type:DataTypes.STRING
+    },
     jadwal: {
         type:DataTypes.DATE
     }

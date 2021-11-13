@@ -215,32 +215,37 @@ const LokerList = () => {
                                                 <div>
                                                     <Link to="/addLoker" className="btn btn-outline-success btn-tambah">Add Loker</Link>
                                                     <table className="table table-hover">
-                                                    <thead>
+                                                    <thead className="text-tabel-head">
                                                         <tr>
                                                             <th>No</th>
                                                             <th>ID Loker</th>    
                                                             <th>Lowongan Pekerjaan</th>
                                                             <th>Perusahaan</th>
-                                                            <th>Deskripsi Pekerjaan</th>
-                                                            <th>Kualifikan Pekerjaan</th>
-                                                            <th>Jadwal Tes Seleksi</th>
+                                                            <th>Deskripsi</th>
+                                                            <th>Kualifikan</th>
+                                                            <th>Jadwal Seleksi</th>
                                                             <th>Action</th>
                                                         </tr>
                                                     </thead>
 
-                                                    <tbody>
+                                                    <tbody className="text-tabel">
                                                             {loker.map((loker, index) => (
                                                                 <tr key={loker.id}>
                                                                     <td>{index + 1}</td>
                                                                     <td>{ loker.id }</td>
                                                                     <td>{ loker.nama_loker }</td>
                                                                     <td>{ loker.nama_perusahaan }</td>
-                                                                    <td className="deskripsi">{ loker.deskripsi }</td>
-                                                                    <td>{ loker.kualifikasi }</td>
+                                                                    <td className="limit">{ loker.deskripsi }</td>
+                                                                    <td>
+                                                                        <ul>
+                                                                            <li> <span className="limit">{loker.kualifikasi}</span> </li>
+                                                                            <li> <span className="limit">{loker.kualifikasi_2}</span> </li>
+                                                                        </ul>
+                                                                    </td>
                                                                     <td>{ loker.jadwal }</td>
                                                                     <td>
-                                                                        <Link to={`/edit-loker/${loker.id}`} className="btn btn-warning btn-ubah">Ubah</Link>
-                                                                        <button onClick={() => deleteLoker(loker.id)} className="btn btn-danger">Hapus</button>
+                                                                        <Link to={`/edit-loker/${loker.id}`} className="btn btn-warning btn-sm btn-ubah">Ubah</Link>
+                                                                        <button onClick={() => deleteLoker(loker.id)} className="btn btn-danger btn-sm">Hapus</button>
                                                                     </td>
                                                                 </tr>
                                                             )) }    

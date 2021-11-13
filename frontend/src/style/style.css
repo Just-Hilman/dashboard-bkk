@@ -224,12 +224,22 @@ body {
 }
 
 /* to limit text display */
-.deskripsi {
+.limit {
     display: block;
     width: 200px;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+}
+
+.text-tabel-head {
+    font-size: 12px;
+    text-align: center;
+}
+
+.text-tabel {
+    font-size: 14px;
+    text-align: center;
 }
 
 

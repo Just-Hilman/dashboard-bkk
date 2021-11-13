@@ -9,6 +9,10 @@ const AddLoker = () => {
     const [perusahaan, setPerusahaan] = useState('');
     const [deskripsi, setDeskripsi] = useState('');
     const [kualifikasi, setKualifikasi] = useState('');
+    const [kualifikasi_2, setKualifikasi2] = useState('');
+    const [kualifikasi_3, setKualifikasi3] = useState('');
+    const [kualifikasi_4, setKualifikasi4] = useState('');
+    const [kualifikasi_5, setKualifikasi5] = useState('');
     const [jadwal, setJadwal] = useState('');
 
 
@@ -24,6 +28,10 @@ const AddLoker = () => {
             nama_perusahaan: perusahaan,
             deskripsi: deskripsi,
             kualifikasi: kualifikasi,
+            kualifikasi_2: kualifikasi_2,
+            kualifikasi_3: kualifikasi_3,
+            kualifikasi_4: kualifikasi_4,
+            kualifikasi_5: kualifikasi_5,
             jadwal: jadwal
         });
         history.push("/loker");
@@ -263,14 +271,43 @@ const AddLoker = () => {
                                                                         onChange={ (e) => setKualifikasi(e.target.value) }
                                                                     />
                                                                 </li>
+                                                                <li class="list-group-item">
+                                                                    <input
+                                                                        className="form-control"
+                                                                        type="text"
+                                                                        placeholder="Kualifikasi 2"
+                                                                        value={kualifikasi_2}
+                                                                        onChange={ (e) => setKualifikasi2(e.target.value) }
+                                                                    />
+                                                                </li>
+                                                                <li class="list-group-item">
+                                                                    <input
+                                                                        className="form-control"
+                                                                        type="text"
+                                                                        placeholder="Kualifikasi 3"
+                                                                        value={kualifikasi_3}
+                                                                        onChange={ (e) => setKualifikasi3(e.target.value) }
+                                                                    />
+                                                                </li>
+                                                                <li class="list-group-item">
+                                                                    <input
+                                                                        className="form-control"
+                                                                        type="text"
+                                                                        placeholder="Kualifikasi 4"
+                                                                        value={kualifikasi_4}
+                                                                        onChange={ (e) => setKualifikasi4(e.target.value) }
+                                                                    />
+                                                                </li>
+                                                                <li class="list-group-item">
+                                                                    <input
+                                                                        className="form-control"
+                                                                        type="text"
+                                                                        placeholder="Kualifikasi 5"
+                                                                        value={kualifikasi_5}
+                                                                        onChange={ (e) => setKualifikasi5(e.target.value) }
+                                                                    />
+                                                                </li>
                                                             </ul>
-                                                            {/* <textarea
-                                                                className="form-control" aria-label="With textarea"
-                                                                type="text"
-                                                                placeholder="Kualifikasi" rows="10"
-                                                                value={kualifikasi}
-                                                                onChange={ (e) => setKualifikasi(e.target.value) }
-                                                            /> */}
                                                         </div>
 
                                                         <div className="mb-3">
