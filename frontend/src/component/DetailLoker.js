@@ -8,6 +8,10 @@ const DetailLoker = () => {
     const [perusahaan, setPerusahaan] = useState('');
     const [deskripsi, setDeskripsi] = useState('');
     const [kualifikasi, setKualifikasi] = useState('');
+    const [kualifikasi_2, setKualifikasi2] = useState('');
+    const [kualifikasi_3, setKualifikasi3] = useState('');
+    const [kualifikasi_4, setKualifikasi4] = useState('');
+    const [kualifikasi_5, setKualifikasi5] = useState('');
     const [jadwal, setJadwal] = useState('');
 
     const { id } = useParams();
@@ -36,6 +40,10 @@ const DetailLoker = () => {
         setPerusahaan(response.data.nama_perusahaan);
         setDeskripsi(response.data.deskripsi);
         setKualifikasi(response.data.kualifikasi);
+        setKualifikasi2(response.data.kualifikasi_2);
+        setKualifikasi3(response.data.kualifikasi_3);
+        setKualifikasi4(response.data.kualifikasi_4);
+        setKualifikasi5(response.data.kualifikasi_5);
         setJadwal(response.data.jadwal);
     }
 
@@ -160,9 +168,12 @@ const DetailLoker = () => {
                                                 <ul class="list-group list-group-flush">
 
                                                     <li class="list-group-item">{kualifikasi}</li>
-                                                    <li class="list-group-item">A second item</li>
-                                                    <li class="list-group-item">A third item</li>
+                                                    <li class="list-group-item">{kualifikasi_2}</li>
+                                                    <li class="list-group-item">{kualifikasi_3}</li>
+                                                    <li class="list-group-item">{kualifikasi_4}</li>
+                                                    <li class="list-group-item">{kualifikasi_5}</li>
                                                 </ul>
+                                                <br></br>
 
                                                 <h6 class="card-title">Jadwal Tes Seleksi</h6>
                                                 <p>{jadwal}</p>
