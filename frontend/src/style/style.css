@@ -223,6 +223,15 @@ body {
     margin: 10px 10px !important;
 }
 
+/* to limit text display */
+.deskripsi {
+    display: block;
+    width: 200px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
 
 
 /* Dashboard */

@@ -207,7 +207,7 @@ const DashboardUser = () => {
                                                                     <td>{ loker.id }</td>
                                                                     <td>{ loker.nama_loker }</td>
                                                                     <td>{ loker.nama_perusahaan }</td>
-                                                                    <td>{ loker.deskripsi }</td>
+                                                                    <td className="deskripsi">{ loker.deskripsi }</td>
                                                                     <td>{ loker.kualifikasi }</td>
                                                                     <td>{ loker.jadwal }</td>
                                                                     <td>
