@@ -187,7 +187,7 @@ const DashboardUser = () => {
                                             <div>
                                                 <div>
                                                     <table className="table table-hover">
-                                                    <thead>
+                                                    <thead className="text-tabel-head">
                                                         <tr>
                                                             <th>No</th>
                                                             <th>ID Loker</th>    
@@ -200,7 +200,7 @@ const DashboardUser = () => {
                                                         </tr>
                                                     </thead>
 
-                                                    <tbody>
+                                                    <tbody className="text-tabel">
                                                             {loker.map((loker, index) => (
                                                                 <tr key={loker.id}>
                                                                     <td>{index + 1}</td>
@@ -211,7 +211,7 @@ const DashboardUser = () => {
                                                                     <td>{ loker.kualifikasi }</td>
                                                                     <td>{ loker.jadwal }</td>
                                                                     <td>
-                                                                        <Link to={`/detail-loker/${loker.id}`} className="btn btn-warning btn-ubah">Detail</Link>
+                                                                        <Link to={`/detail-loker/${loker.id}`} className="btn btn-warning btn-sm btn-ubah">Detail</Link>
                                                                     </td>
                                                                 </tr>
                                                             )) }    
