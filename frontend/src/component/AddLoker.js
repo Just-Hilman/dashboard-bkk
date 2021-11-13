@@ -263,42 +263,6 @@ const AddLoker = () => {
                                                                         onChange={ (e) => setKualifikasi(e.target.value) }
                                                                     />
                                                                 </li>
-                                                                <li class="list-group-item">
-                                                                    <input
-                                                                        className="form-control"
-                                                                        type="text"
-                                                                        placeholder="Kualifikasi 2"
-                                                                        value={kualifikasi}
-                                                                        onChange={ (e) => setKualifikasi(e.target.value) }
-                                                                    />
-                                                                </li>
-                                                                <li class="list-group-item">
-                                                                    <input
-                                                                        className="form-control"
-                                                                        type="text"
-                                                                        placeholder="Kualifikasi 3"
-                                                                        value={kualifikasi}
-                                                                        onChange={ (e) => setKualifikasi(e.target.value) }
-                                                                    />
-                                                                </li>
-                                                                <li class="list-group-item">
-                                                                    <input
-                                                                        className="form-control"
-                                                                        type="text"
-                                                                        placeholder="Kualifikasi 4"
-                                                                        value={kualifikasi}
-                                                                        onChange={ (e) => setKualifikasi(e.target.value) }
-                                                                    />
-                                                                </li>
-                                                                <li class="list-group-item">
-                                                                    <input
-                                                                        className="form-control"
-                                                                        type="text"
-                                                                        placeholder="Kualifikasi 5"
-                                                                        value={kualifikasi}
-                                                                        onChange={ (e) => setKualifikasi(e.target.value) }
-                                                                    />
-                                                                </li>
                                                             </ul>
                                                             {/* <textarea
                                                                 className="form-control" aria-label="With textarea"
