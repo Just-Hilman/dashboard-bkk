@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import jwt_decode from 'jwt-decode';
 import { useHistory } from 'react-router-dom';
 
-const LamaranLoker = () => {
+const DetailLamaran = () => {
     const [loker, setLoker] = useState([]);
     const [name, setName] = useState('');
     const [token, setToken] = useState('');
@@ -190,7 +190,7 @@ const LamaranLoker = () => {
 
                         <div className="container-fluid">
                             <div className="d-sm-flex align-items-center justify-content-between mb-4">
-                                <h1 className="h3 mb-0 text-gray-800">Daftar Lamaran Pekerjaan</h1>
+                                <h1 className="h3 mb-0 text-gray-800">Detail Lamaran Pekerjaan</h1>
                             </div>
                             
                             <div className="row">
@@ -198,7 +198,7 @@ const LamaranLoker = () => {
                                     <div className="card shadow mb-4">
                                         <div
                                             className="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                            <h6 className="m-0 font-weight-bold text-primary">Lamaran Pekerjaan</h6>
+                                            <h6 className="m-0 font-weight-bold text-primary">Daftar Peserta</h6>
                                             <div className="dropdown no-arrow">
                                                 <a className="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
                                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -213,11 +213,11 @@ const LamaranLoker = () => {
                                                     <thead className="text-tabel-head">
                                                         <tr>
                                                             <th>No</th>
-                                                            <th>ID Loker</th>    
-                                                            <th>Lowongan Pekerjaan</th>
-                                                            <th>Perusahaan</th>
-                                                            <th>Jadwal Seleksi</th>
-                                                            <th>Action</th>
+                                                            <th>Nama Peserta</th>    
+                                                            <th>Alamat</th>
+                                                            <th>Jurusan</th>
+                                                            <th>No Telp</th>
+                                                            <th>Email</th>
                                                         </tr>
                                                     </thead>
 
@@ -230,7 +230,7 @@ const LamaranLoker = () => {
                                                                     <td>{ loker.nama_perusahaan }</td>
                                                                     <td>{ loker.jadwal }</td>
                                                                     <td>
-                                                                        <Link to={`/detail-lamaran/${loker.id}`} className="btn btn-info btn-sm btn-ubah">Detail</Link>
+                                                                        <Link to={`/edit-loker/${loker.id}`} className="btn btn-info btn-sm btn-ubah">Detail</Link>
                                                                     </td>
                                                                 </tr>
                                                             )) }    
@@ -284,4 +284,4 @@ const LamaranLoker = () => {
     )
 }
 
-export default LamaranLoker
+export default DetailLamaran

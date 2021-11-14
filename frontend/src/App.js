@@ -13,6 +13,7 @@ import DashboardUser from "./component/DashboardUser";
 import DashboardAdmin from "./component/DashboardAdmin";
 import DetailLoker from "./component/DetailLoker";
 import LamaranLoker from "./component/LamaranLoker";
+import DetailLamaran from "./component/DetailLamaran";
 
 function App() {
   return (
@@ -42,10 +43,16 @@ function App() {
                 <DetailLoker />
               </Route>
 
+            </Switch>
+            
+            <Switch>
               <Route path="/lamaran-loker">
-                <LamaranLoker />
+                  <LamaranLoker />
               </Route>
 
+              <Route path="/detail-lamaran/:id">
+                  <DetailLamaran />
+              </Route>
 
             </Switch>
 
