@@ -5,19 +5,19 @@ import jwt_decode from 'jwt-decode';
 import { useHistory } from 'react-router-dom';
 
 const DetailLamaran = () => {
-    const [loker, setLoker] = useState([]);
+    const [lamaran, setLamaran] = useState([]);
     const [name, setName] = useState('');
     const [token, setToken] = useState('');
     const [expire, setExpire] = useState('');
     const history = useHistory();
 
     useEffect(() => {
-        getLoker();
+        getLamaran();
     }, []);
 
-    const getLoker = async () => {
-        const response = await axios.get('http://localhost:5000/loker');
-        setLoker(response.data);
+    const getLamaran = async () => {
+        const response = await axios.get('http://localhost:5000/lamaran');
+        setLamaran(response.data);
     }
 
     useEffect(() => {
@@ -209,6 +209,7 @@ const DetailLamaran = () => {
                                         <div className="card-body">
                                             <div>
                                                 <div>
+                                                    
                                                     <table className="table table-hover">
                                                     <thead className="text-tabel-head">
                                                         <tr>
@@ -218,20 +219,20 @@ const DetailLamaran = () => {
                                                             <th>Jurusan</th>
                                                             <th>No Telp</th>
                                                             <th>Email</th>
+                                                            <th>Tanda Tangan</th>
                                                         </tr>
                                                     </thead>
 
                                                     <tbody className="text-tabel">
-                                                            {loker.map((loker, index) => (
-                                                                <tr key={loker.id}>
+                                                            {lamaran.map((lamaran, index) => (
+                                                                <tr key={lamaran.id}>
                                                                     <td>{index + 1}</td>
-                                                                    <td>{ loker.id }</td>
-                                                                    <td>{ loker.nama_loker }</td>
-                                                                    <td>{ loker.nama_perusahaan }</td>
-                                                                    <td>{ loker.jadwal }</td>
-                                                                    <td>
-                                                                        <Link to={`/edit-loker/${loker.id}`} className="btn btn-info btn-sm btn-ubah">Detail</Link>
-                                                                    </td>
+                                                                    <td>{ lamaran.nama_peserta }</td>
+                                                                    <td>{ lamaran.alamat }</td>
+                                                                    <td>{ lamaran.jurusan }</td>
+                                                                    <td>{ lamaran.no_telp }</td>
+                                                                    <td>{ lamaran.email }</td>
+                                                                    <td></td>
                                                                 </tr>
                                                             )) }    
                                                         
