@@ -12,6 +12,7 @@ import Register from "./component/Register";
 import DashboardUser from "./component/DashboardUser";
 import DashboardAdmin from "./component/DashboardAdmin";
 import DetailLoker from "./component/DetailLoker";
+import LamaranLoker from "./component/LamaranLoker";
 
 function App() {
   return (
@@ -39,6 +40,10 @@ function App() {
 
               <Route path="/detail-loker/:id">
                 <DetailLoker />
+              </Route>
+
+              <Route path="/lamaran-loker">
+                <LamaranLoker />
               </Route>
 
 
