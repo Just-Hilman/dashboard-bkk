@@ -224,7 +224,6 @@ const PesertaList = () => {
                                                             <th>Jurusan</th>
                                                             <th>No Telepon</th>
                                                             <th>Email</th>
-                                                            <th>Loker</th>
                                                             <th>Action</th>
                                                         </tr>
                                                     </thead>
@@ -239,7 +238,6 @@ const PesertaList = () => {
                                                                     <td>{ peserta.jurusan }</td>
                                                                     <td>{ peserta.no_telp }</td>
                                                                     <td>{ peserta.email }</td>
-                                                                    <td>{ peserta.id_loker }</td>
                                                                     <td>
                                                                         <Link to={`/edit-peserta/${peserta.id}`} className="btn btn-warning btn-sm btn-ubah">Ubah</Link>
                                                                         <button onClick={() => deletePeserta(peserta.id)} className="btn btn-sm btn-danger">Hapus</button>

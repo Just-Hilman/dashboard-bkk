@@ -16,7 +16,7 @@ const LamaranLoker = () => {
     }, []);
 
     const getLoker = async () => {
-        const response = await axios.get('http://localhost:5000/lamaran-loker');
+        const response = await axios.get('http://localhost:5000/loker');
         setLoker(response.data);
     }
 
@@ -228,14 +228,10 @@ const LamaranLoker = () => {
                                                                     <td>{ loker.id }</td>
                                                                     <td>{ loker.nama_loker }</td>
                                                                     <td>{ loker.nama_perusahaan }</td>
-                                                                    <td className="limit">{ loker.deskripsi }</td>
-                                                                    <td>
-                                                                        <ul>
-                                                                            <li> <span className="limit">{loker.kualifikasi}</span> </li>
-                                                                            <li> <span className="limit">{loker.kualifikasi_2}</span> </li>
-                                                                        </ul>
-                                                                    </td>
                                                                     <td>{ loker.jadwal }</td>
+                                                                    <td>
+                                                                        <Link to={`/edit-loker/${loker.id}`} className="btn btn-info btn-sm btn-ubah">Detail</Link>
+                                                                    </td>
                                                                 </tr>
                                                             )) }    
                                                         
