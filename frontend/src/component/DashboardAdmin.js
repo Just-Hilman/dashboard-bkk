@@ -95,7 +95,8 @@ const DashboardUser = () => {
                         </a>
                         <div id="collapseTwo" className="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                             <div className="bg-white py-2 collapse-inner rounded">
-                                <a className="collapse-item" href="http://localhost:3000/loker">Daftar Lowongan Pekrejaan</a>
+                                <a className="collapse-item" href="http://localhost:3000/loker">Lowongan Pekrejaan</a>
+                                <a className="collapse-item" href="http://localhost:3000/loker">Lamaran Pekerjaan</a>
                                 <button onClick={getUsers}>Get Users</button>
                             </div>
                         </div>
