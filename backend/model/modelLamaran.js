@@ -17,6 +17,9 @@ const Lamaran = db.define('lamaran_pekerjaan', {
     nama_perusahaan: {
         type: DataTypes.STRING
     },
+    jadwal_seleksi: {
+        type: DataTypes.DATE
+    },
     id_peserta: {
         type: DataTypes.INTEGER
     },

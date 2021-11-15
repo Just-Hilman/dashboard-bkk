@@ -5,19 +5,19 @@ import jwt_decode from 'jwt-decode';
 import { useHistory } from 'react-router-dom';
 
 const LamaranLoker = () => {
-    const [loker, setLoker] = useState([]);
+    const [lamaran, setLamaran] = useState([]);
     const [name, setName] = useState('');
     const [token, setToken] = useState('');
     const [expire, setExpire] = useState('');
     const history = useHistory();
 
     useEffect(() => {
-        getLoker();
+        getLamaran();
     }, []);
 
-    const getLoker = async () => {
-        const response = await axios.get('http://localhost:5000/loker');
-        setLoker(response.data);
+    const getLamaran = async () => {
+        const response = await axios.get('http://localhost:5000/lamaran');
+        setLamaran(response.data);
     }
 
     useEffect(() => {
@@ -222,15 +222,15 @@ const LamaranLoker = () => {
                                                     </thead>
 
                                                     <tbody className="text-tabel">
-                                                            {loker.map((loker, index) => (
-                                                                <tr key={loker.id}>
+                                                            {lamaran.map((lamaran, index) => (
+                                                                <tr key={lamaran.id}>
                                                                     <td>{index + 1}</td>
-                                                                    <td>{ loker.id }</td>
-                                                                    <td>{ loker.nama_loker }</td>
-                                                                    <td>{ loker.nama_perusahaan }</td>
-                                                                    <td>{ loker.jadwal }</td>
+                                                                    <td>{ lamaran.id_loker }</td>
+                                                                    <td>{ lamaran.nama_loker }</td>
+                                                                    <td>{ lamaran.nama_perusahaan }</td>
+                                                                    <td>{ lamaran.jadwal }</td>
                                                                     <td>
-                                                                        <Link to={`/detail-lamaran/${loker.id}`} className="btn btn-info btn-sm btn-ubah">Detail</Link>
+                                                                        <Link to={`/detail-lamaran/loker/${lamaran.id_loker}`} className="btn btn-info btn-sm btn-ubah">Detail</Link>
                                                                     </td>
                                                                 </tr>
                                                             )) }    

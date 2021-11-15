@@ -23,6 +23,20 @@ export const getLamaranById = async (req, res) => {
 
 }
 
+export const getLamaranByIdLoker = async (req, res) => {
+    try {
+        const lamaran = await Lamaran.findAll({
+            where: {
+                id_loker:req.params.id_loker
+            }
+        });
+        res.json(lamaran);
+    } catch (error) {
+        res.json({ messege: error.messege });
+    }
+
+}
+
 export const createLamaran = async (req, res) => {
     try {
         await Lamaran.create(req.body);

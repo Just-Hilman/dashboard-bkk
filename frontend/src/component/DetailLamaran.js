@@ -1,23 +1,34 @@
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { useHistory, useParams } from 'react-router-dom';
 import jwt_decode from 'jwt-decode';
-import { useHistory } from 'react-router-dom';
 
 const DetailLamaran = () => {
     const [lamaran, setLamaran] = useState([]);
     const [name, setName] = useState('');
+    const [peserta, setPeserta] = useState('');
+    const [alamat, setAlamat] = useState('');
+    const [jurusan, setJurusan] = useState('');
+    const [telp, setTelp] = useState('');
+    const [email, setEmail] = useState('');
     const [token, setToken] = useState('');
     const [expire, setExpire] = useState('');
+
+    const { id_loker } = useParams();
     const history = useHistory();
 
     useEffect(() => {
-        getLamaran();
+        getLamaranByIdLoker();
     }, []);
 
-    const getLamaran = async () => {
-        const response = await axios.get('http://localhost:5000/lamaran');
-        setLamaran(response.data);
+    const getLamaranByIdLoker = async () => {
+        const response = await axios.get(`http://localhost:5000/lamaran/loker/${id_loker}`);
+        setLamaran(response.data.nama_loker);
+        setPeserta(response.data.nama_peserta);
+        setAlamat(response.data.alamat);
+        setJurusan(response.data.jurusan);
+        setTelp(response.data.telp);
+        setEmail(response.data.email);
     }
 
     useEffect(() => {
@@ -224,17 +235,15 @@ const DetailLamaran = () => {
                                                     </thead>
 
                                                     <tbody className="text-tabel">
-                                                            {lamaran.map((lamaran, index) => (
-                                                                <tr key={lamaran.id}>
-                                                                    <td>{index + 1}</td>
-                                                                    <td>{ lamaran.nama_peserta }</td>
-                                                                    <td>{ lamaran.alamat }</td>
-                                                                    <td>{ lamaran.jurusan }</td>
-                                                                    <td>{ lamaran.no_telp }</td>
-                                                                    <td>{ lamaran.email }</td>
-                                                                    <td></td>
-                                                                </tr>
-                                                            )) }    
+                                                        <tr>
+                                                            <td></td>
+                                                            <td>{ peserta }</td>
+                                                            <td>{ alamat }</td>
+                                                            <td>{ jurusan }</td>
+                                                            <td>{ telp }</td>
+                                                            <td>{ email }</td>
+                                                            <td></td>
+                                                        </tr>
                                                         
                                                     </tbody>
                                                     </table>
