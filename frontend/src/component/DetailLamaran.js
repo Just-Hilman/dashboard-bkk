@@ -4,13 +4,13 @@ import { useHistory, useParams } from 'react-router-dom';
 import jwt_decode from 'jwt-decode';
 
 const DetailLamaran = () => {
-    const [lamaran, setLamaran] = useState([]);
+    // const [loker, setLoker] = useState([]);
     const [name, setName] = useState('');
     const [peserta, setPeserta] = useState('');
-    const [alamat, setAlamat] = useState('');
-    const [jurusan, setJurusan] = useState('');
-    const [telp, setTelp] = useState('');
-    const [email, setEmail] = useState('');
+    // const [alamat, setAlamat] = useState('');
+    // const [jurusan, setJurusan] = useState('');
+    // const [telp, setTelp] = useState('');
+    // const [email, setEmail] = useState('');
     const [token, setToken] = useState('');
     const [expire, setExpire] = useState('');
 
@@ -23,13 +23,15 @@ const DetailLamaran = () => {
 
     const getLamaranByIdLoker = async () => {
         const response = await axios.get(`http://localhost:5000/lamaran/loker/${id_loker}`);
-        setLamaran(response.data.nama_loker);
+        // setLoker(response.data.nama_loker);
         setPeserta(response.data.nama_peserta);
-        setAlamat(response.data.alamat);
-        setJurusan(response.data.jurusan);
-        setTelp(response.data.telp);
-        setEmail(response.data.email);
+        // setAlamat(response.data.alamat);
+        // setJurusan(response.data.jurusan);
+        // setTelp(response.data.telp);
+        // setEmail(response.data.email);
+        
     }
+    console.log(peserta);
 
     // useEffect(() => {
     //     refreshToken();
@@ -238,10 +240,10 @@ const DetailLamaran = () => {
                                                         <tr>
                                                             <td></td>
                                                             <td>{ peserta }</td>
-                                                            <td>{ alamat }</td>
+                                                            {/* <td>{ alamat }</td>
                                                             <td>{ jurusan }</td>
                                                             <td>{ telp }</td>
-                                                            <td>{ email }</td>
+                                                            <td>{ email }</td> */}
                                                             <td></td>
                                                         </tr>
                                                         

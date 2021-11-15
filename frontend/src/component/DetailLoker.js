@@ -45,7 +45,9 @@ const DetailLoker = () => {
         setKualifikasi4(response.data.kualifikasi_4);
         setKualifikasi5(response.data.kualifikasi_5);
         setJadwal(response.data.jadwal);
+        
     }
+    console.log(perusahaan);
 
     return (
         <div id="page-top">
