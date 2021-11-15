@@ -11,7 +11,6 @@ const DashboardUser = () => {
     const [loker, setLoker] = useState([]);
     const history = useHistory();
 
-
     useEffect(() => {
         getLoker();
     }, []);

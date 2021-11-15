@@ -228,7 +228,7 @@ const LamaranLoker = () => {
                                                                     <td>{ lamaran.id_loker }</td>
                                                                     <td>{ lamaran.nama_loker }</td>
                                                                     <td>{ lamaran.nama_perusahaan }</td>
-                                                                    <td>{ lamaran.jadwal }</td>
+                                                                    <td>{ lamaran.jadwal_seleksi }</td>
                                                                     <td>
                                                                         <Link to={`/detail-lamaran/loker/${lamaran.id_loker}`} className="btn btn-info btn-sm btn-ubah">Detail</Link>
                                                                     </td>

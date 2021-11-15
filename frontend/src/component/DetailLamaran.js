@@ -31,49 +31,49 @@ const DetailLamaran = () => {
         setEmail(response.data.email);
     }
 
-    useEffect(() => {
-        refreshToken();
-    }, []);
+    // useEffect(() => {
+    //     refreshToken();
+    // }, []);
 
-    const refreshToken = async () => {
-        try {
-            const response = await axios.get('http://localhost:5000/token');
-            setToken(response.data.accessToken);
-            const decoded = jwt_decode(response.data.accessToken);
-            setName(decoded.name);
-            setExpire(decoded.exp);
-        } catch (error) {
-            if (error.response) {
-                history.push('/login');
-            }
-        }
-    }
+    // const refreshToken = async () => {
+    //     try {
+    //         const response = await axios.get('http://localhost:5000/token');
+    //         setToken(response.data.accessToken);
+    //         const decoded = jwt_decode(response.data.accessToken);
+    //         setName(decoded.name);
+    //         setExpire(decoded.exp);
+    //     } catch (error) {
+    //         if (error.response) {
+    //             history.push('/login');
+    //         }
+    //     }
+    // }
 
-    const axiosJWT = axios.create();
+    // const axiosJWT = axios.create();
     
-    axiosJWT.interceptors.request.use(async (config) => {
-        const currentDate = new Date();
-        if (expire * 1000 < currentDate.getTime()) {
-            const response = await axios.get('http://localhost:5000/token');
-            config.headers.Authorization = `Bearer ${response.data.accessToken}`;
-            setToken(response.data.accessToken);
-            const decoded = jwt_decode(response.data.accessToken);
-            setName(decoded.name);
-            setExpire(decoded.exp);
-        }
-        return config;
-    }, (error) => {
-            return Promise.reject(error);
-    });
+    // axiosJWT.interceptors.request.use(async (config) => {
+    //     const currentDate = new Date();
+    //     if (expire * 1000 < currentDate.getTime()) {
+    //         const response = await axios.get('http://localhost:5000/token');
+    //         config.headers.Authorization = `Bearer ${response.data.accessToken}`;
+    //         setToken(response.data.accessToken);
+    //         const decoded = jwt_decode(response.data.accessToken);
+    //         setName(decoded.name);
+    //         setExpire(decoded.exp);
+    //     }
+    //     return config;
+    // }, (error) => {
+    //         return Promise.reject(error);
+    // });
 
-    const Logout = async() => {
-        try {
-            await axios.delete('http://localhost:5000/logout');
-            history.push("/");
-        } catch (error) {
-            console.log(error);
-        }
-    }
+    // const Logout = async() => {
+    //     try {
+    //         await axios.delete('http://localhost:5000/logout');
+    //         history.push("/");
+    //     } catch (error) {
+    //         console.log(error);
+    //     }
+    // }
 
     return (
         <div id="page-top">
@@ -279,7 +279,7 @@ const DetailLamaran = () => {
                         </div>
                         <div className="modal-footer">
                             <button className="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                            <button onClick={Logout} className="btn btn-primary" type="button" >Logout</button>
+                            {/* <button onClick={Logout} className="btn btn-primary" type="button" >Logout</button> */}
                         </div>
                     </div>
                 </div>
