@@ -14,7 +14,7 @@ export const getPesertaById = async (req, res) => {
     try {
         const peserta = await Peserta.findAll({
             where: {
-                id: req.params.id
+                id_loker: req.params.id
             }
         });
         res.json(peserta[0]);

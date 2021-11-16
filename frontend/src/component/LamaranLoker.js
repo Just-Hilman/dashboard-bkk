@@ -16,7 +16,7 @@ const LamaranLoker = () => {
     }, []);
 
     const getLamaran = async () => {
-        const response = await axios.get('http://localhost:5000/lamaran');
+        const response = await axios.get('http://localhost:5000/loker');
         setLamaran(response.data);
     }
 
@@ -225,12 +225,12 @@ const LamaranLoker = () => {
                                                             {lamaran.map((lamaran, index) => (
                                                                 <tr key={lamaran.id}>
                                                                     <td>{index + 1}</td>
-                                                                    <td>{ lamaran.id_loker }</td>
+                                                                    <td>{ lamaran.id }</td>
                                                                     <td>{ lamaran.nama_loker }</td>
                                                                     <td>{ lamaran.nama_perusahaan }</td>
-                                                                    <td>{ lamaran.jadwal_seleksi }</td>
+                                                                    <td>{ lamaran.jadwal }</td>
                                                                     <td>
-                                                                        <Link to={`/detail-lamaran/loker/${lamaran.id_loker}`} className="btn btn-info btn-sm btn-ubah">Detail</Link>
+                                                                        <Link to={`/detail-lamaran/${lamaran.id}`} className="btn btn-info btn-sm btn-ubah">Detail</Link>
                                                                     </td>
                                                                 </tr>
                                                             )) }    

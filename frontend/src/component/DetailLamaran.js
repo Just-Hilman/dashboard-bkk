@@ -6,34 +6,34 @@ import jwt_decode from 'jwt-decode';
 const DetailLamaran = () => {
     // const [loker, setLoker] = useState([]);
     const [name, setName] = useState('');
-    const [idloker, setIdloker] = useState('');
-    // const [peserta, setPeserta] = useState('');
-    // const [alamat, setAlamat] = useState('');
-    // const [jurusan, setJurusan] = useState('');
-    // const [telp, setTelp] = useState('');
-    // const [email, setEmail] = useState('');
+    // const [idloker, setIdloker] = useState('');
+    const [nama, setNama] = useState('');
+    const [alamat, setAlamat] = useState('');
+    const [jurusan, setJurusan] = useState('');
+    const [telp, setTelp] = useState('');
+    const [email, setEmail] = useState('');
     const [token, setToken] = useState('');
     const [expire, setExpire] = useState('');
 
-    const { id_loker } = useParams();
+    const { id } = useParams();
     const history = useHistory();
 
     useEffect(() => {
-        getLamaranByIdLoker();
+        getLokerById();
     }, []);
 
-    const getLamaranByIdLoker = async () => {
-        const response = await axios.get(`http://localhost:5000/lamaran/loker/${id_loker}`);
+    const getLokerById = async () => {
+        const response = await axios.get(`http://localhost:5000/peserta/${id}`);
         // setLoker(response.data.nama_loker);
-        setIdloker(response.data.id_loker);
-        // setPeserta(response.data.nama_peserta);
-        // setAlamat(response.data.alamat);
-        // setJurusan(response.data.jurusan);
-        // setTelp(response.data.telp);
-        // setEmail(response.data.email);
+        // setIdloker(response.data.id_loker);
+        setNama(response.data.nama);
+        setAlamat(response.data.alamat);
+        setJurusan(response.data.jurusan);
+        setTelp(response.data.no_telp);
+        setEmail(response.data.email);
         
     }
-    console.log(idloker);
+    console.log(nama);
 
     // useEffect(() => {
     //     refreshToken();
@@ -241,11 +241,11 @@ const DetailLamaran = () => {
                                                     <tbody className="text-tabel">
                                                         <tr>
                                                             <td></td>
-                                                            {/* <td>{ peserta }</td> */}
-                                                            {/* <td>{ alamat }</td>
+                                                            <td>{ nama }</td>
+                                                            <td>{ alamat }</td>
                                                             <td>{ jurusan }</td>
                                                             <td>{ telp }</td>
-                                                            <td>{ email }</td> */}
+                                                            <td>{ email }</td>
                                                             <td></td>
                                                         </tr>
                                                         

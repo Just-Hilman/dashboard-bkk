@@ -50,7 +50,7 @@ function App() {
                   <LamaranLoker />
               </Route>
 
-              <Route path="/detail-lamaran/loker/:id_loker">
+              <Route path="/detail-lamaran/:id">
                   <DetailLamaran />
               </Route>
 
