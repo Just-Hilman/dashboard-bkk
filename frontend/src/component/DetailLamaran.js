@@ -6,7 +6,8 @@ import jwt_decode from 'jwt-decode';
 const DetailLamaran = () => {
     // const [loker, setLoker] = useState([]);
     const [name, setName] = useState('');
-    const [peserta, setPeserta] = useState('');
+    const [idloker, setIdloker] = useState('');
+    // const [peserta, setPeserta] = useState('');
     // const [alamat, setAlamat] = useState('');
     // const [jurusan, setJurusan] = useState('');
     // const [telp, setTelp] = useState('');
@@ -24,14 +25,15 @@ const DetailLamaran = () => {
     const getLamaranByIdLoker = async () => {
         const response = await axios.get(`http://localhost:5000/lamaran/loker/${id_loker}`);
         // setLoker(response.data.nama_loker);
-        setPeserta(response.data.nama_peserta);
+        setIdloker(response.data.id_loker);
+        // setPeserta(response.data.nama_peserta);
         // setAlamat(response.data.alamat);
         // setJurusan(response.data.jurusan);
         // setTelp(response.data.telp);
         // setEmail(response.data.email);
         
     }
-    console.log(peserta);
+    console.log(idloker);
 
     // useEffect(() => {
     //     refreshToken();
@@ -239,7 +241,7 @@ const DetailLamaran = () => {
                                                     <tbody className="text-tabel">
                                                         <tr>
                                                             <td></td>
-                                                            <td>{ peserta }</td>
+                                                            {/* <td>{ peserta }</td> */}
                                                             {/* <td>{ alamat }</td>
                                                             <td>{ jurusan }</td>
                                                             <td>{ telp }</td>

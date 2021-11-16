@@ -4,6 +4,7 @@ import { useHistory, useParams } from 'react-router-dom';
 
 const DetailLoker = () => {
     const [name, setName] = useState('');
+    const [idloker, setIdloker] = useState('');
     const [loker, setLoker] = useState('');
     const [perusahaan, setPerusahaan] = useState('');
     const [deskripsi, setDeskripsi] = useState('');
@@ -36,6 +37,7 @@ const DetailLoker = () => {
 
     const getLokerById = async () => {
         const response = await axios.get(`http://localhost:5000/loker/${id}`);
+        setIdloker(response.data.id);
         setLoker(response.data.nama_loker);
         setPerusahaan(response.data.nama_perusahaan);
         setDeskripsi(response.data.deskripsi);
@@ -47,7 +49,7 @@ const DetailLoker = () => {
         setJadwal(response.data.jadwal);
         
     }
-    console.log(perusahaan);
+    console.log(idloker);
 
     return (
         <div id="page-top">
