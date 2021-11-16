@@ -22,6 +22,9 @@ const Peserta = db.define('peserta_seleksi', {
     email: {
         type: DataTypes.STRING
     },
+    id_loker: {
+        type: DataTypes.INTEGER
+    },
 }, {
     freezeTableName: true
 });
