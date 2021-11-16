@@ -9,19 +9,19 @@ export const getAllLamaran = async (req, res) => {
     }
 }
 
-export const getLamaranById = async (req, res) => {
-    try {
-        const lamaran = await Lamaran.findAll({
-            where: {
-                id:req.params.id
-            }
-        });
-        res.json(lamaran[0]);
-    } catch (error) {
-        res.json({ messege: error.messege });
-    }
+// export const getLamaranById = async (req, res) => {
+//     try {
+//         const lamaran = await Lamaran.findAll({
+//             where: {
+//                 id:req.params.id
+//             }
+//         });
+//         res.json(lamaran[0]);
+//     } catch (error) {
+//         res.json({ messege: error.messege });
+//     }
 
-}
+// }
 
 export const getLamaranByIdLoker = async (req, res) => {
     try {
@@ -49,34 +49,34 @@ export const createLamaran = async (req, res) => {
 
 }
 
-export const updateLamaran = async (req, res) => {
-    try {
-        await Lamaran.update(req.body, {
-            where: {
-                id: req.params.id
-            }
-        });
-        res.json({
-            "messege": "Lamaran Updated"
-        });
-    } catch (error) {
-        res.json({ messege: error.messege });
-    }
+// export const updateLamaran = async (req, res) => {
+//     try {
+//         await Lamaran.update(req.body, {
+//             where: {
+//                 id: req.params.id
+//             }
+//         });
+//         res.json({
+//             "messege": "Lamaran Updated"
+//         });
+//     } catch (error) {
+//         res.json({ messege: error.messege });
+//     }
 
-}
+// }
 
-export const deleteLamaran = async (req, res) => {
-    try {
-        await Lamaran.destroy({
-            where: {
-                id: req.params.id
-            }
-        });
-        res.json({
-            "messege": "Lamaran Deleted"
-        });
-    } catch (error) {
-        res.json({ messege: error.messege });
-    }
+// export const deleteLamaran = async (req, res) => {
+//     try {
+//         await Lamaran.destroy({
+//             where: {
+//                 id: req.params.id
+//             }
+//         });
+//         res.json({
+//             "messege": "Lamaran Deleted"
+//         });
+//     } catch (error) {
+//         res.json({ messege: error.messege });
+//     }
 
-}
+// }

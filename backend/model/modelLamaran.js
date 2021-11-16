@@ -4,12 +4,13 @@ import db from "../config/database.js";
 const { DataTypes } = Sequelize;
 
 const Lamaran = db.define('lamaran_pekerjaan', {
-    id: {
+    // id: {
+    //     type: DataTypes.INTEGER,
+    //     primaryKey: true
+    // },
+    id_loker: {
         type: DataTypes.INTEGER,
         primaryKey: true
-    },
-    id_loker: {
-        type: DataTypes.INTEGER
     },
     nama_loker: {
         type: DataTypes.STRING
