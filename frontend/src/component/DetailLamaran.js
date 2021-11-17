@@ -19,11 +19,11 @@ const DetailLamaran = () => {
     const history = useHistory();
 
     useEffect(() => {
-        getLokerById();
+        getPesertaByIdLoker();
     }, []);
 
-    const getLokerById = async () => {
-        const response = await axios.get(`http://localhost:5000/peserta/${id}`);
+    const getPesertaByIdLoker = async () => {
+        const response = await axios.get(`http://localhost:5000/peserta/loker/${id}`);
         // setLoker(response.data.nama_loker);
         // setIdloker(response.data.id_loker);
         setNama(response.data.nama);

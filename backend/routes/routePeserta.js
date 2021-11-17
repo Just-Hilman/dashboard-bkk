@@ -5,7 +5,8 @@ import {
     createPeserta,
     getPesertaById,
     updatePeserta,
-    deletePeserta
+    deletePeserta,
+    getPesertaByIdLoker
 } from "../controller/Peserta.js";
 
 const router = express.Router();
@@ -15,5 +16,6 @@ router.get('/:id', getPesertaById);
 router.post('/', createPeserta);
 router.patch('/:id', updatePeserta);
 router.delete('/:id', deletePeserta);
+router.get('/loker/:id', getPesertaByIdLoker);
 
 export default router;

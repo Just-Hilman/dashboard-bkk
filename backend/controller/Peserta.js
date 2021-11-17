@@ -14,10 +14,24 @@ export const getPesertaById = async (req, res) => {
     try {
         const peserta = await Peserta.findAll({
             where: {
-                id_loker: req.params.id
+                id: req.params.id
             }
         });
         res.json(peserta[0]);
+    } catch (error) {
+        res.json({ messege: error.messege });
+    }
+
+}
+
+export const getPesertaByIdLoker = async (req, res) => {
+    try {
+        const peserta = await Peserta.findAll({
+            where: {
+                id_loker: req.params.id
+            }
+        });
+        res.json(peserta);
     } catch (error) {
         res.json({ messege: error.messege });
     }
