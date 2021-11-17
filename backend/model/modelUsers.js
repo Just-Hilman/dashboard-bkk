@@ -13,6 +13,9 @@ const Users = db.define('users', {
     password: {
         type: DataTypes.STRING
     },
+    id_role: {
+        type: DataTypes.INTEGER
+    },
     refresh_token: {
         type: DataTypes.TEXT
     }
