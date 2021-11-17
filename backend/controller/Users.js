@@ -5,7 +5,7 @@ import jwt from "jsonwebtoken";
 export const getUsers = async (req, res) => {
     try {
         const users = await Users.findAll({
-            attributes:['id', 'name', 'email']
+            attributes:['id', 'name', 'email', 'id_role']
         });
         res.json(users);
     } catch (error) {
@@ -14,7 +14,7 @@ export const getUsers = async (req, res) => {
 }
 
 export const Register = async (req, res) => {
-    const { name, email, password, confPassword } = req.body;
+    const { name, email, password, confPassword, id_role } = req.body;
     if (password !== confPassword) return res.status(400).json({ msg: "Password dan konfirmasi password tidak cocok !" });
     const salt = await bcrypt.genSalt();
     const hashPassword = await bcrypt.hash(password, salt);
@@ -23,7 +23,7 @@ export const Register = async (req, res) => {
             name: name,
             email: email,
             password: hashPassword,
-            id_role: "2"
+            id_role: 2
         });
         res.json({ msg: "Registrasi Berhasil" });
     } catch (error) {
@@ -43,10 +43,11 @@ export const Login = async(req, res) => {
         const userId = user[0].id;
         const name = user[0].name;
         const email = user[0].email;
-        const accessToken = jwt.sign({ userId, name, email }, process.env.ACCESS_TOKEN_SECRET, {
+        const id_role = user[0].id_role;
+        const accessToken = jwt.sign({ userId, name, email, id_role }, process.env.ACCESS_TOKEN_SECRET, {
             expiresIn: '20s'
         });
-        const refreshToken = jwt.sign({ userId, name, email }, process.env.REFRESH_TOKEN_SECRET, {
+        const refreshToken = jwt.sign({ userId, name, email, id_role }, process.env.REFRESH_TOKEN_SECRET, {
             expiresIn: '1d'
         });
         await Users.update({ refresh_token: refreshToken }, {

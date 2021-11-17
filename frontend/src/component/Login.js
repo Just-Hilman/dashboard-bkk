@@ -5,6 +5,7 @@ import { useHistory } from 'react-router-dom';
 const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [id_role, setIdRole] = useState('');
     const [msg, setMsg] = useState('');
     const history = useHistory();
 
@@ -13,9 +14,10 @@ const Login = () => {
         try {
             await axios.post('http://localhost:5000/login', {
                 email: email,
-                password: password
+                password: password,
+                id_role: 2
             });
-            history.push('/dashboard')
+            history.push('/dashboard-user')
         } catch (error) {
             if (error) {
                 setMsg(error.response.data.msg);
