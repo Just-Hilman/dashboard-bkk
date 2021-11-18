@@ -14,6 +14,7 @@ import DashboardAdmin from "./component/DashboardAdmin";
 import DetailLoker from "./component/DetailLoker";
 import LamaranLoker from "./component/LamaranLoker";
 import DetailLamaran from "./component/DetailLamaran";
+import AplyLoker from "./component/AplyLoker";
 
 function App() {
   return (
@@ -66,7 +67,7 @@ function App() {
               </Route>
 
               <Route path="/aplyLoker">
-                <AddPeserta />
+                <AplyLoker />
               </Route>
 
               <Route path="/edit-peserta/:id">

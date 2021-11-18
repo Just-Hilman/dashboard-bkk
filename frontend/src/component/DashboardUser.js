@@ -103,11 +103,11 @@ const DashboardUser = () => {
                             <i className="fas fa-fw fa-cog"></i>
                             <span>Lowongan Pekerjaan</span>
                         </a>
-                        <div id="collapseTwo" className="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                        {/* <div id="collapseTwo" className="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                             <div className="bg-white py-2 collapse-inner rounded">
-                                <a className="collapse-item" href="http://localhost:3000/loker">Daftar Lowongan Pekrejaan</a>
+                                <a className="collapse-item" href="http://localhost:3000/dashboard-user">Daftar Lowongan Pekrejaan</a>
                             </div>
-                        </div>
+                        </div> */}
                     </li>           
 
                     <hr className="sidebar-divider d-none d-md-block"></hr>

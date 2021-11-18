@@ -28,9 +28,9 @@ const AddPeserta = () => {
             jurusan: jurusan,
             no_telp: noTelp,
             email: email,
-            id_loker: idLoker
+            id_loker: 23
         });
-        history.push("/dashboard-user");
+        history.push("/peserta");
     }
 
     
@@ -83,7 +83,7 @@ const AddPeserta = () => {
             <div id="wrapper">
                 
                 <ul className="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
-                    <a className="sidebar-brand d-flex align-items-center justify-content-center" href="http://localhost:3000/dashboard">
+                    <a className="sidebar-brand d-flex align-items-center justify-content-center" href="http://localhost:3000/dashboard-user">
                         <div className="sidebar-brand-icon rotate-n-15">
                             <i className="fas fa-tools"></i>
                         </div>
@@ -93,7 +93,7 @@ const AddPeserta = () => {
                     <hr className="sidebar-divider my-0"></hr>
 
                     <li className="nav-item active">
-                        <a className="nav-link" href="http://localhost:3000/dashboard">
+                        <a className="nav-link" href="http://localhost:3000/dashboard-user">
                             <i className="fas fa-fw fa-tachometer-alt"></i>
                             <span>Dashboard</span>
                         </a>
@@ -108,42 +108,11 @@ const AddPeserta = () => {
                             <i className="fas fa-fw fa-cog"></i>
                             <span>Lowongan Pekerjaan</span>
                         </a>
-                        <div id="collapseTwo" className="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                        {/* <div id="collapseTwo" className="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                             <div className="bg-white py-2 collapse-inner rounded">
-                                <a className="collapse-item" href="http://localhost:3000/loker">Daftar Lowongan Pekrejaan</a>
+                                <a className="collapse-item" href="http://localhost:3000/dashboard-user">Daftar Lowongan Pekrejaan</a>
                             </div>
-                        </div>
-                    </li>
-
-                    <li className="nav-item">
-                        <a className="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-                            aria-expanded="true" aria-controls="collapseUtilities">
-                            <i className="fas fa-fw fa-wrench"></i>
-                            <span>Seleksi</span>
-                        </a>
-                        <div id="collapseUtilities" className="collapse" aria-labelledby="headingUtilities"
-                            data-parent="#accordionSidebar">
-                            <div className="bg-white py-2 collapse-inner rounded">
-                                <a className="collapse-item" href="utilities-color.html">Jadwal Seleksi</a>
-                                <a className="collapse-item" href="http://localhost:3000/peserta">Peserta Seleksi</a>
-                            </div>
-                        </div>
-                    </li>
-
-                    <hr className="sidebar-divider"></hr>
-
-                    <li className="nav-item">
-                        <a className="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
-                            aria-expanded="true" aria-controls="collapsePages">
-                            <i className="fas fa-fw fa-folder"></i>
-                            <span>Laporan</span>
-                        </a>
-                        <div id="collapsePages" className="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-                            <div className="bg-white py-2 collapse-inner rounded">
-                                <a className="collapse-item" href="/">Rekap Harian</a>
-                                <a className="collapse-item" href="/">Rekap Bulanan</a>
-                            </div>
-                        </div>
+                        </div> */}
                     </li>
                     
 
@@ -170,7 +139,7 @@ const AddPeserta = () => {
                                 <li className="nav-item dropdown no-arrow">
                                     <a className="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <span className="mr-2 d-none d-lg-inline text-gray-600 small"> <strong> Admin | </strong> { name }</span>
+                                        <span className="mr-2 d-none d-lg-inline text-gray-600 small"> <strong> Peserta | </strong> { name }</span>
                                         <img className="img-profile rounded-circle"></img>
                                     </a>
 
@@ -289,7 +258,7 @@ const AddPeserta = () => {
                                                             />
                                                         </div>
 
-                                                        <div className="mb-3">
+                                                        {/* <div className="mb-3">
                                                             <label className="label">ID Loker</label>
                                                             <input
                                                                 className="form-control"
@@ -298,7 +267,7 @@ const AddPeserta = () => {
                                                                 value={idLoker}
                                                                 onChange={ (e) => setIdLoker(e.target.value) }
                                                             />
-                                                        </div>
+                                                        </div> */}
 
                                                         <div className="mb-3">
                                                             <button type="submit" className="btn btn-primary">Save</button>
