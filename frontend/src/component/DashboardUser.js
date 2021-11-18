@@ -20,58 +20,58 @@ const DashboardUser = () => {
         setLoker(response.data);
     }
 
-    // useEffect(() => {
-    //     refreshToken();
-    // }, []);
+    useEffect(() => {
+        refreshToken();
+    }, []);
 
-    // const refreshToken = async () => {
-    //     try {
-    //         const response = await axios.get('http://localhost:5000/token');
-    //         setToken(response.data.accessToken);
-    //         const decoded = jwt_decode(response.data.accessToken);
-    //         setName(decoded.name);
-    //         setExpire(decoded.exp);
-    //     } catch (error) {
-    //         if (error.response) {
-    //             history.push('/login');
-    //         }
-    //     }
-    // }
+    const refreshToken = async () => {
+        try {
+            const response = await axios.get('http://localhost:5000/token');
+            setToken(response.data.accessToken);
+            const decoded = jwt_decode(response.data.accessToken);
+            setName(decoded.name);
+            setExpire(decoded.exp);
+        } catch (error) {
+            if (error.response) {
+                history.push('/login');
+            }
+        }
+    }
 
-    // const axiosJWT = axios.create();
+    const axiosJWT = axios.create();
     
-    // axiosJWT.interceptors.request.use(async (config) => {
-    //     const currentDate = new Date();
-    //     if (expire * 1000 < currentDate.getTime()) {
-    //         const response = await axios.get('http://localhost:5000/token');
-    //         config.headers.Authorization = `Bearer ${response.data.accessToken}`;
-    //         setToken(response.data.accessToken);
-    //         const decoded = jwt_decode(response.data.accessToken);
-    //         setName(decoded.name);
-    //         setExpire(decoded.exp);
-    //     }
-    //     return config;
-    // }, (error) => {
-    //         return Promise.reject(error);
-    // });
+    axiosJWT.interceptors.request.use(async (config) => {
+        const currentDate = new Date();
+        if (expire * 1000 < currentDate.getTime()) {
+            const response = await axios.get('http://localhost:5000/token');
+            config.headers.Authorization = `Bearer ${response.data.accessToken}`;
+            setToken(response.data.accessToken);
+            const decoded = jwt_decode(response.data.accessToken);
+            setName(decoded.name);
+            setExpire(decoded.exp);
+        }
+        return config;
+    }, (error) => {
+            return Promise.reject(error);
+    });
 
-    // const getUsers = async () => {
-    //     const response = await axiosJWT.get('http://localhost:5000/users', {
-    //         headers: {
-    //             Authorization: `Bearer ${token}`
-    //         }
-    //     });
-    //     console.log(response.data);
-    // }
+    const getUsers = async () => {
+        const response = await axiosJWT.get('http://localhost:5000/users', {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        });
+        console.log(response.data);
+    }
 
-    // const Logout = async() => {
-    //     try {
-    //         await axios.delete('http://localhost:5000/logout');
-    //         history.push("/");
-    //     } catch (error) {
-    //         console.log(error);
-    //     }
-    // }
+    const Logout = async() => {
+        try {
+            await axios.delete('http://localhost:5000/logout');
+            history.push("/");
+        } catch (error) {
+            console.log(error);
+        }
+    }
 
     return (
         <div id="page-top">
@@ -133,7 +133,7 @@ const DashboardUser = () => {
                                 <li className="nav-item dropdown no-arrow">
                                     <a className="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <span className="mr-2 d-none d-lg-inline text-gray-600 small"> <strong> Welcome Back ! </strong> { name }</span>
+                                        <span className="mr-2 d-none d-lg-inline text-gray-600 small"> <strong> Peserta | </strong> { name }</span>
                                         <img className="img-profile rounded-circle"></img>
                                     </a>
 
@@ -237,7 +237,7 @@ const DashboardUser = () => {
                 </div>
             </div>
 
-            {/* <div className="modal fade" id="logoutModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            <div className="modal fade" id="logoutModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel"
                 aria-hidden="true">
                 <div className="modal-dialog" role="document">
                     <div className="modal-content">
@@ -253,7 +253,7 @@ const DashboardUser = () => {
                         </div>
                     </div>
                 </div>
-            </div> */}
+            </div>
 
             
         </div>
