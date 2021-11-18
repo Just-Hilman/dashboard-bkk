@@ -65,6 +65,10 @@ function App() {
                 <AddPeserta />
               </Route>
 
+              <Route path="/aplyLoker">
+                <AddPeserta />
+              </Route>
+
               <Route path="/edit-peserta/:id">
                 <EditPeserta />
               </Route>

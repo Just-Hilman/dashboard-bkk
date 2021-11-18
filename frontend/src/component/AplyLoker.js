@@ -1,28 +1,39 @@
-import { useState, useEffect } from 'react'
+import  React, { useState, useEffect } from 'react'
 import axios from "axios";
-import { useHistory, useParams } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
+// import { Link } from "react-router-dom";
 import jwt_decode from 'jwt-decode';
-import { Link } from "react-router-dom";
 
-const DetailLoker = () => {
+const AddPeserta = () => {
+    const [nama, setNama] = useState('');
+    const [alamat, setAlamat] = useState('');
+    const [tglLahir, setTglLahir] = useState('');
+    const [jurusan, setJurusan] = useState('');
+    const [noTelp, setNoTelp] = useState('');
+    const [email, setEmail] = useState('');
+    const [idLoker, setIdLoker] = useState('');
+
+
     const [name, setName] = useState('');
-    const [idloker, setIdloker] = useState('');
-    const [loker, setLoker] = useState('');
-    const [perusahaan, setPerusahaan] = useState('');
-    const [deskripsi, setDeskripsi] = useState('');
-    const [kualifikasi, setKualifikasi] = useState('');
-    const [kualifikasi_2, setKualifikasi2] = useState('');
-    const [kualifikasi_3, setKualifikasi3] = useState('');
-    const [kualifikasi_4, setKualifikasi4] = useState('');
-    const [kualifikasi_5, setKualifikasi5] = useState('');
-    const [jadwal, setJadwal] = useState('');
-
     const [token, setToken] = useState('');
     const [expire, setExpire] = useState('');
-
-    const { id } = useParams();
     const history = useHistory();
 
+    const savePeserta = async (e) => {
+        e.preventDefault();
+        await axios.post('http://localhost:5000/peserta', {
+            nama: nama,
+            alamat: alamat,
+            tgl_lahir: tglLahir,
+            jurusan: jurusan,
+            no_telp: noTelp,
+            email: email,
+            id_loker: idLoker
+        });
+        history.push("/dashboard-user");
+    }
+
+    
     useEffect(() => {
         refreshToken();
     }, []);
@@ -58,15 +69,6 @@ const DetailLoker = () => {
             return Promise.reject(error);
     });
 
-    const getUsers = async () => {
-        const response = await axiosJWT.get('http://localhost:5000/users', {
-            headers: {
-                Authorization: `Bearer ${token}`
-            }
-        });
-        console.log(response.data);
-    }
-
     const Logout = async() => {
         try {
             await axios.delete('http://localhost:5000/logout');
@@ -75,39 +77,6 @@ const DetailLoker = () => {
             console.log(error);
         }
     }
-
-
-    // const updateLoker = async (e) => {
-    //     e.preventDefault();
-    //     await axios.patch(`http://localhost:5000/loker/${id}`, {
-    //         nama_loker: loker,
-    //         nama_perusahaan: perusahaan,
-    //         deskripsi: deskripsi,
-    //         kualifikasi: kualifikasi,
-    //         jadwal: jadwal
-    //     });
-    //     history.push("/");
-    // }
-
-    useEffect(() => {
-        getLokerById();
-    }, []);
-
-    const getLokerById = async () => {
-        const response = await axios.get(`http://localhost:5000/loker/${id}`);
-        setIdloker(response.data.id);
-        setLoker(response.data.nama_loker);
-        setPerusahaan(response.data.nama_perusahaan);
-        setDeskripsi(response.data.deskripsi);
-        setKualifikasi(response.data.kualifikasi);
-        setKualifikasi2(response.data.kualifikasi_2);
-        setKualifikasi3(response.data.kualifikasi_3);
-        setKualifikasi4(response.data.kualifikasi_4);
-        setKualifikasi5(response.data.kualifikasi_5);
-        setJadwal(response.data.jadwal);
-        
-    }
-    console.log(idloker);
 
     return (
         <div id="page-top">
@@ -146,6 +115,38 @@ const DetailLoker = () => {
                         </div>
                     </li>
 
+                    <li className="nav-item">
+                        <a className="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
+                            aria-expanded="true" aria-controls="collapseUtilities">
+                            <i className="fas fa-fw fa-wrench"></i>
+                            <span>Seleksi</span>
+                        </a>
+                        <div id="collapseUtilities" className="collapse" aria-labelledby="headingUtilities"
+                            data-parent="#accordionSidebar">
+                            <div className="bg-white py-2 collapse-inner rounded">
+                                <a className="collapse-item" href="utilities-color.html">Jadwal Seleksi</a>
+                                <a className="collapse-item" href="http://localhost:3000/peserta">Peserta Seleksi</a>
+                            </div>
+                        </div>
+                    </li>
+
+                    <hr className="sidebar-divider"></hr>
+
+                    <li className="nav-item">
+                        <a className="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
+                            aria-expanded="true" aria-controls="collapsePages">
+                            <i className="fas fa-fw fa-folder"></i>
+                            <span>Laporan</span>
+                        </a>
+                        <div id="collapsePages" className="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                            <div className="bg-white py-2 collapse-inner rounded">
+                                <a className="collapse-item" href="/">Rekap Harian</a>
+                                <a className="collapse-item" href="/">Rekap Bulanan</a>
+                            </div>
+                        </div>
+                    </li>
+                    
+
                     <hr className="sidebar-divider d-none d-md-block"></hr>
 
                     <div className="sidebar-card d-none d-lg-flex">
@@ -169,7 +170,7 @@ const DetailLoker = () => {
                                 <li className="nav-item dropdown no-arrow">
                                     <a className="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <span className="mr-2 d-none d-lg-inline text-gray-600 small"> <strong> Peserta | </strong> { name }</span>
+                                        <span className="mr-2 d-none d-lg-inline text-gray-600 small"> <strong> Admin | </strong> { name }</span>
                                         <img className="img-profile rounded-circle"></img>
                                     </a>
 
@@ -202,7 +203,7 @@ const DetailLoker = () => {
 
                         <div className="container-fluid">
                             <div className="d-sm-flex align-items-center justify-content-between mb-4">
-                                <h1 className="h3 mb-0 text-gray-800">Detail Lowongan Pekerjaan</h1>
+                                <h1 className="h3 mb-0 text-gray-800">Tambah Peserta Seleksi</h1>
                             </div>
                             
                             <div className="row">
@@ -210,7 +211,7 @@ const DetailLoker = () => {
                                     <div className="card shadow mb-4">
                                         <div
                                             className="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                            <h6 className="m-0 font-weight-bold text-primary">Lowongan Pekerjaan</h6>
+                                            <h6 className="m-0 font-weight-bold text-primary">Peserta Seleksi</h6>
                                             <div className="dropdown no-arrow">
                                                 <a className="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
                                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -220,26 +221,91 @@ const DetailLoker = () => {
                                         </div>
                                         <div className="card-body">
                                             <div>
-                                                <h3 class="card-title">{loker} | {perusahaan}</h3>
+                                                <div>
+                                                    <form onSubmit={ savePeserta }>
+                                                        <div className="mb-3">
+                                                            <label className="form-label">Nama Peserta</label>
+                                                            <input
+                                                                className="form-control"
+                                                                type="text"
+                                                                placeholder="Nama Peserta"
+                                                                value={nama}
+                                                                onChange={ (e) => setNama(e.target.value) }
+                                                            />
+                                                        </div>
 
-                                                <h6 class="card-title">Deskripsi Pekerjaan</h6>
-                                                <p class="card-text">{deskripsi}</p>
+                                                        <div className="mb-3">
+                                                            <label className="label">Alamat</label>
+                                                            <input
+                                                                className="form-control"
+                                                                type="text"
+                                                                placeholder="Alamat"
+                                                                value={alamat}
+                                                                onChange={ (e) => setAlamat(e.target.value) }
+                                                            />
+                                                        </div>
 
+                                                        <div className="mb-3">
+                                                            <label className="label">Tanggal Lahir</label>
+                                                            <input
+                                                                className="form-control"
+                                                                type="date"
+                                                                placeholder="Jadwal Tes"
+                                                                value={tglLahir}
+                                                                onChange={ (e) => setTglLahir(e.target.value) }
+                                                            />
+                                                        </div>
 
-                                                <h6 class="card-title">Kualifikasi</h6>
-                                                <ul class="list-group list-group-flush">
+                                                        <div className="mb-3">
+                                                            <label className="label">Jurusan</label>
+                                                            <textarea
+                                                                className="form-control"
+                                                                type="text"
+                                                                placeholder="Jurusan"
+                                                                value={jurusan}
+                                                                onChange={ (e) => setJurusan(e.target.value) }
+                                                            />
+                                                        </div>
 
-                                                    <li class="list-group-item">{kualifikasi}</li>
-                                                    <li class="list-group-item">{kualifikasi_2}</li>
-                                                    <li class="list-group-item">{kualifikasi_3}</li>
-                                                    <li class="list-group-item">{kualifikasi_4}</li>
-                                                    <li class="list-group-item">{kualifikasi_5}</li>
-                                                </ul>
-                                                <br></br>
+                                                        <div className="mb-3">
+                                                            <label className="label">No Telepon</label>
+                                                            <input
+                                                                className="form-control"
+                                                                type="text"
+                                                                placeholder="No Telepon"
+                                                                value={noTelp}
+                                                                onChange={ (e) => setNoTelp(e.target.value) }
+                                                            />
+                                                        </div>
 
-                                                <h6 class="card-title">Jadwal Tes Seleksi</h6>
-                                                <p>{jadwal}</p>
-                                                <Link to={`/aplyLoker/${idloker}`} className="btn btn-info btn-tambah">Apply</Link>
+                                                        <div className="mb-3">
+                                                            <label className="label">Email</label>
+                                                            <input
+                                                                className="form-control"
+                                                                type="text"
+                                                                placeholder="Email"
+                                                                value={email}
+                                                                onChange={ (e) => setEmail(e.target.value) }
+                                                            />
+                                                        </div>
+
+                                                        <div className="mb-3">
+                                                            <label className="label">ID Loker</label>
+                                                            <input
+                                                                className="form-control"
+                                                                type="text"
+                                                                placeholder="Loker"
+                                                                value={idLoker}
+                                                                onChange={ (e) => setIdLoker(e.target.value) }
+                                                            />
+                                                        </div>
+
+                                                        <div className="mb-3">
+                                                            <button type="submit" className="btn btn-primary">Save</button>
+                                                        </div>
+                                                    </form>
+
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -278,7 +344,10 @@ const DetailLoker = () => {
 
             
         </div>
+
+
+        
     )
 }
 
-export default DetailLoker
+export default AddPeserta
