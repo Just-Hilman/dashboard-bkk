@@ -50,6 +50,21 @@ export const createPeserta = async (req, res) => {
 
 }
 
+export const pesertaApply = async (req, res) => {
+    try {
+        await Peserta.create(req.body, {
+            where: {
+                id_loker: req.params.id
+            }
+        });
+        res.json({
+            "messege": "Loker Applied"
+        })
+    } catch (error) {
+        res.json({ messege: error.messege });
+    }
+}
+
 export const updatePeserta = async (req, res) => {
     try {
         await Peserta.update(req.body, {
