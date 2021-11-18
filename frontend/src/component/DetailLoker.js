@@ -220,7 +220,7 @@ const DetailLoker = () => {
                                         </div>
                                         <div className="card-body">
                                             <div>
-                                                <h3 class="card-title">{loker} | {perusahaan}</h3>
+                                                <h3 class="card-title">{idloker} | {loker} | {perusahaan}</h3>
 
                                                 <h6 class="card-title">Deskripsi Pekerjaan</h6>
                                                 <p class="card-text">{deskripsi}</p>

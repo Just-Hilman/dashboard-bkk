@@ -1,17 +1,17 @@
 import  React, { useState, useEffect } from 'react'
 import axios from "axios";
-import { useHistory } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 // import { Link } from "react-router-dom";
 import jwt_decode from 'jwt-decode';
 
-const AddPeserta = () => {
+const AplyLoker = () => {
     const [nama, setNama] = useState('');
     const [alamat, setAlamat] = useState('');
     const [tglLahir, setTglLahir] = useState('');
     const [jurusan, setJurusan] = useState('');
     const [noTelp, setNoTelp] = useState('');
     const [email, setEmail] = useState('');
-    const [idLoker, setIdLoker] = useState('');
+    const [idloker, setIdloker] = useState('');
 
 
     const [name, setName] = useState('');
@@ -28,9 +28,9 @@ const AddPeserta = () => {
             jurusan: jurusan,
             no_telp: noTelp,
             email: email,
-            id_loker: 23
+            id_loker: idloker
         });
-        history.push("/peserta");
+        history.push("/dashboard-user");
     }
 
     
@@ -78,6 +78,7 @@ const AddPeserta = () => {
         }
     }
 
+    
     return (
         <div id="page-top">
             <div id="wrapper">
@@ -258,16 +259,15 @@ const AddPeserta = () => {
                                                             />
                                                         </div>
 
-                                                        {/* <div className="mb-3">
+                                                        <div className="mb-3">
                                                             <label className="label">ID Loker</label>
                                                             <input
                                                                 className="form-control"
                                                                 type="text"
-                                                                placeholder="Loker"
-                                                                value={idLoker}
-                                                                onChange={ (e) => setIdLoker(e.target.value) }
+                                                                value={idloker}
+                                                                onChange={ (e) => setIdloker(e.target.value) }
                                                             />
-                                                        </div> */}
+                                                        </div>
 
                                                         <div className="mb-3">
                                                             <button type="submit" className="btn btn-primary">Save</button>
@@ -319,4 +319,4 @@ const AddPeserta = () => {
     )
 }
 
-export default AddPeserta
+export default AplyLoker
