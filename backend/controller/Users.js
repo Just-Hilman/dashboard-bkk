@@ -35,7 +35,8 @@ export const Login = async(req, res) => {
     try {
         const user = await Users.findAll({
             where: {
-                email:req.body.email
+                email: req.body.email,
+                id_role: req.body.id_role
             }
         });
         const match = await bcrypt.compare(req.body.password, user[0].password);
@@ -61,7 +62,7 @@ export const Login = async(req, res) => {
         });
         res.json({ accessToken });
     } catch (error) {
-        res.status(404).json({msg: "Email tidak ditemukan !"});
+        res.status(404).json({msg: ""});
     }
 }
 

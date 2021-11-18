@@ -12,11 +12,16 @@ const Login = () => {
     const Auth = async(e) => {
         e.preventDefault();
         try {
-            await axios.post('http://localhost:5000/login', {
-                email: email,
-                password: password,
-                id_role: 2
-            });
+            await axios.post('http://localhost:5000/login', { email: email, password: password, id_role: 1});
+            history.push('/dashboard')
+        } catch (error) {
+            if (error) {
+                setMsg(error.response.data.msg);
+            }
+        }
+
+        try {
+            await axios.post('http://localhost:5000/login', { email: email, password: password, id_role: 2});
             history.push('/dashboard-user')
         } catch (error) {
             if (error) {
@@ -44,6 +49,11 @@ const Login = () => {
                                         <label className="form-label">Password</label>
                                         <input type="password" className="form-control" placeholder="Your Password" value={password} onChange={(e) => setPassword(e.target.value)}id="exampleInputPassword1"></input>
                                     </div>
+
+                                    {/* <div className="mb-3">
+                                        <label className="form-label">Role</label>
+                                        <input type="text" className="form-control" placeholder="Your Password" value={id_role} onChange={(e) => setIdRole(e.target.value)}></input>
+                                    </div> */}
                                         
                                     <p>Belum memiliki akun? <a className="link-info" href="http://localhost:3000/register">Daftar</a> </p>
                                     
