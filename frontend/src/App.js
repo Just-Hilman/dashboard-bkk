@@ -66,7 +66,7 @@ function App() {
                 <AddPeserta />
               </Route>
 
-              <Route path="/aplyLoker">
+              <Route path="/aplyLoker/:id">
                 <AplyLoker />
               </Route>
 

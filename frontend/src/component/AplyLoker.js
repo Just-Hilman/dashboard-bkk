@@ -1,7 +1,6 @@
-import  React, { useState, useEffect } from 'react'
+import React,{ useState, useEffect } from 'react'
 import axios from "axios";
 import { useHistory, useParams } from 'react-router-dom';
-// import { Link } from "react-router-dom";
 import jwt_decode from 'jwt-decode';
 
 const AplyLoker = () => {
@@ -11,29 +10,54 @@ const AplyLoker = () => {
     const [jurusan, setJurusan] = useState('');
     const [noTelp, setNoTelp] = useState('');
     const [email, setEmail] = useState('');
-    const [idloker, setIdloker] = useState('');
+    const [idLoker, setIdLoker] = useState('');
 
-
+    const { id } = useParams();
     const [name, setName] = useState('');
     const [token, setToken] = useState('');
     const [expire, setExpire] = useState('');
     const history = useHistory();
 
-    const savePeserta = async (e) => {
+    const pesertaApply = async (e) => {
         e.preventDefault();
-        await axios.post('http://localhost:5000/peserta', {
+        await axios.patch(`http://localhost:5000/peserta/loker/${id}`, {
             nama: nama,
             alamat: alamat,
             tgl_lahir: tglLahir,
             jurusan: jurusan,
             no_telp: noTelp,
             email: email,
-            id_loker: idloker
+            id_loker: idLoker
         });
-        history.push("/dashboard-user");
+        history.push("/peserta");
     }
 
-    
+    // useEffect(() => {
+    //     getPesertaById();
+    // }, []);
+
+    // const getPesertaById = async () => {
+    //     const response = await axios.get(`http://localhost:5000/peserta/loker/${id}`);
+    //     setNama(response.data.nama);
+    //     setAlamat(response.data.alamat);
+    //     setTglLahir(response.data.tgl_lahir);
+    //     setJurusan(response.data.jurusan);
+    //     setNoTelp(response.data.no_telp);
+    //     setEmail(response.data.email);
+    //     setIdLoker(response.data.id_loker);
+    // }
+    // console.log(idLoker)
+
+    useEffect(() => {
+        getLokerById();
+    }, []);
+
+    const getLokerById = async () => {
+        const response = await axios.get(`http://localhost:5000/loker/${id}`);
+        setIdLoker(response.data.id);
+    }
+    console.log(idLoker)
+
     useEffect(() => {
         refreshToken();
     }, []);
@@ -78,13 +102,12 @@ const AplyLoker = () => {
         }
     }
 
-    
     return (
         <div id="page-top">
             <div id="wrapper">
                 
                 <ul className="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
-                    <a className="sidebar-brand d-flex align-items-center justify-content-center" href="http://localhost:3000/dashboard-user">
+                    <a className="sidebar-brand d-flex align-items-center justify-content-center" href="http://localhost:3000/dashboard">
                         <div className="sidebar-brand-icon rotate-n-15">
                             <i className="fas fa-tools"></i>
                         </div>
@@ -94,7 +117,7 @@ const AplyLoker = () => {
                     <hr className="sidebar-divider my-0"></hr>
 
                     <li className="nav-item active">
-                        <a className="nav-link" href="http://localhost:3000/dashboard-user">
+                        <a className="nav-link" href="http://localhost:3000/dashboard">
                             <i className="fas fa-fw fa-tachometer-alt"></i>
                             <span>Dashboard</span>
                         </a>
@@ -104,16 +127,47 @@ const AplyLoker = () => {
                     <hr className="sidebar-divider"></hr>
 
                     <li className="nav-item">
-                        <a className="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+                        <a className="nav-link collapsed" href="/" data-toggle="collapse" data-target="#collapseTwo"
                             aria-expanded="true" aria-controls="collapseTwo">
                             <i className="fas fa-fw fa-cog"></i>
                             <span>Lowongan Pekerjaan</span>
                         </a>
-                        {/* <div id="collapseTwo" className="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                        <div id="collapseTwo" className="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                             <div className="bg-white py-2 collapse-inner rounded">
-                                <a className="collapse-item" href="http://localhost:3000/dashboard-user">Daftar Lowongan Pekrejaan</a>
+                                <a className="collapse-item" href="http://localhost:3000/loker">Daftar Lowongan Pekrejaan</a>
                             </div>
-                        </div> */}
+                        </div>
+                    </li>
+
+                    <li className="nav-item">
+                        <a className="nav-link collapsed" href="/" data-toggle="collapse" data-target="#collapseUtilities"
+                            aria-expanded="true" aria-controls="collapseUtilities">
+                            <i className="fas fa-fw fa-wrench"></i>
+                            <span>Seleksi</span>
+                        </a>
+                        <div id="collapseUtilities" className="collapse" aria-labelledby="headingUtilities"
+                            data-parent="#accordionSidebar">
+                            <div className="bg-white py-2 collapse-inner rounded">
+                                <a className="collapse-item" href="http://localhost:3000/peserta">Jadwal Seleksi</a>
+                                <a className="collapse-item" href="http://localhost:3000/peserta">Peserta Seleksi</a>
+                            </div>
+                        </div>
+                    </li>
+
+                    <hr className="sidebar-divider"></hr>
+
+                    <li className="nav-item">
+                        <a className="nav-link collapsed" href="/" data-toggle="collapse" data-target="#collapsePages"
+                            aria-expanded="true" aria-controls="collapsePages">
+                            <i className="fas fa-fw fa-folder"></i>
+                            <span>Laporan</span>
+                        </a>
+                        <div id="collapsePages" className="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                            <div className="bg-white py-2 collapse-inner rounded">
+                                <a className="collapse-item" href="/">Rekap Harian</a>
+                                <a className="collapse-item" href="/">Rekap Bulanan</a>
+                            </div>
+                        </div>
                     </li>
                     
 
@@ -138,31 +192,31 @@ const AplyLoker = () => {
                                 <div className="topbar-divider d-none d-sm-block"></div>
 
                                 <li className="nav-item dropdown no-arrow">
-                                    <a className="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                                    <a className="nav-link dropdown-toggle" href="/" id="userDropdown" role="button"
                                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <span className="mr-2 d-none d-lg-inline text-gray-600 small"> <strong> Peserta | </strong> { name }</span>
+                                        <span className="mr-2 d-none d-lg-inline text-gray-600 small"> <strong> Admin | </strong> { name }</span>
                                         <img className="img-profile rounded-circle"></img>
                                     </a>
 
                                     <div className="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                                        <a className="dropdown-item" href="#">
+                                        <a className="dropdown-item" href="/">
                                             <i className="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                             Profile
                                         </a>
 
-                                        <a className="dropdown-item" href="#">
+                                        <a className="dropdown-item" href="/">
                                             <i className="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
                                             Settings
                                         </a>
 
-                                        <a className="dropdown-item" href="#">
+                                        <a className="dropdown-item" href="/">
                                             <i className="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
                                             Activity Log
                                         </a>
 
                                         <div className="dropdown-divider"></div>
 
-                                        <a className="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                        <a className="dropdown-item" href="/" data-toggle="modal" data-target="#logoutModal">
                                             <i className="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                             Logout
                                         </a>
@@ -173,7 +227,7 @@ const AplyLoker = () => {
 
                         <div className="container-fluid">
                             <div className="d-sm-flex align-items-center justify-content-between mb-4">
-                                <h1 className="h3 mb-0 text-gray-800">Tambah Peserta Seleksi</h1>
+                                <h1 className="h3 mb-0 text-gray-800">Tambah Lowongan Pekerjaan</h1>
                             </div>
                             
                             <div className="row">
@@ -181,9 +235,9 @@ const AplyLoker = () => {
                                     <div className="card shadow mb-4">
                                         <div
                                             className="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                            <h6 className="m-0 font-weight-bold text-primary">Peserta Seleksi</h6>
+                                            <h6 className="m-0 font-weight-bold text-primary">Lowongan Pekerjaan</h6>
                                             <div className="dropdown no-arrow">
-                                                <a className="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                                                <a className="dropdown-toggle" href="/" role="button" id="dropdownMenuLink"
                                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                     <i className="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
                                                 </a>
@@ -192,22 +246,22 @@ const AplyLoker = () => {
                                         <div className="card-body">
                                             <div>
                                                 <div>
-                                                    <form onSubmit={ savePeserta }>
+                                                    <form onSubmit={ pesertaApply }>
                                                         <div className="mb-3">
                                                             <label className="form-label">Nama Peserta</label>
-                                                            <input
-                                                                className="form-control"
-                                                                type="text"
-                                                                placeholder="Nama Peserta"
-                                                                value={nama}
-                                                                onChange={ (e) => setNama(e.target.value) }
+                                                                <input
+                                                                    class="form-control"
+                                                                    type="text"
+                                                                    placeholder="Nama Peserta"
+                                                                    value={nama}
+                                                                    onChange={ (e) => setNama(e.target.value) }
                                                             />
                                                         </div>
 
                                                         <div className="mb-3">
-                                                            <label className="label">Alamat</label>
+                                                            <label className="form-label">Alamat</label>
                                                             <input
-                                                                className="form-control"
+                                                                class="form-control"
                                                                 type="text"
                                                                 placeholder="Alamat"
                                                                 value={alamat}
@@ -216,20 +270,20 @@ const AplyLoker = () => {
                                                         </div>
 
                                                         <div className="mb-3">
-                                                            <label className="label">Tanggal Lahir</label>
+                                                            <label className="form-label">Tanggal Lahir</label>
                                                             <input
-                                                                className="form-control"
+                                                                class="form-control"
                                                                 type="date"
-                                                                placeholder="Jadwal Tes"
+                                                                placeholder="Tanggal Lahir"
                                                                 value={tglLahir}
                                                                 onChange={ (e) => setTglLahir(e.target.value) }
                                                             />
                                                         </div>
 
                                                         <div className="mb-3">
-                                                            <label className="label">Jurusan</label>
+                                                            <label className="form-label">Jurusan</label>
                                                             <textarea
-                                                                className="form-control"
+                                                                class="form-control"
                                                                 type="text"
                                                                 placeholder="Jurusan"
                                                                 value={jurusan}
@@ -238,9 +292,9 @@ const AplyLoker = () => {
                                                         </div>
 
                                                         <div className="mb-3">
-                                                            <label className="label">No Telepon</label>
+                                                            <label className="form-label">No Telepon</label>
                                                             <input
-                                                                className="form-control"
+                                                                class="form-control"
                                                                 type="text"
                                                                 placeholder="No Telepon"
                                                                 value={noTelp}
@@ -249,9 +303,9 @@ const AplyLoker = () => {
                                                         </div>
 
                                                         <div className="mb-3">
-                                                            <label className="label">Email</label>
+                                                            <label className="form-label">Email</label>
                                                             <input
-                                                                className="form-control"
+                                                                class="form-control"
                                                                 type="text"
                                                                 placeholder="Email"
                                                                 value={email}
@@ -260,17 +314,18 @@ const AplyLoker = () => {
                                                         </div>
 
                                                         <div className="mb-3">
-                                                            <label className="label">ID Loker</label>
+                                                            <label className="form-label">Loker</label>
                                                             <input
-                                                                className="form-control"
+                                                                class="form-control"
                                                                 type="text"
-                                                                value={idloker}
-                                                                onChange={ (e) => setIdloker(e.target.value) }
+                                                                placeholder="Loker"
+                                                                value={idLoker}
+                                                                onChange={ (e) => setIdLoker(e.target.value) }
                                                             />
                                                         </div>
 
                                                         <div className="mb-3">
-                                                            <button type="submit" className="btn btn-primary">Save</button>
+                                                            <button type="submit" className="btn btn-primary">Update</button>
                                                         </div>
                                                     </form>
 
@@ -313,9 +368,6 @@ const AplyLoker = () => {
 
             
         </div>
-
-
-        
     )
 }
 
