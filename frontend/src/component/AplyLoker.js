@@ -20,7 +20,7 @@ const AplyLoker = () => {
 
     const pesertaApply = async (e) => {
         e.preventDefault();
-        await axios.patch(`http://localhost:5000/peserta/loker/${id}`, {
+        await axios.post(`http://localhost:5000/peserta`, {
             nama: nama,
             alamat: alamat,
             tgl_lahir: tglLahir,
@@ -56,7 +56,7 @@ const AplyLoker = () => {
         const response = await axios.get(`http://localhost:5000/loker/${id}`);
         setIdLoker(response.data.id);
     }
-    console.log(idLoker)
+    // console.log(idLoker)
 
     useEffect(() => {
         refreshToken();
@@ -107,7 +107,7 @@ const AplyLoker = () => {
             <div id="wrapper">
                 
                 <ul className="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
-                    <a className="sidebar-brand d-flex align-items-center justify-content-center" href="http://localhost:3000/dashboard">
+                    <a className="sidebar-brand d-flex align-items-center justify-content-center" href="http://localhost:3000/dashboard-user">
                         <div className="sidebar-brand-icon rotate-n-15">
                             <i className="fas fa-tools"></i>
                         </div>
@@ -117,7 +117,7 @@ const AplyLoker = () => {
                     <hr className="sidebar-divider my-0"></hr>
 
                     <li className="nav-item active">
-                        <a className="nav-link" href="http://localhost:3000/dashboard">
+                        <a className="nav-link" href="http://localhost:3000/dashboard-user">
                             <i className="fas fa-fw fa-tachometer-alt"></i>
                             <span>Dashboard</span>
                         </a>
@@ -132,44 +132,7 @@ const AplyLoker = () => {
                             <i className="fas fa-fw fa-cog"></i>
                             <span>Lowongan Pekerjaan</span>
                         </a>
-                        <div id="collapseTwo" className="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                            <div className="bg-white py-2 collapse-inner rounded">
-                                <a className="collapse-item" href="http://localhost:3000/loker">Daftar Lowongan Pekrejaan</a>
-                            </div>
-                        </div>
                     </li>
-
-                    <li className="nav-item">
-                        <a className="nav-link collapsed" href="/" data-toggle="collapse" data-target="#collapseUtilities"
-                            aria-expanded="true" aria-controls="collapseUtilities">
-                            <i className="fas fa-fw fa-wrench"></i>
-                            <span>Seleksi</span>
-                        </a>
-                        <div id="collapseUtilities" className="collapse" aria-labelledby="headingUtilities"
-                            data-parent="#accordionSidebar">
-                            <div className="bg-white py-2 collapse-inner rounded">
-                                <a className="collapse-item" href="http://localhost:3000/peserta">Jadwal Seleksi</a>
-                                <a className="collapse-item" href="http://localhost:3000/peserta">Peserta Seleksi</a>
-                            </div>
-                        </div>
-                    </li>
-
-                    <hr className="sidebar-divider"></hr>
-
-                    <li className="nav-item">
-                        <a className="nav-link collapsed" href="/" data-toggle="collapse" data-target="#collapsePages"
-                            aria-expanded="true" aria-controls="collapsePages">
-                            <i className="fas fa-fw fa-folder"></i>
-                            <span>Laporan</span>
-                        </a>
-                        <div id="collapsePages" className="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-                            <div className="bg-white py-2 collapse-inner rounded">
-                                <a className="collapse-item" href="/">Rekap Harian</a>
-                                <a className="collapse-item" href="/">Rekap Bulanan</a>
-                            </div>
-                        </div>
-                    </li>
-                    
 
                     <hr className="sidebar-divider d-none d-md-block"></hr>
 
@@ -194,7 +157,7 @@ const AplyLoker = () => {
                                 <li className="nav-item dropdown no-arrow">
                                     <a className="nav-link dropdown-toggle" href="/" id="userDropdown" role="button"
                                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <span className="mr-2 d-none d-lg-inline text-gray-600 small"> <strong> Admin | </strong> { name }</span>
+                                        <span className="mr-2 d-none d-lg-inline text-gray-600 small"> <strong> Peserta | </strong> { name }</span>
                                         <img className="img-profile rounded-circle"></img>
                                     </a>
 
@@ -227,7 +190,7 @@ const AplyLoker = () => {
 
                         <div className="container-fluid">
                             <div className="d-sm-flex align-items-center justify-content-between mb-4">
-                                <h1 className="h3 mb-0 text-gray-800">Tambah Lowongan Pekerjaan</h1>
+                                <h1 className="h3 mb-0 text-gray-800">Form Lamar Lowongan Pekerjaan</h1>
                             </div>
                             
                             <div className="row">
@@ -235,13 +198,7 @@ const AplyLoker = () => {
                                     <div className="card shadow mb-4">
                                         <div
                                             className="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                            <h6 className="m-0 font-weight-bold text-primary">Lowongan Pekerjaan</h6>
-                                            <div className="dropdown no-arrow">
-                                                <a className="dropdown-toggle" href="/" role="button" id="dropdownMenuLink"
-                                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                    <i className="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-                                                </a>
-                                            </div>
+                                            <h6 className="m-0 font-weight-bold text-primary">Isikan Data Diri</h6>
                                         </div>
                                         <div className="card-body">
                                             <div>
@@ -318,14 +275,15 @@ const AplyLoker = () => {
                                                             <input
                                                                 class="form-control"
                                                                 type="text"
-                                                                placeholder="Loker"
+                                                                id="disabledInput"
+                                                                placeholder="Disabled input here..." disabled
                                                                 value={idLoker}
                                                                 onChange={ (e) => setIdLoker(e.target.value) }
                                                             />
                                                         </div>
 
                                                         <div className="mb-3">
-                                                            <button type="submit" className="btn btn-primary">Update</button>
+                                                            <button type="submit" className="btn btn-primary">Apply</button>
                                                         </div>
                                                     </form>
 
