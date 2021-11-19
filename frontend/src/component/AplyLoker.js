@@ -207,7 +207,7 @@ const AplyLoker = () => {
                                                         <div className="mb-3">
                                                             <label className="form-label">Nama Peserta</label>
                                                                 <input
-                                                                    class="form-control"
+                                                                    className="form-control"
                                                                     type="text"
                                                                     placeholder="Nama Peserta"
                                                                     value={nama}
@@ -218,7 +218,7 @@ const AplyLoker = () => {
                                                         <div className="mb-3">
                                                             <label className="form-label">Alamat</label>
                                                             <input
-                                                                class="form-control"
+                                                                className="form-control"
                                                                 type="text"
                                                                 placeholder="Alamat"
                                                                 value={alamat}
@@ -229,7 +229,7 @@ const AplyLoker = () => {
                                                         <div className="mb-3">
                                                             <label className="form-label">Tanggal Lahir</label>
                                                             <input
-                                                                class="form-control"
+                                                                className="form-control"
                                                                 type="date"
                                                                 placeholder="Tanggal Lahir"
                                                                 value={tglLahir}
@@ -240,7 +240,7 @@ const AplyLoker = () => {
                                                         <div className="mb-3">
                                                             <label className="form-label">Jurusan</label>
                                                             <textarea
-                                                                class="form-control"
+                                                                className="form-control"
                                                                 type="text"
                                                                 placeholder="Jurusan"
                                                                 value={jurusan}
@@ -251,7 +251,7 @@ const AplyLoker = () => {
                                                         <div className="mb-3">
                                                             <label className="form-label">No Telepon</label>
                                                             <input
-                                                                class="form-control"
+                                                                className="form-control"
                                                                 type="text"
                                                                 placeholder="No Telepon"
                                                                 value={noTelp}
@@ -262,7 +262,7 @@ const AplyLoker = () => {
                                                         <div className="mb-3">
                                                             <label className="form-label">Email</label>
                                                             <input
-                                                                class="form-control"
+                                                                className="form-control"
                                                                 type="text"
                                                                 placeholder="Email"
                                                                 value={email}
@@ -273,7 +273,7 @@ const AplyLoker = () => {
                                                         <div className="mb-3">
                                                             <label className="form-label">Loker</label>
                                                             <input
-                                                                class="form-control"
+                                                                className="form-control"
                                                                 type="text"
                                                                 id="disabledInput"
                                                                 placeholder="Disabled input here..." disabled

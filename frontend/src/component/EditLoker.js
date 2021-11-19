@@ -218,7 +218,7 @@ const EditLoker = () => {
 
                         <div className="container-fluid">
                             <div className="d-sm-flex align-items-center justify-content-between mb-4">
-                                <h1 className="h3 mb-0 text-gray-800">Tambah Lowongan Pekerjaan</h1>
+                                <h1 className="h3 mb-0 text-gray-800">Ubah Lowongan Pekerjaan</h1>
                             </div>
                             
                             <div className="row">
@@ -241,7 +241,7 @@ const EditLoker = () => {
                                                         <div className="mb-3">
                                                             <label className="form-label">Loker</label>
                                                             <input
-                                                                class="form-control"
+                                                                className="form-control"
                                                                 type="text"
                                                                 placeholder="Lowongan Pekerjaan"
                                                                 value={loker}
@@ -252,7 +252,7 @@ const EditLoker = () => {
                                                         <div className="mb-3">
                                                             <label className="form-label">Perusahaan</label>
                                                             <input
-                                                                class="form-control"
+                                                                className="form-control"
                                                                 type="text"
                                                                 placeholder="Perusahaan"
                                                                 value={perusahaan}
@@ -263,7 +263,7 @@ const EditLoker = () => {
                                                         <div className="mb-3">
                                                             <label className="form-label">Deskripsi</label>
                                                             <textarea
-                                                                class="form-control" aria-label="With textarea"
+                                                                className="form-control" aria-label="With textarea"
                                                                 type="text"
                                                                 placeholder="Deskripsi"
                                                                 value={deskripsi}
@@ -273,8 +273,8 @@ const EditLoker = () => {
 
                                                         <div className="mb-3">
                                                             <label className="form-label">Kualifikasi</label>
-                                                            <ul class="list-group">
-                                                                <li class="list-group-item">
+                                                            <ul className="list-group">
+                                                                <li className="list-group-item">
                                                                     <input
                                                                         className="form-control"
                                                                         type="text"
@@ -283,7 +283,7 @@ const EditLoker = () => {
                                                                         onChange={ (e) => setKualifikasi(e.target.value) }
                                                                     />
                                                                 </li>
-                                                                <li class="list-group-item">
+                                                                <li className="list-group-item">
                                                                     <input
                                                                         className="form-control"
                                                                         type="text"
@@ -292,7 +292,7 @@ const EditLoker = () => {
                                                                         onChange={ (e) => setKualifikasi2(e.target.value) }
                                                                     />
                                                                 </li>
-                                                                <li class="list-group-item">
+                                                                <li className="list-group-item">
                                                                     <input
                                                                         className="form-control"
                                                                         type="text"
@@ -301,7 +301,7 @@ const EditLoker = () => {
                                                                         onChange={ (e) => setKualifikasi3(e.target.value) }
                                                                     />
                                                                 </li>
-                                                                <li class="list-group-item">
+                                                                <li className="list-group-item">
                                                                     <input
                                                                         className="form-control"
                                                                         type="text"
@@ -310,7 +310,7 @@ const EditLoker = () => {
                                                                         onChange={ (e) => setKualifikasi4(e.target.value) }
                                                                     />
                                                                 </li>
-                                                                <li class="list-group-item">
+                                                                <li className="list-group-item">
                                                                     <input
                                                                         className="form-control"
                                                                         type="text"
@@ -325,7 +325,7 @@ const EditLoker = () => {
                                                         <div className="mb-3">
                                                             <label className="form-label">Jadwal</label>
                                                             <input
-                                                                class="form-control"
+                                                                className="form-control"
                                                                 type="date"
                                                                 placeholder="Jadwal Tes"
                                                                 value={jadwal}

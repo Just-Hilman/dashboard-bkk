@@ -209,24 +209,24 @@ const DetailLoker = () => {
                                         </div>
                                         <div className="card-body">
                                             <div>
-                                                <h3 class="card-title">{idloker} | {loker} | {perusahaan}</h3>
+                                                <h3 className="card-title">{idloker} | {loker} | {perusahaan}</h3>
 
-                                                <h6 class="card-title">Deskripsi Pekerjaan</h6>
-                                                <p class="card-text">{deskripsi}</p>
+                                                <h6 className="card-title">Deskripsi Pekerjaan</h6>
+                                                <p className="card-text">{deskripsi}</p>
 
 
-                                                <h6 class="card-title">Kualifikasi</h6>
-                                                <ul class="list-group list-group-flush">
+                                                <h6 className="card-title">Kualifikasi</h6>
+                                                <ul className="list-group list-group-flush">
 
-                                                    <li class="list-group-item">{kualifikasi}</li>
-                                                    <li class="list-group-item">{kualifikasi_2}</li>
-                                                    <li class="list-group-item">{kualifikasi_3}</li>
-                                                    <li class="list-group-item">{kualifikasi_4}</li>
-                                                    <li class="list-group-item">{kualifikasi_5}</li>
+                                                    <li className="list-group-item">{kualifikasi}</li>
+                                                    <li className="list-group-item">{kualifikasi_2}</li>
+                                                    <li className="list-group-item">{kualifikasi_3}</li>
+                                                    <li className="list-group-item">{kualifikasi_4}</li>
+                                                    <li className="list-group-item">{kualifikasi_5}</li>
                                                 </ul>
                                                 <br></br>
 
-                                                <h6 class="card-title">Jadwal Tes Seleksi</h6>
+                                                <h6 className="card-title">Jadwal Tes Seleksi</h6>
                                                 <p>{jadwal}</p>
                                                 <Link to={`/aplyLoker/${idloker}`} className="btn btn-info btn-tambah">Apply</Link>
                                             </div>

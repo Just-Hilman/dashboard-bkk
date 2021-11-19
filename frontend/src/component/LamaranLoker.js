@@ -89,7 +89,7 @@ const LamaranLoker = () => {
                     <hr className="sidebar-divider"></hr>
 
                     <li className="nav-item">
-                        <a className="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+                        <a className="nav-link collapsed" href="/" data-toggle="collapse" data-target="#collapseTwo"
                             aria-expanded="true" aria-controls="collapseTwo">
                             <i className="fas fa-fw fa-cog"></i>
                             <span>Lowongan Pekerjaan</span>
@@ -103,7 +103,7 @@ const LamaranLoker = () => {
                     </li>
 
                     <li className="nav-item">
-                        <a className="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
+                        <a className="nav-link collapsed" href="/" data-toggle="collapse" data-target="#collapseUtilities"
                             aria-expanded="true" aria-controls="collapseUtilities">
                             <i className="fas fa-fw fa-wrench"></i>
                             <span>Seleksi</span>
@@ -120,7 +120,7 @@ const LamaranLoker = () => {
                     <hr className="sidebar-divider"></hr>
 
                     <li className="nav-item">
-                        <a className="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
+                        <a className="nav-link collapsed" href="/" data-toggle="collapse" data-target="#collapsePages"
                             aria-expanded="true" aria-controls="collapsePages">
                             <i className="fas fa-fw fa-folder"></i>
                             <span>Laporan</span>
@@ -155,31 +155,31 @@ const LamaranLoker = () => {
                                 <div className="topbar-divider d-none d-sm-block"></div>
 
                                 <li className="nav-item dropdown no-arrow">
-                                    <a className="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                                    <a className="nav-link dropdown-toggle" href="/" id="userDropdown" role="button"
                                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         <span className="mr-2 d-none d-lg-inline text-gray-600 small"> <strong> Admin | </strong> { name }</span>
                                         <img className="img-profile rounded-circle"></img>
                                     </a>
 
                                     <div className="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                                        <a className="dropdown-item" href="#">
+                                        <a className="dropdown-item" href="/">
                                             <i className="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                             Profile
                                         </a>
 
-                                        <a className="dropdown-item" href="#">
+                                        <a className="dropdown-item" href="/">
                                             <i className="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
                                             Settings
                                         </a>
 
-                                        <a className="dropdown-item" href="#">
+                                        <a className="dropdown-item" href="/">
                                             <i className="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
                                             Activity Log
                                         </a>
 
                                         <div className="dropdown-divider"></div>
 
-                                        <a className="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                        <a className="dropdown-item" href="/" data-toggle="modal" data-target="#logoutModal">
                                             <i className="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                             Logout
                                         </a>
@@ -200,7 +200,7 @@ const LamaranLoker = () => {
                                             className="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                                             <h6 className="m-0 font-weight-bold text-primary">Lamaran Pekerjaan</h6>
                                             <div className="dropdown no-arrow">
-                                                <a className="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                                                <a className="dropdown-toggle" href="/" role="button" id="dropdownMenuLink"
                                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                     <i className="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
                                                 </a>
