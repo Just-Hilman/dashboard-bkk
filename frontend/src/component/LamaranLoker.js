@@ -55,6 +55,15 @@ const LamaranLoker = () => {
             return Promise.reject(error);
     });
 
+    const getUsers = async () => {
+        const response = await axiosJWT.get('http://localhost:5000/users', {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        });
+        console.log(response.data);
+    }
+
     const Logout = async() => {
         try {
             await axios.delete('http://localhost:5000/logout');
@@ -163,7 +172,7 @@ const LamaranLoker = () => {
 
                                     <div className="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                                         <a className="dropdown-item" href="/">
-                                            <i className="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                            <i className="fas fa-user fa-sm fa-fw mr-2 text-gray-400">{ getUsers }</i>
                                             Profile
                                         </a>
 
@@ -199,12 +208,6 @@ const LamaranLoker = () => {
                                         <div
                                             className="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                                             <h6 className="m-0 font-weight-bold text-primary">Lamaran Pekerjaan</h6>
-                                            <div className="dropdown no-arrow">
-                                                <a className="dropdown-toggle" href="/" role="button" id="dropdownMenuLink"
-                                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                    <i className="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-                                                </a>
-                                            </div>
                                         </div>
                                         <div className="card-body">
                                             <div>

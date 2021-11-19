@@ -97,7 +97,6 @@ const DashboardUser = () => {
                             <div className="bg-white py-2 collapse-inner rounded">
                                 <a className="collapse-item" href="http://localhost:3000/loker">Lowongan Pekrejaan</a>
                                 <a className="collapse-item" href="http://localhost:3000/lamaran-loker">Lamaran Pekerjaan</a>
-                                <button onClick={getUsers}>Get Users</button>
                             </div>
                         </div>
                     </li>
@@ -163,7 +162,7 @@ const DashboardUser = () => {
 
                                     <div className="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                                         <a className="dropdown-item" href="/">
-                                            <i className="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                            <i className="fas fa-user fa-sm fa-fw mr-2 text-gray-400">{getUsers}</i>
                                             Profile
                                         </a>
 
@@ -274,12 +273,6 @@ const DashboardUser = () => {
                                         <div
                                             className="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                                             <h6 className="m-0 font-weight-bold text-primary">Grafik Kegiatan</h6>
-                                            <div className="dropdown no-arrow">
-                                                <a className="dropdown-toggle" href="/" role="button" id="dropdownMenuLink"
-                                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                    <i className="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-                                                </a>
-                                            </div>
                                         </div>
                                         <div className="card-body">
                                             <div className="chart-area">
@@ -294,12 +287,6 @@ const DashboardUser = () => {
                                         <div
                                             className="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                                             <h6 className="m-0 font-weight-bold text-primary">Perusahaan</h6>
-                                            <div className="dropdown no-arrow">
-                                                <a className="dropdown-toggle" href="/" role="button" id="dropdownMenuLink"
-                                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                    <i className="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-                                                </a>
-                                            </div>
                                         </div>
                                         <div className="card-body">
                                             <div className="chart-pie pt-4 pb-2">

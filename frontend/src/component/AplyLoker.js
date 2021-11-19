@@ -93,6 +93,15 @@ const AplyLoker = () => {
             return Promise.reject(error);
     });
 
+    const getUsers = async () => {
+        const response = await axiosJWT.get('http://localhost:5000/users', {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        });
+        console.log(response.data);
+    }
+
     const Logout = async() => {
         try {
             await axios.delete('http://localhost:5000/logout');
@@ -163,7 +172,7 @@ const AplyLoker = () => {
 
                                     <div className="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                                         <a className="dropdown-item" href="/">
-                                            <i className="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                            <i className="fas fa-user fa-sm fa-fw mr-2 text-gray-400">{ getUsers }</i>
                                             Profile
                                         </a>
 

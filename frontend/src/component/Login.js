@@ -5,7 +5,6 @@ import { useHistory } from 'react-router-dom';
 const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [id_role, setIdRole] = useState('');
     const [msg, setMsg] = useState('');
     const history = useHistory();
 
@@ -49,11 +48,6 @@ const Login = () => {
                                         <label className="form-label">Password</label>
                                         <input type="password" className="form-control" placeholder="Your Password" value={password} onChange={(e) => setPassword(e.target.value)}id="exampleInputPassword1"></input>
                                     </div>
-
-                                    {/* <div className="mb-3">
-                                        <label className="form-label">Role</label>
-                                        <input type="text" className="form-control" placeholder="Your Password" value={id_role} onChange={(e) => setIdRole(e.target.value)}></input>
-                                    </div> */}
                                         
                                     <p>Belum memiliki akun? <a className="link-info" href="http://localhost:3000/register">Daftar</a> </p>
                                     
