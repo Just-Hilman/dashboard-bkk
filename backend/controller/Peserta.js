@@ -1,3 +1,4 @@
+import db from "../config/database.js";
 import Peserta from "../model/modelPeserta.js";
 
 export const getAllPeserta = async (req, res) => {
@@ -91,6 +92,16 @@ export const deletePeserta = async (req, res) => {
         res.json({
             "messege": "Peserta Deleted"
         });
+    } catch (error) {
+        res.json({ messege: error.messege });
+    }
+
+}
+
+export const getPesertaRekap = async (req, res) => {
+    try {
+        const peserta = await db.query('SELECT jadwal AS Jadwal,  nama_loker AS Lowongan, nama_perusahaan AS Perusahaan, COUNT(id_loker) AS Jumlah_Peserta FROM peserta_seleksi JOIN lowongan_pekerjaan ON peserta_seleksi.id_loker = lowongan_pekerjaan.id WHERE peserta_seleksi.id_loker = 32')
+        res.json(peserta);
     } catch (error) {
         res.json({ messege: error.messege });
     }

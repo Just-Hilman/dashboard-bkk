@@ -5,24 +5,19 @@ import jwt_decode from 'jwt-decode';
 import { useHistory } from 'react-router-dom';
 
 const RekapHarian = () => {
-    const [loker, setLoker] = useState([]);
+    const [pesertaRekap, setPesertaRekap] = useState([]);
     const [name, setName] = useState('');
     const [token, setToken] = useState('');
     const [expire, setExpire] = useState('');
     const history = useHistory();
 
     useEffect(() => {
-        getLoker();
+        getPesertaRekap();
     }, []);
 
-    const getLoker = async () => {
-        const response = await axios.get('http://localhost:5000/loker');
-        setLoker(response.data);
-    }
-
-    const deleteLoker = async (id) => {
-        await axios.delete(`http://localhost:5000/loker/${id}`);
-        getLoker();
+    const getPesertaRekap = async () => {
+        const response = await axios.get('http://localhost:5000/peserta/rekap');
+        setPesertaRekap(response.data);
     }
 
     useEffect(() => {
@@ -204,7 +199,7 @@ const RekapHarian = () => {
 
                         <div className="container-fluid">
                             <div className="d-sm-flex align-items-center justify-content-between mb-4">
-                                <h1 className="h3 mb-0 text-gray-800">Daftar Lowongan Pekerjaan</h1>
+                                <h1 className="h3 mb-0 text-gray-800">Rekap Harian Kegiatan</h1>
                             </div>
                             
                             <div className="row">
@@ -212,7 +207,7 @@ const RekapHarian = () => {
                                     <div className="card shadow mb-4">
                                         <div
                                             className="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                            <h6 className="m-0 font-weight-bold text-primary">Lowongan Pekerjaan</h6>
+                                            <h6 className="m-0 font-weight-bold text-primary">Rekap Harian</h6>
                                         </div>
                                         <div className="card-body">
                                             <div>
@@ -222,34 +217,24 @@ const RekapHarian = () => {
                                                     <thead className="text-tabel-head">
                                                         <tr>
                                                             <th>No</th>
-                                                            <th>ID Loker</th>    
+                                                            <th>Tanggal</th>    
                                                             <th>Lowongan Pekerjaan</th>
                                                             <th>Perusahaan</th>
-                                                            <th>Deskripsi</th>
-                                                            <th>Kualifikan</th>
-                                                            <th>Jadwal Seleksi</th>
+                                                            <th>Jumlah Peserta</th>
                                                             <th>Action</th>
                                                         </tr>
                                                     </thead>
 
                                                     <tbody className="text-tabel">
-                                                            {loker.map((loker, index) => (
-                                                                <tr key={loker.id}>
+                                                            {pesertaRekap.map((pesertaRekap, index) => (
+                                                                <tr key={pesertaRekap.id}>
                                                                     <td>{index + 1}</td>
-                                                                    <td>{ loker.id }</td>
-                                                                    <td>{ loker.nama_loker }</td>
-                                                                    <td>{ loker.nama_perusahaan }</td>
-                                                                    <td className="limit">{ loker.deskripsi }</td>
+                                                                    <td>{ pesertaRekap.Jadwal}</td>
+                                                                    <td>{ pesertaRekap.nama_loker }</td>
+                                                                    <td>{ pesertaRekap.nama_perusahaan }</td>
+                                                                    <td className="limit">{ pesertaRekap.id_loker }</td>
                                                                     <td>
-                                                                        <ul>
-                                                                            <li> <span className="limit">{loker.kualifikasi}</span> </li>
-                                                                            <li> <span className="limit">{loker.kualifikasi_2}</span> </li>
-                                                                        </ul>
-                                                                    </td>
-                                                                    <td>{ loker.jadwal }</td>
-                                                                    <td>
-                                                                        <Link to={`/edit-loker/${loker.id}`} className="btn btn-warning btn-sm btn-ubah">Ubah</Link>
-                                                                        <button onClick={() => deleteLoker(loker.id)} className="btn btn-danger btn-sm">Hapus</button>
+                                                                        
                                                                     </td>
                                                                 </tr>
                                                             )) }    

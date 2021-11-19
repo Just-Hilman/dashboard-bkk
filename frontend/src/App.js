@@ -15,6 +15,7 @@ import DetailLoker from "./component/DetailLoker";
 import LamaranLoker from "./component/LamaranLoker";
 import DetailLamaran from "./component/DetailLamaran";
 import AplyLoker from "./component/AplyLoker";
+import RekapHarian from "./component/RekapHarian";
 
 function App() {
   return (
@@ -90,6 +91,17 @@ function App() {
             <Switch>
               <Route path="/dashboard">
                 <DashboardAdmin />
+              </Route>
+
+              <Route path="/dashboard-user">
+                <DashboardUser />
+              </Route>
+
+            </Switch>
+
+            <Switch>
+              <Route path="/rekap-harian">
+                <RekapHarian />
               </Route>
 
               <Route path="/dashboard-user">
