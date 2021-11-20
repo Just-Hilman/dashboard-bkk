@@ -1,6 +1,5 @@
 import { Sequelize } from "sequelize";
 import db from "../config/database.js";
-import Loker from "./modelLoker.js";
 
 const { DataTypes } = Sequelize;
 
@@ -29,8 +28,5 @@ const Peserta = db.define('peserta_seleksi', {
 }, {
     freezeTableName: true
 });
-
-Peserta.hasOne(Loker, { foreignKey: 'id_loker' });
-Peserta.belongsTo(Loker, { foreignKey: 'id_loker' });
 
 export default Peserta;

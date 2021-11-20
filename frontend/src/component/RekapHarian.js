@@ -20,58 +20,58 @@ const RekapHarian = () => {
         setPesertaRekap(response.data);
     }
 
-    useEffect(() => {
-        refreshToken();
-    }, []);
+    // useEffect(() => {
+    //     refreshToken();
+    // }, []);
 
-    const refreshToken = async () => {
-        try {
-            const response = await axios.get('http://localhost:5000/token');
-            setToken(response.data.accessToken);
-            const decoded = jwt_decode(response.data.accessToken);
-            setName(decoded.name);
-            setExpire(decoded.exp);
-        } catch (error) {
-            if (error.response) {
-                history.push('/login');
-            }
-        }
-    }
+    // const refreshToken = async () => {
+    //     try {
+    //         const response = await axios.get('http://localhost:5000/token');
+    //         setToken(response.data.accessToken);
+    //         const decoded = jwt_decode(response.data.accessToken);
+    //         setName(decoded.name);
+    //         setExpire(decoded.exp);
+    //     } catch (error) {
+    //         if (error.response) {
+    //             history.push('/login');
+    //         }
+    //     }
+    // }
 
-    const axiosJWT = axios.create();
+    // const axiosJWT = axios.create();
     
-    axiosJWT.interceptors.request.use(async (config) => {
-        const currentDate = new Date();
-        if (expire * 1000 < currentDate.getTime()) {
-            const response = await axios.get('http://localhost:5000/token');
-            config.headers.Authorization = `Bearer ${response.data.accessToken}`;
-            setToken(response.data.accessToken);
-            const decoded = jwt_decode(response.data.accessToken);
-            setName(decoded.name);
-            setExpire(decoded.exp);
-        }
-        return config;
-    }, (error) => {
-            return Promise.reject(error);
-    });
+    // axiosJWT.interceptors.request.use(async (config) => {
+    //     const currentDate = new Date();
+    //     if (expire * 1000 < currentDate.getTime()) {
+    //         const response = await axios.get('http://localhost:5000/token');
+    //         config.headers.Authorization = `Bearer ${response.data.accessToken}`;
+    //         setToken(response.data.accessToken);
+    //         const decoded = jwt_decode(response.data.accessToken);
+    //         setName(decoded.name);
+    //         setExpire(decoded.exp);
+    //     }
+    //     return config;
+    // }, (error) => {
+    //         return Promise.reject(error);
+    // });
 
-    const getUsers = async () => {
-        const response = await axiosJWT.get('http://localhost:5000/users', {
-            headers: {
-                Authorization: `Bearer ${token}`
-            }
-        });
-        console.log(response.data);
-    }
+    // const getUsers = async () => {
+    //     const response = await axiosJWT.get('http://localhost:5000/users', {
+    //         headers: {
+    //             Authorization: `Bearer ${token}`
+    //         }
+    //     });
+    //     console.log(response.data);
+    // }
 
-    const Logout = async() => {
-        try {
-            await axios.delete('http://localhost:5000/logout');
-            history.push("/");
-        } catch (error) {
-            console.log(error);
-        }
-    }
+    // const Logout = async() => {
+    //     try {
+    //         await axios.delete('http://localhost:5000/logout');
+    //         history.push("/");
+    //     } catch (error) {
+    //         console.log(error);
+    //     }
+    // }
 
     return (
         <div id="page-top">
@@ -172,7 +172,7 @@ const RekapHarian = () => {
 
                                     <div className="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                                         <a className="dropdown-item" href="/">
-                                            <i className="fas fa-user fa-sm fa-fw mr-2 text-gray-400">{ getUsers }</i>
+                                            <i className="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                             Profile
                                         </a>
 
@@ -230,9 +230,9 @@ const RekapHarian = () => {
                                                                 <tr key={pesertaRekap.id}>
                                                                     <td>{index + 1}</td>
                                                                     <td>{ pesertaRekap.Jadwal}</td>
-                                                                    <td>{ pesertaRekap.nama_loker }</td>
-                                                                    <td>{ pesertaRekap.nama_perusahaan }</td>
-                                                                    <td className="limit">{ pesertaRekap.id_loker }</td>
+                                                                    <td>{ pesertaRekap.Lowongan }</td>
+                                                                    <td>{ pesertaRekap.Perusahaan }</td>
+                                                                    <td>{ pesertaRekap.Jumlah_Peserta }</td>
                                                                     <td>
                                                                         
                                                                     </td>
@@ -273,7 +273,7 @@ const RekapHarian = () => {
                         </div>
                         <div className="modal-footer">
                             <button className="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                            <button onClick={Logout} className="btn btn-primary" type="button" >Logout</button>
+                            {/* <button onClick={Logout} className="btn btn-primary" type="button" >Logout</button> */}
                         </div>
                     </div>
                 </div>
