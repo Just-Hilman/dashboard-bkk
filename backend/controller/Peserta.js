@@ -1,4 +1,5 @@
 import db from "../config/database.js";
+import Loker from "../model/modelLoker.js";
 import Peserta from "../model/modelPeserta.js";
 
 export const getAllPeserta = async (req, res) => {
@@ -102,10 +103,21 @@ export const getPesertaRekap = async (req, res) => {
     try {
         const peserta = await Peserta.findAll({
             attributes: [
-              'id',
-              [db.fn('COUNT', db.col('id_loker')), 'Jumlah'],
-              'nama'
-            ]
+                [db.fn('COUNT', db.col('id_loker')), 'Jumlah_Peserta']
+            ],
+            include: [
+                {
+                    model: Loker,
+                    attributes: [
+                        'jadwal',
+                        'nama_loker',
+                        'nama_perusahaan'
+                    ]
+                }
+            ],
+            where: {
+                id_loker: 23
+            }
           });
         res.json(peserta);
     } catch (error) {

@@ -237,9 +237,9 @@ const RekapHarian = () => {
                                                             {pesertaRekap.map((pesertaRekap, index) => (
                                                                 <tr key={pesertaRekap.id}>
                                                                     <td>{index + 1}</td>
-                                                                    <td>{ pesertaRekap.Jadwal}</td>
-                                                                    <td>{ pesertaRekap.Lowongan }</td>
-                                                                    <td>{ pesertaRekap.Perusahaan }</td>
+                                                                    <td>{ pesertaRekap.lowongan_pekerjaan.jadwal}</td>
+                                                                    <td>{ pesertaRekap.lowongan_pekerjaan.nama_loker }</td>
+                                                                    <td>{ pesertaRekap.lowongan_pekerjaan.nama_perusahaan }</td>
                                                                     <td>{ pesertaRekap.Jumlah_Peserta }</td>
                                                                     <td>
                                                                         
