@@ -199,7 +199,7 @@ const RekapHarian = () => {
 
                         <div className="container-fluid">
                             <div className="d-sm-flex align-items-center justify-content-between mb-4">
-                                <h1 className="h3 mb-0 text-gray-800">Rekap Harian Kegiatan</h1>
+                                <h1 className="h3 mb-0 text-gray-800">Rekap Kegiatan Seleksi</h1>
                             </div>
                             
                             <div className="row">
@@ -207,20 +207,11 @@ const RekapHarian = () => {
                                     <div className="card shadow mb-4">
                                         <div
                                             className="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                            <h6 className="m-0 font-weight-bold text-primary">Rekap Harian</h6>
+                                            <h6 className="m-0 font-weight-bold text-primary">Rekap</h6>
                                         </div>
                                         <div className="card-body">
                                             <div>
                                                 <div>
-                                                    <div className="col-sm-2 my-1">
-                                                        <label className="label">Tanggal</label>
-                                                        <input
-                                                            className="form-control form-control-sm"
-                                                            type="text"
-                                                            
-                                                        />
-                                                    </div>
-
                                                     <table className="table table-hover">
                                                     <thead className="text-tabel-head">
                                                         <tr>
@@ -237,9 +228,9 @@ const RekapHarian = () => {
                                                             {pesertaRekap.map((pesertaRekap, index) => (
                                                                 <tr key={pesertaRekap.id}>
                                                                     <td>{index + 1}</td>
-                                                                    <td>{ pesertaRekap.lowongan_pekerjaan.jadwal}</td>
-                                                                    <td>{ pesertaRekap.lowongan_pekerjaan.nama_loker }</td>
-                                                                    <td>{ pesertaRekap.lowongan_pekerjaan.nama_perusahaan }</td>
+                                                                    <td>{ pesertaRekap.Jadwal}</td>
+                                                                    <td>{ pesertaRekap.Lowongan }</td>
+                                                                    <td>{ pesertaRekap.Perusahaan }</td>
                                                                     <td>{ pesertaRekap.Jumlah_Peserta }</td>
                                                                     <td>
                                                                         

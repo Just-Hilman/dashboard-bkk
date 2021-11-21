@@ -126,8 +126,7 @@ const DashboardUser = () => {
                         </a>
                         <div id="collapsePages" className="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                             <div className="bg-white py-2 collapse-inner rounded">
-                                <a className="collapse-item" href="http://localhost:3000/rekap-harian">Rekap Harian</a>
-                                <a className="collapse-item" href="/">Rekap Bulanan</a>
+                                <a className="collapse-item" href="http://localhost:3000/rekap-harian">Rekap Kegiatan</a>
                             </div>
                         </div>
                     </li>

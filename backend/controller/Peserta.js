@@ -101,25 +101,8 @@ export const deletePeserta = async (req, res) => {
 
 export const getPesertaRekap = async (req, res) => {
     try {
-        const peserta = await Peserta.findAll({
-            attributes: [
-                [db.fn('COUNT', db.col('id_loker')), 'Jumlah_Peserta']
-            ],
-            include: [
-                {
-                    model: Loker,
-                    attributes: [
-                        'jadwal',
-                        'nama_loker',
-                        'nama_perusahaan'
-                    ]
-                }
-            ],
-            where: {
-                id_loker: 23
-            }
-          });
-        res.json(peserta);
+        const peserta = await db.query('SELECT jadwal AS Jadwal, nama_loker AS Lowongan, nama_perusahaan AS Perusahaan, COUNT(id_loker) AS Jumlah_Peserta FROM peserta_seleksi JOIN lowongan_pekerjaan ON peserta_seleksi.id_loker = lowongan_pekerjaan.id GROUP BY id_loker')
+        res.json(peserta[0]);
     } catch (error) {
         res.json({ messege: error.messege });
     }
