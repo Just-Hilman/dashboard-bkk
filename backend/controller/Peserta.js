@@ -102,9 +102,10 @@ export const getPesertaRekap = async (req, res) => {
     try {
         const peserta = await Peserta.findAll({
             attributes: [
-                'id', 'nama', 'alamat', 'id_loker', // We had to list all attributes...
-                [sequelize.fn('COUNT', sequelize.col('id_loker')), 'jumlah'] // To add the aggregation...
-              ]
+              'id',
+              [db.fn('COUNT', db.col('id_loker')), 'Jumlah'],
+              'nama'
+            ]
           });
         res.json(peserta);
     } catch (error) {
