@@ -1,9 +1,19 @@
+import db from "../config/database.js";
 import Lamaran from "../model/modelLamaran.js";
 
 export const getAllLamaran = async (req, res) => {
     try {
         const lamaran = await Lamaran.findAll();
         res.json(lamaran);
+    } catch (error) {
+        res.json({ messege: error.messege });
+    }
+}
+
+export const getTotalLamaran = async (req, res) => {
+    try {
+        const lamaran = await db.query('SELECT COUNT(id) AS Total_Seleksi FROM lowongan_pekerjaan')
+        res.json(lamaran[0]);
     } catch (error) {
         res.json({ messege: error.messege });
     }

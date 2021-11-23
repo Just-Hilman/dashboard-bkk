@@ -8,6 +8,8 @@ const DashboardUser = () => {
     const [name, setName] = useState('');
     const [token, setToken] = useState('');
     const [expire, setExpire] = useState('');
+    const [lamaranTotal, setTotalLamaran] = useState([]);
+    const [pesertaRekap, setPesertaRekap] = useState([]);
     const history = useHistory();
 
     useEffect(() => {
@@ -52,6 +54,24 @@ const DashboardUser = () => {
             }
         });
         console.log(response.data);
+    }
+
+    useEffect(() => {
+        getTotalLamaran();
+    }, []);
+
+    const getTotalLamaran = async () => {
+        const response = await axios.get('http://localhost:5000/lamaran/total');
+        setTotalLamaran(response.data);
+    }
+
+    useEffect(() => {
+        getPesertaRekap();
+    }, []);
+
+    const getPesertaRekap = async () => {
+        const response = await axios.get('http://localhost:5000/peserta/total');
+        setPesertaRekap(response.data);
     }
 
     const Logout = async() => {
@@ -199,7 +219,11 @@ const DashboardUser = () => {
                                                 <div className="col mr-2">
                                                     <div className="text-xs font-weight-bold text-primary text-uppercase mb-1">
                                                         Total Seleksi (Bulan Ini)</div>
-                                                    <div className="h5 mb-0 font-weight-bold text-gray-800">25 Seleksi</div>
+                                                    <div className="h5 mb-0 font-weight-bold text-gray-800">
+                                                        {lamaranTotal.map((lamaranTotal) => (
+                                                            <div>{ lamaranTotal.Total_Seleksi} Seleksi</div>
+                                                        )) }    
+                                                    </div>
                                                 </div>
                                                 <div className="col-auto">
                                                     <i className="fas fa-calendar fa-2x text-gray-300"></i>
@@ -217,7 +241,13 @@ const DashboardUser = () => {
                                                 <div className="col mr-2">
                                                     <div className="text-xs font-weight-bold text-success text-uppercase mb-1">
                                                         Total Peserta (Per Bulan)</div>
-                                                    <div className="h5 mb-0 font-weight-bold text-gray-800">450 Orang</div>
+                                                    <div className="h5 mb-0 font-weight-bold text-gray-800">
+                                                    <div className="h5 mb-0 font-weight-bold text-gray-800">
+                                                        {pesertaRekap.map((pesertaRekap) => (
+                                                            <div>{ pesertaRekap.Jumlah_Peserta } Orang</div>
+                                                        )) }    
+                                                    </div>
+                                                    </div>
                                                 </div>
                                                 <div className="col-auto">
                                                     <i className="fas fa-users fa-2x text-gray-300"></i>
@@ -236,7 +266,11 @@ const DashboardUser = () => {
                                                     </div>
                                                     <div className="row no-gutters align-items-center">
                                                         <div className="col-auto">
-                                                            <div className="h5 mb-0 mr-3 font-weight-bold text-gray-800">18 Orang</div>
+                                                            <div className="h5 mb-0 mr-3 font-weight-bold text-gray-800">
+                                                                {pesertaRekap.map((pesertaRekap) => (
+                                                                    <div>{ Math.round(pesertaRekap.Jumlah_Peserta / 5)} Orang</div>
+                                                                )) }  
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>

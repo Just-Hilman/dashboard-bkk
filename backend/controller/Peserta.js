@@ -108,3 +108,13 @@ export const getPesertaRekap = async (req, res) => {
     }
 
 }
+
+export const getTotalPeserta = async (req, res) => {
+    try {
+        const peserta = await db.query('SELECT COUNT(id) AS Jumlah_Peserta FROM peserta_seleksi')
+        res.json(peserta[0]);
+    } catch (error) {
+        res.json({ messege: error.messege });
+    }
+
+}

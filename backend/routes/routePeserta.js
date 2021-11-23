@@ -8,13 +8,15 @@ import {
     deletePeserta,
     getPesertaByIdLoker,
     pesertaApply,
-    getPesertaRekap
+    getPesertaRekap,
+    getTotalPeserta
 } from "../controller/Peserta.js";
 
 const router = express.Router();
 
 router.get('/', getAllPeserta);
 router.get('/rekap', getPesertaRekap);
+router.get('/total', getTotalPeserta);
 router.get('/:id', getPesertaById);
 router.post('/', createPeserta);
 router.post('/loker/:id', pesertaApply);

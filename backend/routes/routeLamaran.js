@@ -6,12 +6,14 @@ import {
     // getLamaranById,
     getLamaranByIdLoker,
     // updateLamaran,
-    // deleteLamaran
+    // deleteLamaran,
+    getTotalLamaran
 } from "../controller/Lamaran.js";
 
 const router = express.Router();
 
 router.get('/', getAllLamaran);
+router.get('/total', getTotalLamaran);
 // router.get('/:id', getLamaranById);
 router.get('/loker/:id_loker', getLamaranByIdLoker);
 router.post('/', createLamaran);
