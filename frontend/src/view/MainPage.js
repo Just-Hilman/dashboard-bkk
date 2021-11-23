@@ -82,70 +82,26 @@ const MainPage = () => {
                     <div className="highlight-text">
                         <h2>How Can I Help You?</h2>
                         <h5>Our work then targeted, best practices outcomes social innovation synergy. <br></br>
-                            Venture philanthropy, revolutionary inclusive policymaker relief. User-centered
-                            program areas scale.
+                            BKK carries out marketing programs (search and distribution/placement) for alumni of SMK Negeri 6 Bandung.
                         </h5>
+                        <p className="please">Please Login To Apply !!</p>
                     </div>
 
                     {loker.map((loker, index) => (
                         <div> 
                         
                             <article id="loker" className="card-main">
-                                <h5>{ loker.nama_loker }</h5>
-                                <li>{loker.kualifikasi}</li>
-                                <li>{loker.kualifikasi_2}</li>
-                                <li>{ loker.kualifikasi_3 }</li>
+                                <h5>{loker.nama_loker}</h5>
+                                <ul className="kual">
+                                    <li>{loker.kualifikasi}</li>
+                                    <li>{loker.kualifikasi_2}</li>
+                                    <li>{loker.kualifikasi_3}</li>
+                                </ul>
+                                
                             </article>
                         
                         </div>
                     )) }
-
-                    
-
-                    {/* <article id="loker" className="card-main">
-                        <h5>{ loker.nama_loker }</h5>
-                        <p>{ loker.deskripsi }</p>
-                    </article>
-                        
-                    <article id="loker" className="card-main">
-                        <h5>Design</h5>
-                        <p>Policymaker collaborates collective impact humanitarian shared value
-                            vocabulary inspire issue outcomes agile. Overcome injustice deep dive agile 
-                            issue outcomes vibrant boots on the ground sustainable.
-                        </p>
-                    </article>
-                        
-                    <article id="loker" className="card-main">
-                        <h5>Develop</h5>
-                        <p>Revolutionary circular, movements a or impact framework social impact low-
-                            hanging. Save the compelling revolutionary inspire progress. Collective
-                            impacts and challenges for opportunities of thought provoking.
-                        </p>
-                    </article>
-                        
-                    <article id="loker" className="card-main">
-                        <h5>Marketing</h5>
-                        <p>Peaceful; vibrant paradigm, collaborative cities. Shared vocabulary agile,
-                            replicable, effective altruism youth. Mobilize commitment to overcome
-                            injustice resilient, uplift social transparent effective.
-                        </p>
-                    </article>
-                        
-                    <article id="loker" className="card-main">
-                        <h5>Manage</h5>
-                        <p>Change-makers innovation or shared unit of analysis. Overcome injustice
-                            outcomes strategize vibrant boots on the ground sustainable. Optimism,
-                            effective altruism invest optimism corporate social.
-                        </p>
-                    </article>
-                        
-                    <article id="loker" className="card-main">
-                        <h5>Evolve</h5>
-                        <p>Activate catalyze and impact contextualize humanitarian. Unit of analysis
-                            overcome injustice storytelling altruism. Thought leadership mass 
-                            incarceration. Outcomes big data, fairness, social game-changer.
-                        </p>
-                    </article> */}
 
                     <div className="clear"></div>
 

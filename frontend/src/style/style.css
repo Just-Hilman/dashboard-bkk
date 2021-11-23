@@ -232,6 +232,10 @@ body {
     text-overflow: ellipsis;
 }
 
+.kual {
+    padding: 5px 10px;
+}
+
 .text-tabel-head {
     font-size: 12px;
     text-align: center;
@@ -240,6 +244,14 @@ body {
 .text-tabel {
     font-size: 14px;
     text-align: center;
+}
+
+.please {
+    padding: 20px;
+    color: rgb(132, 163, 247);
+    background-color: white;
+    text-align: center;
+    font-family: 'Quicksand', sans-serif;
 }
 
 
