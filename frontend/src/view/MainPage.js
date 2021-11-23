@@ -1,6 +1,19 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import axios from 'axios';
+import { Link } from "react-router-dom";
 
 const MainPage = () => {
+    const [loker, setLoker] = useState([]);
+
+    useEffect(() => {
+        getLoker();
+    }, []);
+
+    const getLoker = async () => {
+        const response = await axios.get('http://localhost:5000/loker');
+        setLoker(response.data);
+    }
+
     return (
         <div>
             <header className="header-main">
@@ -56,7 +69,7 @@ const MainPage = () => {
                     </div>
                         
                     <div className="cta">
-                        <a href="http://localhost:3000/loker" className="jumbotron-button">Lihat Lowongan</a>
+                        <a href="#loker" className="jumbotron-button">Lihat Lowongan</a>
                     </div>
                     <div className="color-overlay"></div>
                 </div>
@@ -74,15 +87,27 @@ const MainPage = () => {
                         </h5>
                     </div>
 
-                    <article id="consult" className="card-main">
-                        <h5>Consult</h5>
-                        <p>Co-create, design thinking; strengthen infrastructure resist granular.
-                            Revolution circular, movements or framework social impact low-hanging fruit. 
-                            Save the world compelling revolutionary progress.
-                        </p>
+                    {loker.map((loker, index) => (
+                        <div> 
+                        
+                            <article id="loker" className="card-main">
+                                <h5>{ loker.nama_loker }</h5>
+                                <li>{loker.kualifikasi}</li>
+                                <li>{loker.kualifikasi_2}</li>
+                                <li>{ loker.kualifikasi_3 }</li>
+                            </article>
+                        
+                        </div>
+                    )) }
+
+                    
+
+                    {/* <article id="loker" className="card-main">
+                        <h5>{ loker.nama_loker }</h5>
+                        <p>{ loker.deskripsi }</p>
                     </article>
                         
-                    <article id="design" className="card-main">
+                    <article id="loker" className="card-main">
                         <h5>Design</h5>
                         <p>Policymaker collaborates collective impact humanitarian shared value
                             vocabulary inspire issue outcomes agile. Overcome injustice deep dive agile 
@@ -90,7 +115,7 @@ const MainPage = () => {
                         </p>
                     </article>
                         
-                    <article id="develop" className="card-main">
+                    <article id="loker" className="card-main">
                         <h5>Develop</h5>
                         <p>Revolutionary circular, movements a or impact framework social impact low-
                             hanging. Save the compelling revolutionary inspire progress. Collective
@@ -98,7 +123,7 @@ const MainPage = () => {
                         </p>
                     </article>
                         
-                    <article id="marketing" className="card-main">
+                    <article id="loker" className="card-main">
                         <h5>Marketing</h5>
                         <p>Peaceful; vibrant paradigm, collaborative cities. Shared vocabulary agile,
                             replicable, effective altruism youth. Mobilize commitment to overcome
@@ -106,7 +131,7 @@ const MainPage = () => {
                         </p>
                     </article>
                         
-                    <article id="manage" className="card-main">
+                    <article id="loker" className="card-main">
                         <h5>Manage</h5>
                         <p>Change-makers innovation or shared unit of analysis. Overcome injustice
                             outcomes strategize vibrant boots on the ground sustainable. Optimism,
@@ -114,13 +139,13 @@ const MainPage = () => {
                         </p>
                     </article>
                         
-                    <article id="evolve" className="card-main">
+                    <article id="loker" className="card-main">
                         <h5>Evolve</h5>
                         <p>Activate catalyze and impact contextualize humanitarian. Unit of analysis
                             overcome injustice storytelling altruism. Thought leadership mass 
                             incarceration. Outcomes big data, fairness, social game-changer.
                         </p>
-                    </article>
+                    </article> */}
 
                     <div className="clear"></div>
 
