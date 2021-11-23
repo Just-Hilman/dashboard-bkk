@@ -136,8 +136,7 @@ const LamaranLoker = () => {
                         </a>
                         <div id="collapsePages" className="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                             <div className="bg-white py-2 collapse-inner rounded">
-                                <a className="collapse-item" href="/">Rekap Harian</a>
-                                <a className="collapse-item" href="/">Rekap Bulanan</a>
+                                <a className="collapse-item" href="http://localhost:3000/rekap-harian">Rekap Kegiatan</a>
                             </div>
                         </div>
                     </li>
@@ -174,16 +173,6 @@ const LamaranLoker = () => {
                                         <a className="dropdown-item" href="/">
                                             <i className="fas fa-user fa-sm fa-fw mr-2 text-gray-400">{ getUsers }</i>
                                             Profile
-                                        </a>
-
-                                        <a className="dropdown-item" href="/">
-                                            <i className="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                                            Settings
-                                        </a>
-
-                                        <a className="dropdown-item" href="/">
-                                            <i className="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                                            Activity Log
                                         </a>
 
                                         <div className="dropdown-divider"></div>

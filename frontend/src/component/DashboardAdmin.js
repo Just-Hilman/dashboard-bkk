@@ -185,16 +185,6 @@ const DashboardUser = () => {
                                             Profile
                                         </a>
 
-                                        <a className="dropdown-item" href="/">
-                                            <i className="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                                            Settings
-                                        </a>
-
-                                        <a className="dropdown-item" href="/">
-                                            <i className="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                                            Activity Log
-                                        </a>
-
                                         <div className="dropdown-divider"></div>
 
                                         <a className="dropdown-item" href="/" data-toggle="modal" data-target="#logoutModal">
