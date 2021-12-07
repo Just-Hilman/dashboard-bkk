@@ -134,9 +134,7 @@ const DetailLoker = () => {
                     <hr className="sidebar-divider"></hr>
 
                     <li className="nav-item">
-                        <a className="nav-link collapsed" href="/" data-toggle="collapse" data-target="#collapseTwo"
-                            aria-expanded="true" aria-controls="collapseTwo">
-                            <i className="fas fa-fw fa-cog"></i>
+                        <a className="nav-link collapsed" href="http://localhost:3000/dashboard-user">
                             <span>Lowongan Pekerjaan</span>
                         </a>
                     </li>
@@ -174,16 +172,6 @@ const DetailLoker = () => {
                                             Profile
                                         </a>
 
-                                        <a className="dropdown-item" href="/">
-                                            <i className="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                                            Settings
-                                        </a>
-
-                                        <a className="dropdown-item" href="/">
-                                            <i className="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                                            Activity Log
-                                        </a>
-
                                         <div className="dropdown-divider"></div>
 
                                         <a className="dropdown-item" href="/" data-toggle="modal" data-target="#logoutModal">
@@ -209,7 +197,7 @@ const DetailLoker = () => {
                                         </div>
                                         <div className="card-body">
                                             <div>
-                                                <h3 className="card-title">{idloker} | {loker} | {perusahaan}</h3>
+                                                <h3 className="card-title"> {loker} | {perusahaan}</h3>
 
                                                 <h6 className="card-title">Deskripsi Pekerjaan</h6>
                                                 <p className="card-text">{deskripsi}</p>

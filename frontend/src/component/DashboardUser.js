@@ -98,9 +98,7 @@ const DashboardUser = () => {
                     <hr className="sidebar-divider"></hr>
 
                     <li className="nav-item">
-                        <a className="nav-link collapsed" href="/" data-toggle="collapse" data-target="#collapseTwo"
-                            aria-expanded="true" aria-controls="collapseTwo">
-                            <i className="fas fa-fw fa-cog"></i>
+                        <a className="nav-link collapsed" href="/">
                             <span>Lowongan Pekerjaan</span>
                         </a>
                     </li>           
@@ -136,16 +134,6 @@ const DashboardUser = () => {
                                         <a className="dropdown-item" href="/">
                                             <i className="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                             Profile
-                                        </a>
-
-                                        <a className="dropdown-item" href="/">
-                                            <i className="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                                            Settings
-                                        </a>
-
-                                        <a className="dropdown-item" href="/">
-                                            <i className="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                                            Activity Log
                                         </a>
 
                                         <div className="dropdown-divider"></div>

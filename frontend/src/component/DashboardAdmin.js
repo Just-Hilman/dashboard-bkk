@@ -130,7 +130,7 @@ const DashboardUser = () => {
                         <div id="collapseUtilities" className="collapse" aria-labelledby="headingUtilities"
                             data-parent="#accordionSidebar">
                             <div className="bg-white py-2 collapse-inner rounded">
-                                <a className="collapse-item" href="utilities-color.html">Jadwal Seleksi</a>
+                                <a className="collapse-item" href="utilities-color.html">Pengumuman Seleksi</a>
                                 <a className="collapse-item" href="http://localhost:3000/peserta">Peserta Seleksi</a>
                             </div>
                         </div>
