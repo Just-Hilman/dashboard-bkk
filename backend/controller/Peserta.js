@@ -33,7 +33,7 @@ export const getPesertaByIdLoker = async (req, res) => {
                 id_loker: req.params.id
             }
         });
-        res.json(peserta[0]);
+        res.json(peserta);
     } catch (error) {
         res.json({ messege: error.messege });
     }

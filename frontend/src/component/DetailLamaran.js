@@ -2,16 +2,18 @@ import { useState, useEffect } from 'react'
 import axios from "axios";
 import { useHistory, useParams } from 'react-router-dom';
 import jwt_decode from 'jwt-decode';
+import ReactHTMLTableToExcel from 'react-html-table-to-excel';
 
 const DetailLamaran = () => {
+    const [pesertaByIdLoker, setPesertaByIdLoker] = useState([]);
     // const [loker, setLoker] = useState([]);
     const [name, setName] = useState('');
     // const [idloker, setIdloker] = useState('');
-    const [nama, setNama] = useState('');
-    const [alamat, setAlamat] = useState('');
-    const [jurusan, setJurusan] = useState('');
-    const [telp, setTelp] = useState('');
-    const [email, setEmail] = useState('');
+    // const [nama, setNama] = useState('');
+    // const [alamat, setAlamat] = useState('');
+    // const [jurusan, setJurusan] = useState('');
+    // const [telp, setTelp] = useState('');
+    // const [email, setEmail] = useState('');
     const [token, setToken] = useState('');
     const [expire, setExpire] = useState('');
 
@@ -26,14 +28,15 @@ const DetailLamaran = () => {
         const response = await axios.get(`http://localhost:5000/peserta/loker/${id}`);
         // setLoker(response.data.nama_loker);
         // setIdloker(response.data.id_loker);
-        setNama(response.data.nama);
-        setAlamat(response.data.alamat);
-        setJurusan(response.data.jurusan);
-        setTelp(response.data.no_telp);
-        setEmail(response.data.email);
+        // setNama(response.data.nama);
+        // setAlamat(response.data.alamat);
+        // setJurusan(response.data.jurusan);
+        // setTelp(response.data.no_telp);
+        // setEmail(response.data.email);
+        setPesertaByIdLoker(response.data);
         
     }
-    console.log(nama);
+    // console.log(nama);
 
     useEffect(() => {
         refreshToken();
@@ -202,13 +205,20 @@ const DetailLamaran = () => {
                                     <div className="card shadow mb-4">
                                         <div
                                             className="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                            <h6 className="m-0 font-weight-bold text-primary">Daftar Peserta</h6>
+                                            <h6 className="m-0 font-weight-bold text-primary">Daftar Peserta </h6>
+                                            <ReactHTMLTableToExcel
+                                                className="btn btn-info"
+                                                table="table-peserta"
+                                                filename="Daftar Peserta Seleksi"
+                                                sheet="Sheet"
+                                                buttonText="Download"
+                                            />
                                         </div>
                                         <div className="card-body">
                                             <div>
                                                 <div>
                                                     
-                                                    <table className="table table-hover">
+                                                    <table className="table table-hover" id="table-peserta">
                                                     <thead className="text-tabel-head">
                                                         <tr>
                                                             <th>No</th>
@@ -222,15 +232,18 @@ const DetailLamaran = () => {
                                                     </thead>
 
                                                     <tbody className="text-tabel">
-                                                        <tr>
-                                                            <td></td>
-                                                            <td>{ nama }</td>
-                                                            <td>{ alamat }</td>
-                                                            <td>{ jurusan }</td>
-                                                            <td>{ telp }</td>
-                                                            <td>{ email }</td>
-                                                            <td></td>
-                                                        </tr>
+                                                        {pesertaByIdLoker.map((pesertaByIdLoker, index) => (
+                                                                <tr key={pesertaByIdLoker.id}>
+                                                                <td>{ index +1 }</td>
+                                                                <td>{ pesertaByIdLoker.nama }</td>
+                                                                <td>{ pesertaByIdLoker.alamat }</td>
+                                                                <td>{ pesertaByIdLoker.jurusan }</td>
+                                                                <td>{ pesertaByIdLoker.no_telp }</td>
+                                                                <td>{ pesertaByIdLoker.email }</td>
+                                                                <td></td>
+                                                            </tr>
+                                                        ))}
+                                                        
                                                         
                                                     </tbody>
                                                     </table>

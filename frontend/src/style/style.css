@@ -137,7 +137,7 @@
     position: absolute;
     z-index: 1;
     left: 25%;
-    top: 10%;
+    top: 15%;
 
 }
 
@@ -202,7 +202,7 @@ body {
     padding: 10px 10px;
     margin: 10px 10px;
     width: 370px;
-    height: 180px;
+    height: 190px;
     float: left;
     text-align: justify;
 }
@@ -232,6 +232,13 @@ body {
     text-overflow: ellipsis;
 }
 
+.limit2 {
+    overflow: hidden;
+    max-width: 75ch;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
 .kual {
     padding: 5px 10px;
 }
@@ -252,6 +259,10 @@ body {
     background-color: white;
     text-align: center;
     font-family: 'Quicksand', sans-serif;
+}
+
+.detail {
+    text-decoration: underline;
 }
 
 

@@ -206,7 +206,7 @@ const DetailLoker = () => {
                                                 <h6 className="card-title">Kualifikasi</h6>
                                                 <ul className="list-group list-group-flush">
 
-                                                    <li className="list-group-item">{kualifikasi}</li>
+                                                    <li className="limit list-group-item">{kualifikasi}</li>
                                                     <li className="list-group-item">{kualifikasi_2}</li>
                                                     <li className="list-group-item">{kualifikasi_3}</li>
                                                     <li className="list-group-item">{kualifikasi_4}</li>

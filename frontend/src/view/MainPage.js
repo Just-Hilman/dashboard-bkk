@@ -64,8 +64,6 @@ const MainPage = () => {
                     <div className="text-center-main">
                         <h1 className="display-4">Selamat Datang !</h1>
                         <h2>Di Portal Bursa Kerja Khusus SMKN 6 Bandung</h2>
-                        <p className="lead">Have something great in mind? Feel free to contact me. <br></br>
-                            I'll help you to make it happen.</p>
                     </div>
                         
                     <div className="cta">
@@ -97,7 +95,7 @@ const MainPage = () => {
                                     <li>{loker.kualifikasi_2}</li>
                                     <li>{loker.kualifikasi_3}</li>
                                 </ul>
-                                
+                                <Link to={`/detail-loker/${loker.id}`}>Detail</Link>
                             </article>
                         
                         </div>
