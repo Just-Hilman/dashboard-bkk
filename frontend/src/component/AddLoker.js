@@ -136,7 +136,6 @@ const AddLoker = () => {
                         <div id="collapseUtilities" className="collapse" aria-labelledby="headingUtilities"
                             data-parent="#accordionSidebar">
                             <div className="bg-white py-2 collapse-inner rounded">
-                                <a className="collapse-item" href="http://localhost:3000/peserta">Jadwal Seleksi</a>
                                 <a className="collapse-item" href="http://localhost:3000/peserta">Peserta Seleksi</a>
                             </div>
                         </div>

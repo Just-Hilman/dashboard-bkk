@@ -130,7 +130,6 @@ const DashboardUser = () => {
                         <div id="collapseUtilities" className="collapse" aria-labelledby="headingUtilities"
                             data-parent="#accordionSidebar">
                             <div className="bg-white py-2 collapse-inner rounded">
-                                <a className="collapse-item" href="utilities-color.html">Pengumuman Seleksi</a>
                                 <a className="collapse-item" href="http://localhost:3000/peserta">Peserta Seleksi</a>
                             </div>
                         </div>
@@ -208,7 +207,7 @@ const DashboardUser = () => {
                                             <div className="row no-gutters align-items-center">
                                                 <div className="col mr-2">
                                                     <div className="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                                        Total Seleksi (Bulan Ini)</div>
+                                                        Total Seleksi</div>
                                                     <div className="h5 mb-0 font-weight-bold text-gray-800">
                                                         {lamaranTotal.map((lamaranTotal) => (
                                                             <div>{ lamaranTotal.Total_Seleksi} Seleksi</div>
@@ -230,7 +229,7 @@ const DashboardUser = () => {
                                             <div className="row no-gutters align-items-center">
                                                 <div className="col mr-2">
                                                     <div className="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                                        Total Peserta (Per Bulan)</div>
+                                                        Total Peserta</div>
                                                     <div className="h5 mb-0 font-weight-bold text-gray-800">
                                                     <div className="h5 mb-0 font-weight-bold text-gray-800">
                                                         {pesertaRekap.map((pesertaRekap) => (
@@ -258,7 +257,7 @@ const DashboardUser = () => {
                                                         <div className="col-auto">
                                                             <div className="h5 mb-0 mr-3 font-weight-bold text-gray-800">
                                                                 {pesertaRekap.map((pesertaRekap) => (
-                                                                    <div>{ Math.round(pesertaRekap.Jumlah_Peserta / 5)} Orang</div>
+                                                                    <div>{ Math.round(pesertaRekap.Jumlah_Peserta / 6)} Orang</div>
                                                                 )) }  
                                                             </div>
                                                         </div>
@@ -278,7 +277,7 @@ const DashboardUser = () => {
                                             <div className="row no-gutters align-items-center">
                                                 <div className="col mr-2">
                                                     <div className="text-xs font-weight-bold text-warning text-uppercase mb-1">
-                                                        Peserta Tersalurkan (Bulan Ini)</div>
+                                                        Peserta Diterima</div>
                                                     <div className="h5 mb-0 font-weight-bold text-gray-800">30 Orang</div>
                                                 </div>
                                                 <div className="col-auto">
@@ -291,40 +290,15 @@ const DashboardUser = () => {
                             </div>
                             
                             <div className="row">
-                                <div className="col-xl-8 col-lg-7">
+                                <div className="col-xl-12 col-lg-7">
                                     <div className="card shadow mb-4">
                                         <div
                                             className="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                            <h6 className="m-0 font-weight-bold text-primary">Grafik Kegiatan</h6>
+                                            <h6 className="m-0 font-weight-bold text-primary"></h6>
                                         </div>
                                         <div className="card-body">
                                             <div className="chart-area">
                                                 <canvas id="myAreaChart"></canvas>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div className="col-xl-4 col-lg-5">
-                                    <div className="card shadow mb-4">
-                                        <div
-                                            className="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                            <h6 className="m-0 font-weight-bold text-primary">Perusahaan</h6>
-                                        </div>
-                                        <div className="card-body">
-                                            <div className="chart-pie pt-4 pb-2">
-                                                <canvas id="myPieChart"></canvas>
-                                            </div>
-                                            <div className="mt-4 text-center small">
-                                                <span className="mr-2">
-                                                    <i className="fas fa-circle text-primary"></i> Direct
-                                                </span>
-                                                <span className="mr-2">
-                                                    <i className="fas fa-circle text-success"></i> Social
-                                                </span>
-                                                <span className="mr-2">
-                                                    <i className="fas fa-circle text-info"></i> Referral
-                                                </span>
                                             </div>
                                         </div>
                                     </div>
