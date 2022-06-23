@@ -34,6 +34,7 @@ const EditLoker = () => {
             jadwal: jadwal
         });
         history.push("/loker");
+        alert("Loker Updated")
     }
 
     useEffect(() => {
@@ -230,67 +231,73 @@ const EditLoker = () => {
                                                 <div>
                                                     <form onSubmit={ updateLoker }>
                                                         <div className="mb-3">
-                                                            <label className="form-label">Loker</label>
+                                                            <label for="validationServer01" className="form-label">Loker</label>
                                                             <input
                                                                 className="form-control"
                                                                 type="text"
+                                                                id="validationServer01"
                                                                 placeholder="Lowongan Pekerjaan"
                                                                 value={loker}
                                                                 onChange={ (e) => setLoker(e.target.value) }
-                                                            />
+                                                            required/>
                                                         </div>
 
                                                         <div className="mb-3">
-                                                            <label className="form-label">Perusahaan</label>
+                                                            <label for="validationServer01" className="form-label">Perusahaan</label>
                                                             <input
                                                                 className="form-control"
                                                                 type="text"
+                                                                id="validationServer01"
                                                                 placeholder="Perusahaan"
                                                                 value={perusahaan}
                                                                 onChange={ (e) => setPerusahaan(e.target.value) }
-                                                            />
+                                                            required/>
                                                         </div>
 
                                                         <div className="mb-3">
-                                                            <label className="form-label">Deskripsi</label>
+                                                            <label for="validationServer01" className="form-label">Deskripsi</label>
                                                             <textarea
                                                                 className="form-control" aria-label="With textarea"
                                                                 type="text"
+                                                                id="validationServer01"
                                                                 placeholder="Deskripsi"
                                                                 value={deskripsi}
                                                                 onChange={ (e) => setDeskripsi(e.target.value) }
-                                                            />
+                                                            required/>
                                                         </div>
 
                                                         <div className="mb-3">
-                                                            <label className="form-label">Kualifikasi</label>
+                                                            <label for="validationServer01" className="form-label">Kualifikasi</label>
                                                             <ul className="list-group">
                                                                 <li className="list-group-item">
                                                                     <input
                                                                         className="form-control"
                                                                         type="text"
+                                                                        id="validationServer01"
                                                                         placeholder="Kualifikasi 1"
                                                                         value={kualifikasi}
                                                                         onChange={ (e) => setKualifikasi(e.target.value) }
-                                                                    />
+                                                                    required/>
                                                                 </li>
                                                                 <li className="list-group-item">
                                                                     <input
                                                                         className="form-control"
                                                                         type="text"
+                                                                        id="validationServer01"
                                                                         placeholder="Kualifikasi 2"
                                                                         value={kualifikasi_2}
                                                                         onChange={ (e) => setKualifikasi2(e.target.value) }
-                                                                    />
+                                                                    required/>
                                                                 </li>
                                                                 <li className="list-group-item">
                                                                     <input
                                                                         className="form-control"
                                                                         type="text"
+                                                                        id="validationServer01"
                                                                         placeholder="Kualifikasi 3"
                                                                         value={kualifikasi_3}
                                                                         onChange={ (e) => setKualifikasi3(e.target.value) }
-                                                                    />
+                                                                    required/>
                                                                 </li>
                                                                 <li className="list-group-item">
                                                                     <input
@@ -318,10 +325,11 @@ const EditLoker = () => {
                                                             <input
                                                                 className="form-control"
                                                                 type="date"
+                                                                id="validationServer01"
                                                                 placeholder="Jadwal Tes"
                                                                 value={jadwal}
                                                                 onChange={ (e) => setJadwal(e.target.value) }
-                                                            />
+                                                            required/>
                                                         </div>
 
                                                         <div className="mb-3">

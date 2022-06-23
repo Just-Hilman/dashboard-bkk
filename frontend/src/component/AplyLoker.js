@@ -29,7 +29,7 @@ const AplyLoker = () => {
             email: email,
             id_loker: idLoker
         });
-        history.push("/peserta");
+        history.push("/dashboard-user");
     }
 
     // useEffect(() => {

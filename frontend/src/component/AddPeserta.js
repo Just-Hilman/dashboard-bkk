@@ -30,7 +30,8 @@ const AddPeserta = () => {
             email: email,
             id_loker: idLoker
         });
-        history.push("/dashboard-user");
+        history.push("/peserta");
+        alert("Loker created")
     }
 
     
@@ -215,80 +216,87 @@ const AddPeserta = () => {
                                                 <div>
                                                     <form onSubmit={ savePeserta }>
                                                         <div className="mb-3">
-                                                            <label className="form-label">Nama Peserta</label>
+                                                            <label for="validationServer01" className="form-label">Nama Peserta</label>
                                                             <input
                                                                 className="form-control"
                                                                 type="text"
+                                                                id="validationServer01"
                                                                 placeholder="Nama Peserta"
                                                                 value={nama}
                                                                 onChange={ (e) => setNama(e.target.value) }
-                                                            />
+                                                            required/>
                                                         </div>
 
                                                         <div className="mb-3">
-                                                            <label className="label">Alamat</label>
+                                                            <label for="validationServer01" className="label">Alamat</label>
                                                             <input
                                                                 className="form-control"
                                                                 type="text"
+                                                                id="validationServer01"
                                                                 placeholder="Alamat"
                                                                 value={alamat}
                                                                 onChange={ (e) => setAlamat(e.target.value) }
-                                                            />
+                                                            required/>
                                                         </div>
 
                                                         <div className="mb-3">
-                                                            <label className="label">Tanggal Lahir</label>
+                                                            <label for="validationServer01" className="label">Tanggal Lahir</label>
                                                             <input
                                                                 className="form-control"
                                                                 type="date"
+                                                                id="validationServer01"
                                                                 placeholder="Jadwal Tes"
                                                                 value={tglLahir}
                                                                 onChange={ (e) => setTglLahir(e.target.value) }
-                                                            />
+                                                            required/>
                                                         </div>
 
                                                         <div className="mb-3">
-                                                            <label className="label">Jurusan</label>
+                                                            <label for="validationServer01" className="label">Jurusan</label>
                                                             <textarea
                                                                 className="form-control"
                                                                 type="text"
+                                                                id="validationServer01"
                                                                 placeholder="Jurusan"
                                                                 value={jurusan}
                                                                 onChange={ (e) => setJurusan(e.target.value) }
-                                                            />
+                                                            required/>
                                                         </div>
 
                                                         <div className="mb-3">
-                                                            <label className="label">No Telepon</label>
+                                                            <label for="validationServer01" className="label">No Telepon</label>
                                                             <input
                                                                 className="form-control"
                                                                 type="text"
+                                                                id="validationServer01"
                                                                 placeholder="No Telepon"
                                                                 value={noTelp}
                                                                 onChange={ (e) => setNoTelp(e.target.value) }
-                                                            />
+                                                            required/>
                                                         </div>
 
                                                         <div className="mb-3">
-                                                            <label className="label">Email</label>
+                                                            <label for="validationServer01" className="label">Email</label>
                                                             <input
                                                                 className="form-control"
                                                                 type="text"
+                                                                id="validationServer01"
                                                                 placeholder="Email"
                                                                 value={email}
                                                                 onChange={ (e) => setEmail(e.target.value) }
-                                                            />
+                                                            required/>
                                                         </div>
 
                                                         <div className="mb-3">
-                                                            <label className="label">ID Loker</label>
+                                                            <label id="validationServer01" className="label">ID Loker</label>
                                                             <input
                                                                 className="form-control"
                                                                 type="text"
+                                                                id="validationServer01"
                                                                 placeholder="Loker"
                                                                 value={idLoker}
                                                                 onChange={ (e) => setIdLoker(e.target.value) }
-                                                            />
+                                                            required/>
                                                         </div>
 
                                                         <div className="mb-3">
